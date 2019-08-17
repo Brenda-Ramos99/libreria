@@ -1,7 +1,10 @@
 package com.vistas;
 
 /**
- *
+ * nombre de la clase: Mdi_Principal
+ * version:1.0
+ * fecha: 17/08/19
+ * copyright:ITCA-FEPADE
  * @author Brenda Ramos
  */
 public class Mdi_Principal extends javax.swing.JFrame {

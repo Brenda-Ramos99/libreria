@@ -21,7 +21,6 @@ public class Editorial
     {
         
     }
-
     
     /*Método constructor de todos los campos disponible para una instancia al 
         momento de mostrar todos los datos provenientes de la tabla editorial en la 

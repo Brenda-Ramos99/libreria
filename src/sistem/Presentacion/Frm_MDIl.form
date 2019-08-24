@@ -2,139 +2,128 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Menu class="javax.swing.JMenuBar" name="menuBar">
+    <Menu class="javax.swing.JMenuBar" name="MenuBar">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="usuMenu">
+        <Menu class="javax.swing.JMenu" name="UserMenu">
           <Properties>
-            <Property name="mnemonic" type="int" value="102"/>
-            <Property name="text" type="java.lang.String" value="Usuarios"/>
+            <Property name="text" type="java.lang.String" value="Usuario"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="agUsuMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuItemUser">
               <Properties>
-                <Property name="mnemonic" type="int" value="111"/>
                 <Property name="text" type="java.lang.String" value="Agregar Usuario"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemUserActionPerformed"/>
+              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="agmEmpMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuItemEmpl">
               <Properties>
-                <Property name="mnemonic" type="int" value="97"/>
                 <Property name="text" type="java.lang.String" value="Agregar Empleado"/>
               </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="editMenu">
+        <Menu class="javax.swing.JMenu" name="EditorialMenu">
           <Properties>
-            <Property name="mnemonic" type="int" value="101"/>
             <Property name="text" type="java.lang.String" value="Editorial"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="agrEditMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuItemEditorial">
               <Properties>
-                <Property name="mnemonic" type="int" value="116"/>
                 <Property name="text" type="java.lang.String" value="Agregar Editorial"/>
               </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="libroMenu">
+        <Menu class="javax.swing.JMenu" name="LibroMenu">
           <Properties>
-            <Property name="mnemonic" type="int" value="104"/>
             <Property name="text" type="java.lang.String" value="Libro"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="agrLibMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuItemLibro">
               <Properties>
-                <Property name="mnemonic" type="int" value="99"/>
                 <Property name="text" type="java.lang.String" value="Agregar Libro"/>
               </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="categMenu">
+        <Menu class="javax.swing.JMenu" name="CategMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Categoria"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="agrCateMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuItemCateg">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Agregar Categoria"/>
               </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="autorMenu">
+        <Menu class="javax.swing.JMenu" name="AutoresMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Autores"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="agrAutorMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuItemAutor">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Agregar Autores"/>
               </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="prestaMenu">
+        <Menu class="javax.swing.JMenu" name="PrestamoMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Prestamo"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="agrPresMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuItemPrestamo">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Realizar Prestamo"/>
+                <Property name="text" type="java.lang.String" value="Agregar Prestamo"/>
               </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="compraMenu">
+        <Menu class="javax.swing.JMenu" name="CompraMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Compra"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="agrComMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuItemCompra">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Realizar Compra"/>
+                <Property name="text" type="java.lang.String" value="Agregar Compra"/>
               </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="ventasMenu">
+        <Menu class="javax.swing.JMenu" name="VentaMenu">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ventas"/>
+            <Property name="text" type="java.lang.String" value="Venta"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="agrVentaMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuItemVenta">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Realizar Venta"/>
+                <Property name="text" type="java.lang.String" value="agregar Venta"/>
               </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="reporteMenu">
+        <Menu class="javax.swing.JMenu" name="ReporteMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Reportes"/>
           </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="repVLMenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Reporte de venta de Libros"/>
-              </Properties>
-            </MenuItem>
-          </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="exitMenu">
+        <Menu class="javax.swing.JMenu" name="SalirMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="exitMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="SalirMenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salir"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitMenuItemActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SalirMenuItemActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -146,7 +135,7 @@
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="menuBar"/>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="MenuBar"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -165,20 +154,29 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="desktopPane" pref="730" max="32767" attributes="0"/>
+          <Component id="jDesktopPanePrincipal" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="desktopPane" pref="435" max="32767" attributes="0"/>
+          <Component id="jDesktopPanePrincipal" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JDesktopPane" name="desktopPane">
+    <Container class="javax.swing.JDesktopPane" name="jDesktopPanePrincipal">
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="662" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="426" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
       </Layout>
     </Container>
   </SubComponents>

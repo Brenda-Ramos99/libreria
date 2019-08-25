@@ -1,5 +1,9 @@
 package sistem.Entidades;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import sistem.Dao.Conexion;
+
 /**
  * Nombre de la Clase: Compra
  * Versión: 1.0
@@ -7,7 +11,7 @@ package sistem.Entidades;
  * Copyright: ITCA-FEPADE
  * @author Elvis Adalberto Alfaro Gómez
  */
-public class Compra
+public class Compra extends Conexion
 {
     private int id_compra;
     private String fecha;
@@ -69,5 +73,20 @@ public class Compra
 
     public void setTotal(double total) {
         this.total = total;
+    }
+    
+    public double calcTotal() throws ClassNotFoundException,SQLException
+    {
+        PreparedStatement ps;
+        
+        ps=super.con().prepareStatement("select subtotal from detalle_compra "
+                + "where id_libro=(select id_libro from libro where id_libro = "
+                + "detalle_compra.id_libro) and id_compra=(select id_compra "
+                + "from compra where id_compra=detalle_compra.id_compra);");
+        
+        double subtotal = ps.executeUpdate();
+        
+        this.total = subtotal+(subtotal*IVA);
+        return total;
     }
 }

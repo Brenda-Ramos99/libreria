@@ -1,5 +1,7 @@
 package com.vistas;
 
+import sistem.Presentacion.Frm_Usuario;
+
 /**
  * nombre de la clase: Frm_MDI
  * version:1.0

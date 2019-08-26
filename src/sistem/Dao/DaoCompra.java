@@ -72,12 +72,31 @@ public class DaoCompra extends Conexion implements CrudCompra
                 + "iva=? where id_detalle_compra = ?");
         ps.setString(1, comp.getFecha());
         ps.setDouble(2, com.getTotal());
+        ps.setInt(3, com.getId_compra());
+        try
+        {
+            res=ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
         return res;
     }
 
     @Override
-    public int eliminar(Compra comp) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int eliminar(Compra comp) throws ClassNotFoundException, SQLException
+    {
+        ps = super.con().prepareStatement("delete from compra where "
+                + "id_detalle_compra = ?");
+        ps.setInt(1, comp.getId_compra());
+        try
+        {
+            res=ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
+        return res;
     }
     
     

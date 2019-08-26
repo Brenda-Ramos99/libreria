@@ -109,6 +109,11 @@ public class Frm_MDIl extends javax.swing.JFrame {
         CategMenu.setText("Categoria");
 
         MenuItemCateg.setText("Agregar Categoria");
+        MenuItemCateg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemCategActionPerformed(evt);
+            }
+        });
         CategMenu.add(MenuItemCateg);
 
         MenuBar.add(CategMenu);
@@ -204,6 +209,11 @@ public class Frm_MDIl extends javax.swing.JFrame {
         Frm_Autor autor = new Frm_Autor();
         jDesktopPanePrincipal.add(autor);
     }//GEN-LAST:event_MenuItemAutorActionPerformed
+//formulario categoria
+    private void MenuItemCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemCategActionPerformed
+        Frm_Categoria categ = new Frm_Categoria();
+        jDesktopPanePrincipal.add(categ);
+    }//GEN-LAST:event_MenuItemCategActionPerformed
 
     /**
      * @param args the command line arguments

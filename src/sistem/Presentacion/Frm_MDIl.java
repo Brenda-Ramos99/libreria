@@ -1,4 +1,4 @@
-package com.vistas;
+package sistem.Presentacion;
 
 import sistem.Presentacion.Frm_Usuario;
 
@@ -64,6 +64,7 @@ public class Frm_MDIl extends javax.swing.JFrame {
             .addGap(0, 426, Short.MAX_VALUE)
         );
 
+        UserMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/empleado.png"))); // NOI18N
         UserMenu.setText("Usuario");
 
         MenuItemUser.setText("Agregar Usuario");
@@ -79,16 +80,28 @@ public class Frm_MDIl extends javax.swing.JFrame {
 
         MenuBar.add(UserMenu);
 
+        EditorialMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/colegio.png"))); // NOI18N
         EditorialMenu.setText("Editorial");
 
         MenuItemEditorial.setText("Agregar Editorial");
+        MenuItemEditorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemEditorialActionPerformed(evt);
+            }
+        });
         EditorialMenu.add(MenuItemEditorial);
 
         MenuBar.add(EditorialMenu);
 
+        LibroMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/libro.png"))); // NOI18N
         LibroMenu.setText("Libro");
 
         MenuItemLibro.setText("Agregar Libro");
+        MenuItemLibro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemLibroActionPerformed(evt);
+            }
+        });
         LibroMenu.add(MenuItemLibro);
 
         MenuBar.add(LibroMenu);
@@ -100,9 +113,15 @@ public class Frm_MDIl extends javax.swing.JFrame {
 
         MenuBar.add(CategMenu);
 
+        AutoresMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/escritor.png"))); // NOI18N
         AutoresMenu.setText("Autores");
 
         MenuItemAutor.setText("Agregar Autores");
+        MenuItemAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemAutorActionPerformed(evt);
+            }
+        });
         AutoresMenu.add(MenuItemAutor);
 
         MenuBar.add(AutoresMenu);
@@ -121,6 +140,7 @@ public class Frm_MDIl extends javax.swing.JFrame {
 
         MenuBar.add(CompraMenu);
 
+        VentaMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/venta (1).png"))); // NOI18N
         VentaMenu.setText("Venta");
 
         MenuItemVenta.setText("agregar Venta");
@@ -128,9 +148,11 @@ public class Frm_MDIl extends javax.swing.JFrame {
 
         MenuBar.add(VentaMenu);
 
+        ReporteMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/crecimiento.png"))); // NOI18N
         ReporteMenu.setText("Reportes");
         MenuBar.add(ReporteMenu);
 
+        SalirMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/borrar (1).png"))); // NOI18N
         SalirMenu.setText("Salir");
 
         SalirMenuItem.setText("Salir");
@@ -158,15 +180,30 @@ public class Frm_MDIl extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//usuario formulario
     private void MenuItemUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemUserActionPerformed
         Frm_Usuario user= new Frm_Usuario();
         jDesktopPanePrincipal.add(user);
     }//GEN-LAST:event_MenuItemUserActionPerformed
-
+//Salir
     private void SalirMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_SalirMenuItemActionPerformed
+//formulario editorial
+    private void MenuItemEditorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemEditorialActionPerformed
+        Frm_Editorial editorial = new Frm_Editorial();
+        jDesktopPanePrincipal.add(editorial);
+    }//GEN-LAST:event_MenuItemEditorialActionPerformed
+//formulario libro
+    private void MenuItemLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemLibroActionPerformed
+        Frm_Libro libro = new Frm_Libro();
+        jDesktopPanePrincipal.add(libro);
+    }//GEN-LAST:event_MenuItemLibroActionPerformed
+///formulario Autor
+    private void MenuItemAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemAutorActionPerformed
+        Frm_Autor autor = new Frm_Autor();
+        jDesktopPanePrincipal.add(autor);
+    }//GEN-LAST:event_MenuItemAutorActionPerformed
 
     /**
      * @param args the command line arguments

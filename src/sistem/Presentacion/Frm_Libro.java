@@ -52,6 +52,7 @@ public class Frm_Libro extends javax.swing.JInternalFrame {
         txtExistenciasLib = new javax.swing.JTextField();
         btnPrestarLib = new javax.swing.JButton();
         btnSalirLib = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableLibro = new javax.swing.JTable();
 
@@ -81,17 +82,25 @@ public class Frm_Libro extends javax.swing.JInternalFrame {
             }
         });
 
+        btnAgregarLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnAgregarLib.setText("Agregar");
 
+        btnMOdifLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/lapiz-escribiendo-en-un-papel.png"))); // NOI18N
         btnMOdifLib.setText("Modificar");
 
+        btnELiminLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/cesto-de-basura.png"))); // NOI18N
         btnELiminLib.setText("Eliminar");
 
+        btnComprarLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/carro-de-la-compra.png"))); // NOI18N
         btnComprarLib.setText("Comprar");
 
+        btnPrestarLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/pagar.png"))); // NOI18N
         btnPrestarLib.setText("Prestar");
 
+        btnSalirLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/logout.png"))); // NOI18N
         btnSalirLib.setText("Salir");
+
+        jTextField1.setEnabled(false);
 
         javax.swing.GroupLayout PanelLibroLayout = new javax.swing.GroupLayout(PanelLibro);
         PanelLibro.setLayout(PanelLibroLayout);
@@ -129,20 +138,31 @@ public class Frm_Libro extends javax.swing.JInternalFrame {
                             .addComponent(txtPrecioLib)
                             .addComponent(txtTomoLib)
                             .addComponent(cmbAutorLib, 0, 190, Short.MAX_VALUE)
-                            .addComponent(cmbEditorialLib, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(cmbEditorialLib, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE))
                     .addGroup(PanelLibroLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCodLib, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addComponent(txtCodLib, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(88, 88, 88)))
                 .addGroup(PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAgregarLib, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnMOdifLib, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnELiminLib, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnComprarLib, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnPrestarLib, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnSalirLib, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(41, 41, 41))
+                    .addGroup(PanelLibroLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addGroup(PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAgregarLib, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnELiminLib, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnSalirLib)
+                                .addComponent(btnPrestarLib))))
+                    .addGroup(PanelLibroLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btnMOdifLib))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLibroLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(btnComprarLib, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(35, 35, 35))
         );
         PanelLibroLayout.setVerticalGroup(
             PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,7 +170,8 @@ public class Frm_Libro extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtCodLib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCodLib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -253,6 +274,7 @@ public class Frm_Libro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtCodLib;
     private javax.swing.JTextField txtExistenciasLib;
     private javax.swing.JTextField txtPrecioLib;

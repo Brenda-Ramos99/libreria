@@ -57,7 +57,7 @@ public class Frm_MDIl extends javax.swing.JFrame {
         jDesktopPanePrincipal.setLayout(jDesktopPanePrincipalLayout);
         jDesktopPanePrincipalLayout.setHorizontalGroup(
             jDesktopPanePrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 662, Short.MAX_VALUE)
+            .addGap(0, 711, Short.MAX_VALUE)
         );
         jDesktopPanePrincipalLayout.setVerticalGroup(
             jDesktopPanePrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,6 +106,7 @@ public class Frm_MDIl extends javax.swing.JFrame {
 
         MenuBar.add(LibroMenu);
 
+        CategMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/categoria.png"))); // NOI18N
         CategMenu.setText("Categoria");
 
         MenuItemCateg.setText("Agregar Categoria");
@@ -131,6 +132,7 @@ public class Frm_MDIl extends javax.swing.JFrame {
 
         MenuBar.add(AutoresMenu);
 
+        PrestamoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/venta.png"))); // NOI18N
         PrestamoMenu.setText("Prestamo");
 
         MenuItemPrestamo.setText("Agregar Prestamo");
@@ -138,6 +140,7 @@ public class Frm_MDIl extends javax.swing.JFrame {
 
         MenuBar.add(PrestamoMenu);
 
+        CompraMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/bienes.png"))); // NOI18N
         CompraMenu.setText("Compra");
 
         MenuItemCompra.setText("Agregar Compra");
@@ -180,7 +183,7 @@ public class Frm_MDIl extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPanePrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jDesktopPanePrincipal)
         );
 
         pack();

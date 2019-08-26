@@ -99,6 +99,11 @@ public class Frm_Libro extends javax.swing.JInternalFrame {
 
         btnSalirLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/logout.png"))); // NOI18N
         btnSalirLib.setText("Salir");
+        btnSalirLib.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirLibActionPerformed(evt);
+            }
+        });
 
         jTextField1.setEnabled(false);
 
@@ -250,6 +255,10 @@ public class Frm_Libro extends javax.swing.JInternalFrame {
     private void txtTomoLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTomoLibActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTomoLibActionPerformed
+
+    private void btnSalirLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirLibActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalirLibActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -57,6 +57,11 @@ public class Frm_Categoria extends javax.swing.JInternalFrame {
 
         btnSalirCateg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/logout.png"))); // NOI18N
         btnSalirCateg.setText("Salir");
+        btnSalirCateg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirCategActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelCategLayout = new javax.swing.GroupLayout(PanelCateg);
         PanelCateg.setLayout(PanelCategLayout);
@@ -138,6 +143,10 @@ public class Frm_Categoria extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirCategActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalirCategActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

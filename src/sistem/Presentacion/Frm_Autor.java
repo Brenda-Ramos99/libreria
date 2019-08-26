@@ -73,6 +73,11 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
 
         btnSalirAutor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/logout.png"))); // NOI18N
         btnSalirAutor.setText("Salir");
+        btnSalirAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirAutorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelAutorLayout = new javax.swing.GroupLayout(panelAutor);
         panelAutor.setLayout(panelAutorLayout);
@@ -167,6 +172,10 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirAutorActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalirAutorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

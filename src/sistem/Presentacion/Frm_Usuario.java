@@ -46,6 +46,7 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
         btnAgreUser = new javax.swing.JButton();
         btnModifUser = new javax.swing.JButton();
         btnElminUser = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableUser = new javax.swing.JTable();
 
@@ -65,11 +66,22 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Edad");
 
+        btnAgreUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnAgreUser.setText("Agregar");
 
+        btnModifUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/lapiz-escribiendo-en-un-papel.png"))); // NOI18N
         btnModifUser.setText("Modificar");
 
+        btnElminUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/cesto-de-basura.png"))); // NOI18N
         btnElminUser.setText("Eliminar");
+
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/logout.png"))); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelUserLayout = new javax.swing.GroupLayout(PanelUser);
         PanelUser.setLayout(PanelUserLayout);
@@ -77,7 +89,7 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
             PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelUserLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelUserLayout.createSequentialGroup()
                         .addGroup(PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -89,19 +101,19 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
                                 .addComponent(txtCodigUser, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(44, 44, 44)
                                 .addComponent(jLabel5))
-                            .addGroup(PanelUserLayout.createSequentialGroup()
-                                .addGroup(PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                                    .addComponent(txtPass))
-                                .addGap(44, 44, 44)
-                                .addGroup(PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel6)))))
-                    .addGroup(PanelUserLayout.createSequentialGroup()
-                        .addComponent(btnAgreUser)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnModifUser)
-                        .addGap(52, 52, 52)))
+                            .addGroup(PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(PanelUserLayout.createSequentialGroup()
+                                    .addComponent(btnModifUser)
+                                    .addGap(103, 103, 103))
+                                .addGroup(PanelUserLayout.createSequentialGroup()
+                                    .addGroup(PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                        .addComponent(txtPass))
+                                    .addGap(44, 44, 44)
+                                    .addGroup(PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jLabel6))))))
+                    .addComponent(btnAgreUser))
                 .addGroup(PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelUserLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -109,11 +121,13 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
                             .addComponent(cmbRol, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(SpinnerEdadUser, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDire, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(32, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUserLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnElminUser)
-                        .addGap(115, 115, 115))))
+                        .addGap(51, 51, 51)
+                        .addComponent(btnSalir)
+                        .addGap(112, 112, 112))))
         );
         PanelUserLayout.setVerticalGroup(
             PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,7 +154,8 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
                 .addGroup(PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnElminUser)
                     .addComponent(btnModifUser)
-                    .addComponent(btnAgreUser))
+                    .addComponent(btnAgreUser)
+                    .addComponent(btnSalir))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
@@ -161,8 +176,10 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(PanelUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(PanelUser, javax.swing.GroupLayout.PREFERRED_SIZE, 678, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -178,6 +195,10 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelUser;
@@ -186,6 +207,7 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnAgreUser;
     private javax.swing.JButton btnElminUser;
     private javax.swing.JButton btnModifUser;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cmbRol;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

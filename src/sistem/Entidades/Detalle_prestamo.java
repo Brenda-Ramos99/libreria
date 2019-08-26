@@ -22,8 +22,8 @@ public class Detalle_prestamo
     }
 
     /*Método constructor de todos los campos disponible para una instancia al 
-    momento de mostrar todos los datos provenientes de la tabla detalle_prestamo en la 
-    base de datos*/
+    momento de mostrar todos los datos provenientes de la tabla detalle_prestamo
+    en la base de datos*/
     public Detalle_prestamo(int id_detalle_prestamo, int id_libro,
             int id_prestamo, double subtotal)
     {

@@ -16,7 +16,7 @@ public class Compra extends Conexion
     private int id_compra;
     private String fecha;
     private double total;
-    private static final double IVA=0.13;
+    private double IVA=0.13;
 
     /*Método constructor vacío para inicializar la clase*/
     public Compra()
@@ -27,12 +27,14 @@ public class Compra extends Conexion
     /*Método constructor de todos los campos disponible para una instancia al 
     momento de mostrar todos los datos provenientes de la tabla compra en la 
     base de datos*/
+
     public Compra(int id_compra, String fecha, double total)
     {
         this.id_compra = id_compra;
         this.fecha = fecha;
         this.total = total;
     }
+    
 
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla compra en la base de 
@@ -74,19 +76,12 @@ public class Compra extends Conexion
     public void setTotal(double total) {
         this.total = total;
     }
-    
-    public double calcTotal() throws ClassNotFoundException,SQLException
-    {
-        PreparedStatement ps;
-        
-        ps=super.con().prepareStatement("select subtotal from detalle_compra "
-                + "where id_libro=(select id_libro from libro where id_libro = "
-                + "detalle_compra.id_libro) and id_compra=(select id_compra "
-                + "from compra where id_compra=detalle_compra.id_compra);");
-        
-        double subtotal = ps.executeUpdate();
-        
-        this.total = subtotal+(subtotal*IVA);
-        return total;
+
+    public double getIVA() {
+        return IVA;
+    }
+
+    public void setIVA(double IVA) {
+        this.IVA = IVA;
     }
 }

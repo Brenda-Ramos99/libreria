@@ -50,7 +50,6 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TableUser = new javax.swing.JTable();
 
-        setClosable(true);
         setTitle("Registro de Usuario");
         setVisible(true);
 
@@ -65,6 +64,8 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
         jLabel5.setText("Rol");
 
         jLabel6.setText("Edad");
+
+        SpinnerEdadUser.setModel(new javax.swing.SpinnerNumberModel(15, 15, 100, 1));
 
         btnAgreUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnAgreUser.setText("Agregar");

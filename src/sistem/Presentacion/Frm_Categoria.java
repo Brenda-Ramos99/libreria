@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package sistem.Presentacion;
+import sistem.Entidades.Validaciones;
 
 /**
  *
@@ -14,8 +15,10 @@ public class Frm_Categoria extends javax.swing.JInternalFrame {
     /**
      * Creates new form Frm_Categoria
      */
+    Validaciones v = new Validaciones();
     public Frm_Categoria() {
         initComponents();
+        v.validarNombres(txtCatrgoria);
     }
 
     /**
@@ -44,7 +47,9 @@ public class Frm_Categoria extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Codigo");
 
-        jLabel2.setText("Categoria");
+        jLabel2.setText("Nombre de Categoria");
+
+        txtCodCateg.setEnabled(false);
 
         btnAgregCateg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnAgregCateg.setText("Agregar");
@@ -68,46 +73,52 @@ public class Frm_Categoria extends javax.swing.JInternalFrame {
         PanelCategLayout.setHorizontalGroup(
             PanelCategLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCategLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(PanelCategLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelCategLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(txtCatrgoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelCategLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(jLabel1))
+                    .addGroup(PanelCategLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(PanelCategLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnElimCateg)
+                            .addComponent(btnAgregCateg))
+                        .addGroup(PanelCategLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelCategLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(btnModifCateg))
+                            .addGroup(PanelCategLayout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(btnSalirCateg))))
+                    .addGroup(PanelCategLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
                         .addGroup(PanelCategLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addGroup(PanelCategLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodCateg, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCatrgoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(PanelCategLayout.createSequentialGroup()
-                        .addComponent(btnAgregCateg)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnModifCateg))
-                    .addGroup(PanelCategLayout.createSequentialGroup()
-                        .addComponent(btnElimCateg)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalirCateg)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                            .addComponent(txtCodCateg, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         PanelCategLayout.setVerticalGroup(
             PanelCategLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCategLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(PanelCategLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtCodCateg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(PanelCategLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtCatrgoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtCodCateg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel2)
                 .addGap(18, 18, 18)
+                .addComponent(txtCatrgoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addGroup(PanelCategLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregCateg)
                     .addComponent(btnModifCateg))
-                .addGap(27, 27, 27)
+                .addGap(35, 35, 35)
                 .addGroup(PanelCategLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnElimCateg)
                     .addComponent(btnSalirCateg))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         TableCategoria.setModel(new javax.swing.table.DefaultTableModel(
@@ -127,18 +138,20 @@ public class Frm_Categoria extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(PanelCateg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelCateg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addComponent(PanelCateg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 10, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();

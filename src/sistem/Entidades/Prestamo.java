@@ -12,7 +12,6 @@ public class Prestamo
     private int id_prestamo;
     private String fecha_inicio;
     private String fecha_final;
-    private double cargos;
     private double total;
 
     /*Método constructor vacío para inicializar la clase*/
@@ -25,24 +24,21 @@ public class Prestamo
     momento de mostrar todos los datos provenientes de la tabla prestamo en la 
     base de datos*/
     public Prestamo(int id_prestamo, String fecha_inicio, String fecha_final,
-            double cargos, double total)
+            double total)
     {
         this.id_prestamo = id_prestamo;
         this.fecha_inicio = fecha_inicio;
         this.fecha_final = fecha_final;
-        this.cargos = cargos;
         this.total = total;
     }
 
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla prestamo en la base de 
     datos (sin ID, ya que es autoincrementable)*/
-    public Prestamo(String fecha_inicio, String fecha_final, double cargos,
-            double total)
+    public Prestamo(String fecha_inicio, String fecha_final,double total)
     {
         this.fecha_inicio = fecha_inicio;
         this.fecha_final = fecha_final;
-        this.cargos = cargos;
         this.total = total;
     }
 
@@ -76,14 +72,6 @@ public class Prestamo
 
     public void setFecha_final(String fecha_final) {
         this.fecha_final = fecha_final;
-    }
-
-    public double getCargos() {
-        return cargos;
-    }
-
-    public void setCargos(double cargos) {
-        this.cargos = cargos;
     }
 
     public double getTotal() {

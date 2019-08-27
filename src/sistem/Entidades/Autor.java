@@ -11,6 +11,7 @@ public class Autor
 {
     private int id_autor;
     private String nombre;
+    private String seudonimo;
     private String genero;
     private String nacionalidad;
 
@@ -23,33 +24,39 @@ public class Autor
     /*Método constructor de todos los campos disponible para una instancia al 
     momento de mostrar todos los datos provenientes de la tabla autor en la 
     base de datos*/
-    public Autor(int id_autor, String nombre, String genero,
+
+    public Autor(int id_autor, String nombre, String seudonimo, String genero,
             String nacionalidad)
     {
         this.id_autor = id_autor;
         this.nombre = nombre;
+        this.seudonimo = seudonimo;
         this.genero = genero;
         this.nacionalidad = nacionalidad;
     }
+    
 
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla autor en la base de 
     datos (sin ID, ya que es autoincrementable)*/
-    public Autor(String nombre, String genero, String nacionalidad)
+    public Autor(String nombre, String seudonimo, String genero,
+            String nacionalidad)    
     {
         this.nombre = nombre;
+        this.seudonimo = seudonimo;
         this.genero = genero;
         this.nacionalidad = nacionalidad;
     }
 
-    /*Método constructor para el ID del autor, necesario para realizar la 
+    /*Método constructor para el ID del autor, necesario para realizar la
     eliminación de registros a la tabla autor en la base de datos*/
     public Autor(int id_autor)
     {
         this.id_autor = id_autor;
     }
-
+    
     /*Métodos de acceso de la Clase*/
+
     public int getId_autor() {
         return id_autor;
     }
@@ -64,6 +71,14 @@ public class Autor
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getSeudonimo() {
+        return seudonimo;
+    }
+
+    public void setSeudonimo(String seudonimo) {
+        this.seudonimo = seudonimo;
     }
 
     public String getGenero() {
@@ -81,6 +96,5 @@ public class Autor
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
-    
     
 }

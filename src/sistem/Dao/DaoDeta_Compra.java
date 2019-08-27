@@ -22,7 +22,9 @@ public class DaoDeta_Compra extends Conexion implements CrudDetalle_compra
     int res;
 
     @Override
-    public ArrayList<Detalle_compra> mostrar() throws ClassNotFoundException, SQLException {
+    public ArrayList<Detalle_compra> mostrar() throws ClassNotFoundException,
+            SQLException
+    {
         ps= super.con().prepareStatement("select * from detalle_compra");
         ArrayList<Detalle_compra> ar = new ArrayList<Detalle_compra>();
         try
@@ -32,7 +34,7 @@ public class DaoDeta_Compra extends Conexion implements CrudDetalle_compra
             {            
                 deta_compra = new Detalle_compra(rs.getInt(1), rs.getInt(2),
                         rs.getInt(3),rs.getInt(4),rs.getDouble(5),
-                        rs.getInt(6));
+                        rs.getDouble(6));
                 ar.add(deta_compra);
             }
         } catch (Exception e)
@@ -47,18 +49,64 @@ public class DaoDeta_Compra extends Conexion implements CrudDetalle_compra
     }
 
     @Override
-    public int agregar(Detalle_compra deta_comp) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int agregar(Detalle_compra deta_comp) throws ClassNotFoundException,
+            SQLException
+    {
+        ps = super.con().prepareStatement("insert into detalle_compra(id_liro,"
+                + "id_compra,cantidad,precio,sutotal) values(?,?,?);");
+        ps.setInt(1, deta_compra.getId_libro());
+        ps.setInt(2, deta_compra.getId_compra());
+        ps.setInt(3, deta_compra.getCantidad());
+        ps.setDouble(4, deta_compra.getPrecio());
+        ps.setDouble(5, deta_compra.getSubtotal());
+        try
+        {
+            res = ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
+        return res;
     }
 
     @Override
-    public int modificar(Detalle_compra deta_comp) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int modificar(Detalle_compra deta_comp) throws ClassNotFoundException,
+            SQLException
+    {
+        ps = super.con().prepareStatement("update detalle_compra set id_liro=?,"
+                + "id_compra=?,cantidad=?,precio=?,sutotal=? where "
+                + "id_detalle_compra=?;");
+        ps.setInt(1, deta_compra.getId_libro());
+        ps.setInt(2, deta_compra.getId_compra());
+        ps.setInt(3, deta_compra.getCantidad());
+        ps.setDouble(4, deta_compra.getPrecio());
+        ps.setDouble(5, deta_compra.getSubtotal());
+        ps.setInt(6, deta_compra.getId_detalle_compra());
+        try
+        {
+            res = ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
+        return res;
     }
 
     @Override
-    public int eliminar(Detalle_compra deta_comp) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int eliminar(Detalle_compra deta_comp) throws ClassNotFoundException,
+            SQLException
+    {
+        ps = super.con().prepareStatement("delete from compra where "
+                + "id_detalle_compra = ?");
+        ps.setInt(1, deta_compra.getId_detalle_compra());
+        try
+        {
+            res=ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
+        return res;
     }
     
     

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package sistem.Presentacion;
+import sistem.Entidades.Validaciones;
 
 /**
  *
@@ -14,8 +15,13 @@ public class Frm_Editorial extends javax.swing.JInternalFrame {
     /**
      * Creates new form Frm_Editorial
      */
+    Validaciones v = new Validaciones();
     public Frm_Editorial() {
         initComponents();
+        v.validarLetras(txtDireccEdit);
+        v.validarLetras(txtNomEdit);
+        v.validarLetras(txtPaisEdit);
+        v.validarumeros(txtTelefEdit);
     }
 
     /**
@@ -60,6 +66,8 @@ public class Frm_Editorial extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Dirección");
 
+        txtCodEdit.setEnabled(false);
+
         btnAgregEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnAgregEdit.setText("Agregar");
 
@@ -92,7 +100,7 @@ public class Frm_Editorial extends javax.swing.JInternalFrame {
                         .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCodEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PanelEditorialLayout.createSequentialGroup()
-                                .addGap(0, 207, Short.MAX_VALUE)
+                                .addGap(0, 230, Short.MAX_VALUE)
                                 .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel5)))))
@@ -102,24 +110,17 @@ public class Frm_Editorial extends javax.swing.JInternalFrame {
                         .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNomEdit, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                             .addComponent(txtTelefEdit))))
+                .addGap(16, 16, 16)
                 .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelEditorialLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelEditorialLayout.createSequentialGroup()
-                                .addComponent(txtDireccEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(128, 128, 128))
-                            .addGroup(PanelEditorialLayout.createSequentialGroup()
-                                .addComponent(txtPaisEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditorialLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnElimEdit)
-                            .addComponent(btnAgregEdit)
-                            .addComponent(btnModifEdit)
-                            .addComponent(btnSalirEdit))
-                        .addGap(27, 27, 27))))
+                    .addComponent(txtDireccEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPaisEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSalirEdit)
+                    .addComponent(btnElimEdit)
+                    .addComponent(btnAgregEdit)
+                    .addComponent(btnModifEdit))
+                .addGap(27, 27, 27))
         );
         PanelEditorialLayout.setVerticalGroup(
             PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,20 +147,17 @@ public class Frm_Editorial extends javax.swing.JInternalFrame {
                         .addGap(23, 23, 23))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditorialLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnElimEdit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(btnElimEdit)))
                 .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(txtTelefEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)
+                        .addComponent(txtDireccEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelEditorialLayout.createSequentialGroup()
-                        .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(txtTelefEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(txtDireccEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditorialLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                        .addComponent(btnSalirEdit)
-                        .addGap(25, 25, 25))))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalirEdit)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         TableEditorial.setModel(new javax.swing.table.DefaultTableModel(

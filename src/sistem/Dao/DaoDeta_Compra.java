@@ -108,6 +108,4 @@ public class DaoDeta_Compra extends Conexion implements CrudDetalle_compra
         }
         return res;
     }
-    
-    
 }

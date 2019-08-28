@@ -12,24 +12,35 @@ package sistem.Entidades;
 public class Membresia
 {
     private int id_membresia;
+    private String tipo_membresia;
     private String fecha_validacion;
     private String fecha_vencimiento;
+    private double precio_membresia;
+    private int id_usuario;
 
     public Membresia()
     {
         
     }
 
-    public Membresia(int id_membresia, String fecha_validacion,
-            String fecha_vencimiento)
-    {
+    public Membresia(int id_membresia, String tipo_membresia, String fecha_validacion, String fecha_vencimiento, double precio_membresia, int id_usuario) {
         this.id_membresia = id_membresia;
+        this.tipo_membresia = tipo_membresia;
         this.fecha_validacion = fecha_validacion;
         this.fecha_vencimiento = fecha_vencimiento;
+        this.precio_membresia = precio_membresia;
+        this.id_usuario = id_usuario;
     }
 
-    public Membresia(int id_membresia)
-    {
+    public Membresia(String tipo_membresia, String fecha_validacion, String fecha_vencimiento, double precio_membresia, int id_usuario) {
+        this.tipo_membresia = tipo_membresia;
+        this.fecha_validacion = fecha_validacion;
+        this.fecha_vencimiento = fecha_vencimiento;
+        this.precio_membresia = precio_membresia;
+        this.id_usuario = id_usuario;
+    }
+
+    public Membresia(int id_membresia) {
         this.id_membresia = id_membresia;
     }
 
@@ -39,6 +50,14 @@ public class Membresia
 
     public void setId_membresia(int id_membresia) {
         this.id_membresia = id_membresia;
+    }
+
+    public String getTipo_membresia() {
+        return tipo_membresia;
+    }
+
+    public void setTipo_membresia(String tipo_membresia) {
+        this.tipo_membresia = tipo_membresia;
     }
 
     public String getFecha_validacion() {
@@ -56,6 +75,20 @@ public class Membresia
     public void setFecha_vencimiento(String fecha_vencimiento) {
         this.fecha_vencimiento = fecha_vencimiento;
     }
-    
-    
+
+    public double getPrecio_membresia() {
+        return precio_membresia;
+    }
+
+    public void setPrecio_membresia(double precio_membresia) {
+        this.precio_membresia = precio_membresia;
+    }
+
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
 }

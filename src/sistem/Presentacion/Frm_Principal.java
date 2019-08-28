@@ -51,7 +51,6 @@ public class Frm_Principal extends javax.swing.JFrame {
         btnIniciarSesion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/iniciar-la-sesion.png"))); // NOI18N
         btnIniciarSesion.setText("Iniciar Sesión");
-        btnIniciarSesion.setActionCommand("Iniciar Sesión");
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarSesionActionPerformed(evt);
@@ -64,6 +63,11 @@ public class Frm_Principal extends javax.swing.JFrame {
         btnRegistramen.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnRegistramen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/registrarse.png"))); // NOI18N
         btnRegistramen.setText("Registrarme");
+        btnRegistramen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistramenActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Inicia sesión y disfruta de los mejores libros");
@@ -127,6 +131,12 @@ public class Frm_Principal extends javax.swing.JFrame {
         dispose();
         
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
+//llamando al formulario de registrarme 
+    private void btnRegistramenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistramenActionPerformed
+        Frm_Registrarme reg = new Frm_Registrarme();
+        reg.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnRegistramenActionPerformed
 
     /**
      * @param args the command line arguments

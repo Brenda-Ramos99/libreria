@@ -42,6 +42,7 @@ public class Frm_Membresia extends javax.swing.JFrame {
         jTextArea3 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Para disfrutar de los beneficios de la biblioteca elige una membresia");

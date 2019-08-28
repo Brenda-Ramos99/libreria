@@ -38,6 +38,7 @@ public class Frm_Login extends javax.swing.JFrame {
         txtuser = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         btn_ingresar = new javax.swing.JButton();
+        btnAtrasLogin = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,6 +65,15 @@ public class Frm_Login extends javax.swing.JFrame {
             }
         });
 
+        btnAtrasLogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnAtrasLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/atras.png"))); // NOI18N
+        btnAtrasLogin.setText("Atras");
+        btnAtrasLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasLoginActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout loginLayout = new javax.swing.GroupLayout(login);
         login.setLayout(loginLayout);
         loginLayout.setHorizontalGroup(
@@ -79,7 +89,9 @@ public class Frm_Login extends javax.swing.JFrame {
                     .addComponent(txtuser))
                 .addContainerGap(25, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
+                .addComponent(btnAtrasLogin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_ingresar)
                 .addGap(18, 18, 18))
         );
@@ -95,7 +107,9 @@ public class Frm_Login extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
-                .addComponent(btn_ingresar)
+                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_ingresar)
+                    .addComponent(btnAtrasLogin))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -149,6 +163,12 @@ public class Frm_Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Usuario y/o Contraseña incorrecto");
         }
     }//GEN-LAST:event_btn_ingresarMouseClicked
+//volver al menu inicial
+    private void btnAtrasLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasLoginActionPerformed
+        Frm_Principal p = new Frm_Principal();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnAtrasLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,6 +206,7 @@ public class Frm_Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtrasLogin;
     private javax.swing.JButton btn_ingresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -124,7 +124,6 @@
           <Image iconType="3" name="/sistem/Presentacion/img/iniciar-la-sesion.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Iniciar Sesi&#xf3;n"/>
-        <Property name="actionCommand" type="java.lang.String" value="Iniciar Sesi&#xf3;n"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIniciarSesionActionPerformed"/>
@@ -148,6 +147,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Registrarme"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistramenActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>

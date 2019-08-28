@@ -1,9 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistem.Presentacion;
+
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import sistem.Entidades.*;
+import sistem.Dao.*;
 
 /**
  *
@@ -14,8 +14,13 @@ public class Frm_Registrarme extends javax.swing.JFrame {
     /**
      * Creates new form Frm_Registrarme
      */
+    Validaciones v = new Validaciones();
     public Frm_Registrarme() {
         initComponents();
+        this.setLocationRelativeTo(null); 
+        v.validarNombres(txt_direccion);
+        v.validarUsuario(txt_usuario1);
+        v.validarNumeros(txt_edad);
     }
 
     /**
@@ -27,21 +32,196 @@ public class Frm_Registrarme extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        txt_passcon = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        txt_edad = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txt_pass = new javax.swing.JPasswordField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txt_direccion = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txt_usuario1 = new javax.swing.JTextField();
+        btnRegistrarme = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        btnAtrasCrearUser = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        txt_passcon.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel1.setText("Password:");
+
+        txt_edad.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel2.setText("Usuario:");
+
+        txt_pass.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel3.setText("Edad");
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel5.setText("Direccion:");
+
+        txt_direccion.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+
+        jLabel6.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jLabel6.setText("Crear Usuario");
+
+        txt_usuario1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+
+        btnRegistrarme.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnRegistrarme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/registrarse.png"))); // NOI18N
+        btnRegistrarme.setText("Registrarme");
+        btnRegistrarme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarmeActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel7.setText("Confirmar Pasword");
+
+        btnAtrasCrearUser.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnAtrasCrearUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/atras.png"))); // NOI18N
+        btnAtrasCrearUser.setText("Atras");
+        btnAtrasCrearUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasCrearUserActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(btnAtrasCrearUser, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnRegistrarme, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txt_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                            .addComponent(txt_usuario1)
+                            .addComponent(txt_passcon)
+                            .addComponent(txt_edad)
+                            .addComponent(txt_direccion)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabel6)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addGap(50, 50, 50)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txt_passcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(txt_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistrarme)
+                    .addComponent(btnAtrasCrearUser))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 687, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 435, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarmeActionPerformed
+      //  DaoLogin da = new DaoLogin();
+        Usuario lo = new Usuario();
+
+        String pass = new String(txt_pass.getPassword());
+        String pasCon = new String(txt_passcon.getPassword());
+
+        if (txt_usuario1.getText().equals("") || pasCon.equals("") || pass.equals("")
+            || txt_edad.getText().equals("") || txt_direccion.getText().equals("")) {
+
+            JOptionPane.showMessageDialog(null, "debe llenar todos los campos");
+        } else {
+
+            if (pass.equals(pasCon)) {
+/*
+                if (da.ExisteUsuario(txt_usuario1.getText()) ==0) {
+                    String nuevaPass = Hash.sha(pass);
+
+               /     lo.setUser(txt_usuario1.getText());
+                    lo.setPass(nuevaPass);
+                    lo.setEdad(Integer.parseInt(txt_edad.getText()));
+                    lo.setDireccion(txt_direccion.getText());
+                    lo.setId_rol(2);
+                    try {
+                        if (da.agregar(lo)) {
+                            JOptionPane.showMessageDialog(null, "registro guardado");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Error al guardar");
+                        }
+                    }catch(Exception ex) {
+                        //Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "El nombre de usuario ya existe");
+                }*/
+            } else {
+                JOptionPane.showMessageDialog(null, "Las Contraseñas no coisiden");
+            }
+        }
+    }//GEN-LAST:event_btnRegistrarmeActionPerformed
+//volver al menu principal
+    private void btnAtrasCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasCrearUserActionPerformed
+        Frm_Principal p = new Frm_Principal();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnAtrasCrearUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +259,19 @@ public class Frm_Registrarme extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtrasCrearUser;
+    private javax.swing.JButton btnRegistrarme;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txt_direccion;
+    private javax.swing.JTextField txt_edad;
+    private javax.swing.JPasswordField txt_pass;
+    private javax.swing.JPasswordField txt_passcon;
+    private javax.swing.JTextField txt_usuario1;
     // End of variables declaration//GEN-END:variables
 }

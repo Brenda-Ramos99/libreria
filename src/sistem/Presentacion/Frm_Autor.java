@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistem.Presentacion;
 import sistem.Entidades.Validaciones;
 
 /**
- *
+ * nombre de la clase: Frm_Autor
+ * version:1.0
+ * fecha: 23/08/19
+ * copyright:ITCA-FEPADE
  * @author Brenda Ramos
  */
 public class Frm_Autor extends javax.swing.JInternalFrame {
@@ -17,9 +15,10 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
      */
     Validaciones v= new Validaciones();
     public Frm_Autor() {
-        initComponents();
-        v.validarLetras(txtNomAuto);
+        initComponents(); 
+        v.validarNombres(txtNomAuto);
         v.validarNombres(txtNaciAutor);
+        v.validarNombres(txtSeudonimo);
     }
 
     /**
@@ -46,6 +45,8 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
         btnModifAutor = new javax.swing.JButton();
         btnElimAutor = new javax.swing.JButton();
         btnSalirAutor = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txtSeudonimo = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableAutor = new javax.swing.JTable();
 
@@ -85,6 +86,8 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel5.setText("Seudonimo");
+
         javax.swing.GroupLayout panelAutorLayout = new javax.swing.GroupLayout(panelAutor);
         panelAutor.setLayout(panelAutorLayout);
         panelAutorLayout.setHorizontalGroup(
@@ -93,41 +96,53 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
                 .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAutorLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelAutorLayout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addComponent(jLabel2))
-                            .addGroup(panelAutorLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(txtCodAut, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(46, 46, 46)
-                                .addComponent(btnAgregarAuto))
-                            .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(panelAutorLayout.createSequentialGroup()
-                                    .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGap(58, 58, 58)
+                                    .addComponent(jLabel2))
+                                .addGroup(panelAutorLayout.createSequentialGroup()
+                                    .addGap(20, 20, 20)
+                                    .addComponent(txtCodAut, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(46, 46, 46)
+                                    .addComponent(btnAgregarAuto))
+                                .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(panelAutorLayout.createSequentialGroup()
+                                        .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(panelAutorLayout.createSequentialGroup()
+                                                .addComponent(txtNomAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(21, 21, 21))
                                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelAutorLayout.createSequentialGroup()
+                                                .addGap(52, 52, 52)
+                                                .addComponent(jLabel3)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                        .addComponent(btnModifAutor))
+                                    .addComponent(txtNaciAutor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(panelAutorLayout.createSequentialGroup()
+                                .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(panelAutorLayout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(96, 96, 96))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelAutorLayout.createSequentialGroup()
+                                        .addGap(60, 60, 60)
+                                        .addComponent(jLabel5)
+                                        .addGap(61, 61, 61))
+                                    .addGroup(panelAutorLayout.createSequentialGroup()
+                                        .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(txtSeudonimo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(panelAutorLayout.createSequentialGroup()
                                                 .addComponent(rbtnMasculino)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(rbtnFemenino))
-                                            .addComponent(txtNaciAutor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(panelAutorLayout.createSequentialGroup()
-                                            .addGap(68, 68, 68)
-                                            .addComponent(jLabel4)))
-                                    .addGap(27, 27, 27)
-                                    .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnElimAutor)
-                                        .addComponent(btnSalirAutor)))
-                                .addGroup(panelAutorLayout.createSequentialGroup()
-                                    .addComponent(txtNomAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(21, 21, 21)
-                                    .addComponent(btnModifAutor)))))
+                                                .addGap(37, 37, 37)
+                                                .addComponent(rbtnFemenino)))
+                                        .addGap(27, 27, 27)))
+                                .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelAutorLayout.createSequentialGroup()
+                                        .addComponent(btnSalirAutor)
+                                        .addGap(16, 16, 16))
+                                    .addComponent(btnElimAutor, javax.swing.GroupLayout.Alignment.TRAILING)))))
                     .addGroup(panelAutorLayout.createSequentialGroup()
                         .addGap(85, 85, 85)
-                        .addComponent(jLabel1))
-                    .addGroup(panelAutorLayout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(jLabel3)))
+                        .addComponent(jLabel1)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         panelAutorLayout.setVerticalGroup(
@@ -141,35 +156,39 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
                         .addGap(46, 46, 46)
                         .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtCodAut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAgregarAuto))
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel2)))
-                .addGap(17, 17, 17)
-                .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnModifAutor)
-                    .addComponent(txtNomAuto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelAutorLayout.createSequentialGroup()
-                        .addComponent(txtNaciAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4))
-                    .addGroup(panelAutorLayout.createSequentialGroup()
-                        .addComponent(btnElimAutor)
-                        .addGap(31, 31, 31)))
+                            .addComponent(btnAgregarAuto))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
                 .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAutorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rbtnMasculino)
-                            .addComponent(rbtnFemenino))
-                        .addGap(54, 54, 54))
+                        .addGap(29, 29, 29)
+                        .addComponent(btnModifAutor))
                     .addGroup(panelAutorLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtNomAuto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)))
+                .addGap(18, 18, 18)
+                .addComponent(txtNaciAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5)
+                    .addComponent(btnElimAutor))
+                .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAutorLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
                         .addComponent(btnSalirAutor)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelAutorLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSeudonimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbtnFemenino)
+                            .addComponent(rbtnMasculino))
+                        .addGap(29, 29, 29))))
         );
 
         TableAutor.setModel(new javax.swing.table.DefaultTableModel(
@@ -195,10 +214,10 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelAutor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -220,6 +239,7 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelAutor;
     private javax.swing.JRadioButton rbtnFemenino;
@@ -227,5 +247,6 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtCodAut;
     private javax.swing.JTextField txtNaciAutor;
     private javax.swing.JTextField txtNomAuto;
+    private javax.swing.JTextField txtSeudonimo;
     // End of variables declaration//GEN-END:variables
 }

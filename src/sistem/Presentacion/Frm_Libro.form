@@ -238,9 +238,6 @@
         <Component class="javax.swing.JTextField" name="txtPrecioLib">
         </Component>
         <Component class="javax.swing.JTextField" name="txtTomoLib">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTomoLibActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtPublicacionLib">
         </Component>

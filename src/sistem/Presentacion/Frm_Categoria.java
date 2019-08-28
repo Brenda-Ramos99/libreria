@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistem.Presentacion;
 import sistem.Entidades.Validaciones;
 
 /**
- *
+ *nombre de la clase: Frm_Categoria
+ * version:1.0
+ * fecha: 27/08/19
+ * copyright:ITCA-FEPADE
  * @author Brenda Ramos
  */
 public class Frm_Categoria extends javax.swing.JInternalFrame {

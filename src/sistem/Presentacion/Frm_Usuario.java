@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistem.Presentacion;
+import sistem.Entidades.Validaciones;
 
 /**
  * nombre de la clase: Frm_Usuario
@@ -17,8 +13,12 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
     /**
      * Creates new form Frm_Usuario
      */
+    Validaciones v = new Validaciones();
     public Frm_Usuario() {
         initComponents();
+        v.validarNombres(txtDire);
+        v.validarNombres(txtUser);
+        v.validarUsuario(txtPass);
     }
 
     /**
@@ -64,6 +64,8 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
         jLabel5.setText("Rol");
 
         jLabel6.setText("Edad");
+
+        txtCodigUser.setEnabled(false);
 
         SpinnerEdadUser.setModel(new javax.swing.SpinnerNumberModel(15, 15, 100, 1));
 
@@ -195,7 +197,7 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//salir
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed

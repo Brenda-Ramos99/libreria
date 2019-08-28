@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistem.Presentacion;
+import sistem.Entidades.Validaciones;
 
 import javax.swing.JOptionPane;
 
 /**
- *
+ * nombre de la clase: Frm_Login
+ * version:1.0
+ * fecha: 27/08/19
+ * copyright:ITCA-FEPADE
  * @author Brenda Ramos
  */
 public class Frm_Login extends javax.swing.JFrame {
@@ -16,8 +15,11 @@ public class Frm_Login extends javax.swing.JFrame {
     /**
      * Creates new form Frm_Login
      */
+    Validaciones v= new Validaciones();
     public Frm_Login() {
         initComponents();
+        v.validarNombres(txtuser);
+        this.setLocationRelativeTo(null); 
     }
 
     /**
@@ -36,11 +38,13 @@ public class Frm_Login extends javax.swing.JFrame {
         txtuser = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         btn_ingresar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(500, 175));
+        setResizable(false);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel3.setText("Bienvenido/a ");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -51,6 +55,8 @@ public class Frm_Login extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/login (1).png"))); // NOI18N
         jLabel2.setText("Contraseña:");
 
+        btn_ingresar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_ingresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/iniciar-la-sesion.png"))); // NOI18N
         btn_ingresar.setText("Ingresar");
         btn_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -93,19 +99,24 @@ public class Frm_Login extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setText("Disfruta de las mejores promociones y libros solo para ti ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jLabel3)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(25, 25, 25)
+                            .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(110, 110, 110)
+                            .addComponent(jLabel3))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,8 +124,10 @@ public class Frm_Login extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
 
         pack();
@@ -177,6 +190,7 @@ public class Frm_Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel login;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField txtuser;

@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistem.Presentacion;
 import sistem.Entidades.Validaciones;
 
 /**
- *
+ * nombre de la clase: Frm_Editorial
+ * version:1.0
+ * fecha: 23/08/19
+ * copyright:ITCA-FEPADE
  * @author Brenda Ramos
  */
 public class Frm_Editorial extends javax.swing.JInternalFrame {
@@ -18,10 +16,10 @@ public class Frm_Editorial extends javax.swing.JInternalFrame {
     Validaciones v = new Validaciones();
     public Frm_Editorial() {
         initComponents();
-        v.validarLetras(txtDireccEdit);
-        v.validarLetras(txtNomEdit);
-        v.validarLetras(txtPaisEdit);
-        v.validarumeros(txtTelefEdit);
+        v.validarNombres(txtDireccEdit);
+        v.validarNombres(txtNomEdit);
+        v.validarNombres(txtPaisEdit);
+        v.validarNumeros(txtTelefEdit);
     }
 
     /**

@@ -12,8 +12,10 @@ package sistem.Entidades;
 public class Membresia
 {
     private int id_membresia;
+    private String tipo_membresia;
     private String fecha_validacion;
     private String fecha_vencimiento;
+    private double precio_membresia;
 
     public Membresia()
     {

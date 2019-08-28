@@ -16,6 +16,7 @@ public class Libro
     private double precio;
     private String anio_public;
     private String tomo;
+    private int estado;
     private String id_categoria;
     private String id_autor;
     private String id_edit;
@@ -31,7 +32,7 @@ public class Libro
     momento de mostrar todos los datos provenientes de la tabña Libro en la 
     base de datos*/
     public Libro(int id_libro, String titulo, int existencias, double precio,
-            String anio_public, String tomo, String id_categoria,
+            String anio_public, String tomo, int estado, String id_categoria,
             String id_autor, String id_edit, String id_usuario)
     {
         this.id_libro = id_libro;
@@ -40,38 +41,41 @@ public class Libro
         this.precio = precio;
         this.anio_public = anio_public;
         this.tomo = tomo;
+        this.estado = estado;
         this.id_categoria = id_categoria;
         this.id_autor = id_autor;
         this.id_edit = id_edit;
         this.id_usuario = id_usuario;
     }
+    
 
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla Libro en la base de 
     datos (sin ID, ya que es autoincrementable)*/
     public Libro(String titulo, int existencias, double precio,
-            String anio_public, String tomo, String id_categoria,
-            String id_autor, String id_edit, String id_usuario)
+            String anio_public, String tomo, int estado, String id_categoria,
+            String id_autor, String id_edit, String id_usuario)    
     {
         this.titulo = titulo;
         this.existencias = existencias;
         this.precio = precio;
         this.anio_public = anio_public;
         this.tomo = tomo;
+        this.estado = estado;
         this.id_categoria = id_categoria;
         this.id_autor = id_autor;
         this.id_edit = id_edit;
         this.id_usuario = id_usuario;
     }
 
-    /*Método constructor para el ID del Libro, necesario para realizar la 
+    /*Método constructor para el ID del Libro, necesario para realizar la
     eliminación de registros a la tabla Libro en la base de datos*/
-    public Libro(int id_libro)
-    {
+    public Libro(int id_libro) {
         this.id_libro = id_libro;
     }
 
     /*Métodos de acceso de la Clase*/
+
     public int getId_libro() {
         return id_libro;
     }
@@ -118,6 +122,14 @@ public class Libro
 
     public void setTomo(String tomo) {
         this.tomo = tomo;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
 
     public String getId_categoria() {

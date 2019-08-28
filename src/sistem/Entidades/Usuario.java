@@ -16,7 +16,6 @@ public class Usuario
     private int edad;
     private String direccion;
     private int estado;
-    private int id_membresia;
     private String id_rol;
 
     /*Método constructor vacío para inicializar la clase*/
@@ -30,7 +29,7 @@ public class Usuario
     base de datos*/
 
     public Usuario(int id_usuario, String usuario, String pass, int edad,
-            String direccion, int estado, int id_membresia, String id_rol)
+            String direccion, int estado, String id_rol)
     {
         this.id_usuario = id_usuario;
         this.usuario = usuario;
@@ -38,25 +37,24 @@ public class Usuario
         this.edad = edad;
         this.direccion = direccion;
         this.estado = estado;
-        this.id_membresia = id_membresia;
         this.id_rol = id_rol;
     }
     
-
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla usuario en la base de 
     datos (sin ID, ya que es autoincrementable)*/
+
     public Usuario(String usuario, String pass, int edad, String direccion,
-            int estado, int id_membresia, String id_rol)    
+            int estado, String id_rol)
     {
         this.usuario = usuario;
         this.pass = pass;
         this.edad = edad;
         this.direccion = direccion;
         this.estado = estado;
-        this.id_membresia = id_membresia;
         this.id_rol = id_rol;
     }
+    
 
     /*Método constructor para el ID del usuario, necesario para realizar la
     eliminación de registros a la tabla usuario en la base de datos*/
@@ -114,14 +112,6 @@ public class Usuario
         this.estado = estado;
     }
 
-    public int getId_membresia() {
-        return id_membresia;
-    }
-
-    public void setId_membresia(int id_membresia) {
-        this.id_membresia = id_membresia;
-    }
-
     public String getId_rol() {
         return id_rol;
     }
@@ -129,5 +119,4 @@ public class Usuario
     public void setId_rol(String id_rol) {
         this.id_rol = id_rol;
     }
-    
 }

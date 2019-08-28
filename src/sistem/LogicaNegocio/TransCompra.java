@@ -29,7 +29,7 @@ public class TransCompra
                 ar.addAll(obDaoCom.mostrar());
                 re[0]=v.getId_compra();
                 re[1]=v.getFecha();
-                re[2]=v.calcTotal();
+                ///re[2]=v.calcTotal();
                 tm.addRow(re);
             }
         } catch (Exception e)

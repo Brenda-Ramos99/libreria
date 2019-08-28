@@ -12,22 +12,9 @@ import javax.swing.JTextField;
  * @author Brenda Lizeth Ramos
  */
 public class Validaciones {
-    //validacio de caracteres solo letras
-    public void validarLetras(JTextField campo)
-    {
-        campo.addKeyListener(new KeyAdapter(){
-            public void keyTyped(KeyEvent e){
-                Character c= e.getKeyChar();
-                if(!Character.isAlphabetic(c))
-                {
-                    e.consume();
-                }
-            }
-    });
-    }
     
     //validacio de caracteres solo numeros
-    public void validarumeros(JTextField campo)
+    public void validarNumeros(JTextField campo)
     {
         campo.addKeyListener(new KeyAdapter(){
             public void keyTyped(KeyEvent e){

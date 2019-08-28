@@ -1,6 +1,7 @@
 package sistem.Presentacion;
 
-import sistem.Presentacion.Frm_Usuario;
+import java.awt.Dimension;
+//import sistem.Presentacion.Frm_Usuario;
 
 /**
  * nombre de la clase: Frm_MDI
@@ -192,6 +193,11 @@ public class Frm_MDIl extends javax.swing.JFrame {
     private void MenuItemUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemUserActionPerformed
         Frm_Usuario user= new Frm_Usuario();
         jDesktopPanePrincipal.add(user);
+        //codigo para centrar el internalframe
+        Dimension desktopSize = jDesktopPanePrincipal.getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        user.show();
     }//GEN-LAST:event_MenuItemUserActionPerformed
 //Salir
     private void SalirMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirMenuItemActionPerformed
@@ -201,21 +207,37 @@ public class Frm_MDIl extends javax.swing.JFrame {
     private void MenuItemEditorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemEditorialActionPerformed
         Frm_Editorial editorial = new Frm_Editorial();
         jDesktopPanePrincipal.add(editorial);
+        Dimension desktopSize = jDesktopPanePrincipal.getSize();
+        Dimension FrameSize = editorial.getSize();
+        editorial.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        editorial.show();
     }//GEN-LAST:event_MenuItemEditorialActionPerformed
 //formulario libro
     private void MenuItemLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemLibroActionPerformed
         Frm_Libro libro = new Frm_Libro();
         jDesktopPanePrincipal.add(libro);
+        Dimension desktopSize = jDesktopPanePrincipal.getSize();
+        Dimension FrameSize = libro.getSize();
+        libro.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        libro.show();
     }//GEN-LAST:event_MenuItemLibroActionPerformed
 ///formulario Autor
     private void MenuItemAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemAutorActionPerformed
         Frm_Autor autor = new Frm_Autor();
         jDesktopPanePrincipal.add(autor);
+        Dimension desktopSize = jDesktopPanePrincipal.getSize();
+        Dimension FrameSize = autor.getSize();
+        autor.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        autor.show();
     }//GEN-LAST:event_MenuItemAutorActionPerformed
 //formulario categoria
     private void MenuItemCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemCategActionPerformed
         Frm_Categoria categ = new Frm_Categoria();
         jDesktopPanePrincipal.add(categ);
+        Dimension desktopSize = jDesktopPanePrincipal.getSize();
+        Dimension FrameSize = categ.getSize();
+        categ.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        categ.show();
     }//GEN-LAST:event_MenuItemCategActionPerformed
 
     /**

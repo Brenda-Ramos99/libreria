@@ -1,12 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistem.Presentacion;
-
+import sistem.Entidades.Validaciones;
 /**
- *
+ * nombre de la clase: Frm_Libro
+ * version:1.0
+ * fecha: 23/08/19
+ * copyright:ITCA-FEPADE
  * @author Brenda Ramos
  */
 public class Frm_Libro extends javax.swing.JInternalFrame {
@@ -14,8 +12,14 @@ public class Frm_Libro extends javax.swing.JInternalFrame {
     /**
      * Creates new form Frm_Libro
      */
+    Validaciones v = new Validaciones();
     public Frm_Libro() {
         initComponents();
+        v.validarNombres(txtTituloLib);
+        v.validarPrecio(txtPrecioLib);
+        v.validarNumeros(txtExistenciasLib);
+        v.validarNumeros(txtTomoLib);
+        
     }
 
     /**
@@ -77,12 +81,6 @@ public class Frm_Libro extends javax.swing.JInternalFrame {
         jLabel8.setText("Editorial");
 
         jLabel9.setText("Precio");
-
-        txtTomoLib.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTomoLibActionPerformed(evt);
-            }
-        });
 
         btnAgregarLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnAgregarLib.setText("Agregar");
@@ -254,10 +252,6 @@ public class Frm_Libro extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtTomoLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTomoLibActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTomoLibActionPerformed
 
     private void btnSalirLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirLibActionPerformed
         dispose();

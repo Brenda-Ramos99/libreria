@@ -62,6 +62,10 @@ public class DaoCompra extends Conexion implements CrudCompra
         {
             
         }
+        finally
+        {
+            super.con().close();
+        }
         return res;
     }
 
@@ -82,6 +86,10 @@ public class DaoCompra extends Conexion implements CrudCompra
         {
             
         }
+        finally
+        {
+            super.con().close();
+        }
         return res;
     }
 
@@ -97,6 +105,10 @@ public class DaoCompra extends Conexion implements CrudCompra
         } catch (Exception e)
         {
             
+        }
+        finally
+        {
+            super.con().close();
         }
         return res;
     }

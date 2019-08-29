@@ -66,6 +66,10 @@ public class DaoDeta_Compra extends Conexion implements CrudDetalle_compra
         {
             
         }
+        finally
+        {
+            super.con().close();
+        }
         return res;
     }
 
@@ -89,6 +93,10 @@ public class DaoDeta_Compra extends Conexion implements CrudDetalle_compra
         {
             
         }
+        finally
+        {
+            super.con().close();
+        }
         return res;
     }
 
@@ -105,6 +113,10 @@ public class DaoDeta_Compra extends Conexion implements CrudDetalle_compra
         } catch (Exception e)
         {
             
+        }
+        finally
+        {
+            super.con().close();
         }
         return res;
     }

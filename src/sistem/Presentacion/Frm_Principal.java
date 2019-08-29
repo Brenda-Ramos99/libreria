@@ -46,6 +46,7 @@ public class Frm_Principal extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/Bibliotecas-online.gif"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 153, 204));
         jLabel3.setText("¿No tienes una cuenta aun? ");
 
         btnIniciarSesion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -58,6 +59,7 @@ public class Frm_Principal extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 153, 204));
         jLabel4.setText("registrate y disfruta de muchos beneficios");
 
         btnRegistramen.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -70,6 +72,7 @@ public class Frm_Principal extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 153, 204));
         jLabel5.setText("Inicia sesión y disfruta de los mejores libros");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -96,7 +99,7 @@ public class Frm_Principal extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(137, 137, 137))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)

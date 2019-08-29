@@ -1,4 +1,4 @@
-package sistem.Presentacion;
+ package sistem.Presentacion;
 
 import java.awt.Dimension;
 //import sistem.Presentacion.Frm_Usuario;
@@ -15,6 +15,13 @@ public class Frm_MDIl extends javax.swing.JFrame {
     /**
      * Creates new form Frm_MDIl
      */
+    //instancias de los formularios
+    Frm_Usuario user= new Frm_Usuario();
+    Frm_Editorial editorial = new Frm_Editorial();
+    Frm_Libro libro = new Frm_Libro();
+    Frm_Autor autor = new Frm_Autor();
+    Frm_Categoria categ = new Frm_Categoria();    
+    
     public Frm_MDIl() {
         initComponents();
         this.setExtendedState(Frm_MDIl.MAXIMIZED_BOTH);
@@ -191,7 +198,6 @@ public class Frm_MDIl extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 //usuario formulario
     private void MenuItemUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemUserActionPerformed
-        Frm_Usuario user= new Frm_Usuario();
         jDesktopPanePrincipal.add(user);
         //codigo para centrar el internalframe
         Dimension desktopSize = jDesktopPanePrincipal.getSize();
@@ -205,7 +211,6 @@ public class Frm_MDIl extends javax.swing.JFrame {
     }//GEN-LAST:event_SalirMenuItemActionPerformed
 //formulario editorial
     private void MenuItemEditorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemEditorialActionPerformed
-        Frm_Editorial editorial = new Frm_Editorial();
         jDesktopPanePrincipal.add(editorial);
         Dimension desktopSize = jDesktopPanePrincipal.getSize();
         Dimension FrameSize = editorial.getSize();
@@ -214,7 +219,6 @@ public class Frm_MDIl extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuItemEditorialActionPerformed
 //formulario libro
     private void MenuItemLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemLibroActionPerformed
-        Frm_Libro libro = new Frm_Libro();
         jDesktopPanePrincipal.add(libro);
         Dimension desktopSize = jDesktopPanePrincipal.getSize();
         Dimension FrameSize = libro.getSize();
@@ -223,7 +227,6 @@ public class Frm_MDIl extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuItemLibroActionPerformed
 ///formulario Autor
     private void MenuItemAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemAutorActionPerformed
-        Frm_Autor autor = new Frm_Autor();
         jDesktopPanePrincipal.add(autor);
         Dimension desktopSize = jDesktopPanePrincipal.getSize();
         Dimension FrameSize = autor.getSize();
@@ -232,8 +235,7 @@ public class Frm_MDIl extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuItemAutorActionPerformed
 //formulario categoria
     private void MenuItemCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemCategActionPerformed
-        Frm_Categoria categ = new Frm_Categoria();
-        jDesktopPanePrincipal.add(categ);
+         jDesktopPanePrincipal.add(categ);
         Dimension desktopSize = jDesktopPanePrincipal.getSize();
         Dimension FrameSize = categ.getSize();
         categ.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);

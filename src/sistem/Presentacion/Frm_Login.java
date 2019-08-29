@@ -2,6 +2,9 @@ package sistem.Presentacion;
 import sistem.Entidades.Validaciones;
 
 import javax.swing.JOptionPane;
+import sistem.Dao.DaoLogin;
+import sistem.Dao.Hash;
+import sistem.Entidades.Usuario;
 
 /**
  * nombre de la clase: Frm_Login
@@ -63,6 +66,11 @@ public class Frm_Login extends javax.swing.JFrame {
         btn_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_ingresarMouseClicked(evt);
+            }
+        });
+        btn_ingresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ingresarActionPerformed(evt);
             }
         });
 
@@ -150,7 +158,7 @@ public class Frm_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseClicked
-        String user="admin";
+        /*String user="admin";
         String contra="1234";
 
         String pass = new String(password.getPassword());
@@ -163,7 +171,7 @@ public class Frm_Login extends javax.swing.JFrame {
         else
         {
             JOptionPane.showMessageDialog(this,"Usuario y/o Contraseña incorrecto");
-        }
+        }*/
     }//GEN-LAST:event_btn_ingresarMouseClicked
 //volver al menu inicial
     private void btnAtrasLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasLoginActionPerformed
@@ -171,6 +179,34 @@ public class Frm_Login extends javax.swing.JFrame {
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnAtrasLoginActionPerformed
+
+    private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
+        DaoLogin da =new DaoLogin();
+        Usuario lo = new Usuario();
+        
+        String pass=new String(password.getPassword());
+        
+        if(!txtuser.getText().equals("") && !pass.equals("")){
+        
+        String nuevoPass=Hash.sha(pass);
+        lo.setUsuario(txtuser.getText());
+        lo.setPass(nuevoPass);
+        if(da.loging(lo)){
+        
+           /*Frm_Principal.Frm_Login = null; 
+           this.dispose();*/
+           
+           Frm_MDIl frm1= new Frm_MDIl();
+           frm1.setVisible(true);
+            
+        }else{
+        JOptionPane.showMessageDialog(null, "Datos Incorrectos");
+        }
+            
+        }else{
+        JOptionPane.showMessageDialog(null, "Debe Ingresar sus datos");
+        }
+    }//GEN-LAST:event_btn_ingresarActionPerformed
 
     /**
      * @param args the command line arguments

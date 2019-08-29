@@ -19,7 +19,7 @@ public class Frm_Registrarme extends javax.swing.JFrame {
      */
     Validaciones v = new Validaciones();
     public Frm_Registrarme() {
-        initComponents();
+        initComponents(); 
         this.setLocationRelativeTo(null); 
         v.validarNombres(txt_direccion);
         v.validarUsuario(txt_usuario1);
@@ -37,7 +37,7 @@ public class Frm_Registrarme extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        Panelregistrarme = new javax.swing.JPanel();
         txt_passcon = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         txt_edad = new javax.swing.JTextField();
@@ -50,7 +50,6 @@ public class Frm_Registrarme extends javax.swing.JFrame {
         txt_usuario1 = new javax.swing.JTextField();
         btnRegistrarme = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        btnAtrasCrearUser = new javax.swing.JButton();
         PanelMembresia = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -60,13 +59,16 @@ public class Frm_Registrarme extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         txtTarjeta = new javax.swing.JFormattedTextField();
         jLabel11 = new javax.swing.JLabel();
-        txtCodigoSeguridad = new javax.swing.JTextField();
         btnComprar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        btnAtrasCrearUser = new javax.swing.JButton();
+        txtCodigoSeguridad = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+
+        Panelregistrarme.setEnabled(false);
 
         txt_passcon.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
 
@@ -106,72 +108,60 @@ public class Frm_Registrarme extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel7.setText("Confirmar Pasword");
 
-        btnAtrasCrearUser.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnAtrasCrearUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/atras.png"))); // NOI18N
-        btnAtrasCrearUser.setText("Atras");
-        btnAtrasCrearUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtrasCrearUserActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelregistrarmeLayout = new javax.swing.GroupLayout(Panelregistrarme);
+        Panelregistrarme.setLayout(PanelregistrarmeLayout);
+        PanelregistrarmeLayout.setHorizontalGroup(
+            PanelregistrarmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelregistrarmeLayout.createSequentialGroup()
+                .addGroup(PanelregistrarmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelregistrarmeLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PanelregistrarmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel7)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel5)
-                            .addComponent(btnAtrasCrearUser, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel5))
                         .addGap(25, 25, 25)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(PanelregistrarmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnRegistrarme, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txt_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                             .addComponent(txt_usuario1)
                             .addComponent(txt_passcon)
                             .addComponent(txt_edad)
                             .addComponent(txt_direccion)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(PanelregistrarmeLayout.createSequentialGroup()
                         .addGap(106, 106, 106)
                         .addComponent(jLabel6)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        PanelregistrarmeLayout.setVerticalGroup(
+            PanelregistrarmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelregistrarmeLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
                 .addGap(50, 50, 50)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PanelregistrarmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PanelregistrarmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PanelregistrarmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txt_passcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PanelregistrarmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PanelregistrarmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrarme)
-                    .addComponent(btnAtrasCrearUser))
+                .addComponent(btnRegistrarme)
                 .addContainerGap())
         );
 
@@ -217,44 +207,61 @@ public class Frm_Registrarme extends javax.swing.JFrame {
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/tarjeta-de-credito.png"))); // NOI18N
 
+        btnAtrasCrearUser.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnAtrasCrearUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/atras.png"))); // NOI18N
+        btnAtrasCrearUser.setText("Atras");
+        btnAtrasCrearUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasCrearUserActionPerformed(evt);
+            }
+        });
+
+        try {
+            txtCodigoSeguridad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout PanelMembresiaLayout = new javax.swing.GroupLayout(PanelMembresia);
         PanelMembresia.setLayout(PanelMembresiaLayout);
         PanelMembresiaLayout.setHorizontalGroup(
             PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelMembresiaLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
                 .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelMembresiaLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
+                        .addComponent(btnAtrasCrearUser)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                        .addComponent(btnComprar))
+                    .addGroup(PanelMembresiaLayout.createSequentialGroup()
                         .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
                             .addComponent(jLabel10)
                             .addComponent(jLabel9)
-                            .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(cmbTiposMembresia, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelMembresiaLayout.createSequentialGroup()
-                                    .addGap(16, 16, 16)
-                                    .addComponent(btnInformacion)))
-                            .addGroup(PanelMembresiaLayout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel13)
-                                .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PanelMembresiaLayout.createSequentialGroup()
-                                        .addGap(133, 133, 133)
-                                        .addComponent(btnComprar))
-                                    .addGroup(PanelMembresiaLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(PanelMembresiaLayout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel4)
-                                    .addComponent(jLabel8)))))
-                    .addGroup(PanelMembresiaLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                                    .addComponent(jLabel8)))
+                            .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(PanelMembresiaLayout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(jLabel12)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(79, 79, 79))
+                                .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(cmbTiposMembresia, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelMembresiaLayout.createSequentialGroup()
+                                        .addGap(16, 16, 16)
+                                        .addComponent(btnInformacion))))
+                            .addGroup(PanelMembresiaLayout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(43, 43, 43))
         );
         PanelMembresiaLayout.setVerticalGroup(
             PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,22 +279,20 @@ public class Frm_Registrarme extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
+                .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(txtTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
-                .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMembresiaLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addComponent(btnComprar)
-                        .addGap(33, 33, 33))
-                    .addGroup(PanelMembresiaLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(11, 11, 11)
+                .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel13)
+                    .addComponent(txtCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelMembresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAtrasCrearUser)
+                    .addComponent(btnComprar))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -296,10 +301,10 @@ public class Frm_Registrarme extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Panelregistrarme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(PanelMembresia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,18 +312,18 @@ public class Frm_Registrarme extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Panelregistrarme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(PanelMembresia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarmeActionPerformed
-      //  DaoLogin da = new DaoLogin();
+       DaoLogin da = new DaoLogin();
         Usuario lo = new Usuario();
 
         String pass = new String(txt_pass.getPassword());
@@ -331,15 +336,16 @@ public class Frm_Registrarme extends javax.swing.JFrame {
         } else {
 
             if (pass.equals(pasCon)) {
-/*
+
                 if (da.ExisteUsuario(txt_usuario1.getText()) ==0) {
                     String nuevaPass = Hash.sha(pass);
 
-                    lo.setUser(txt_usuario1.getText());
+                    lo.setUsuario(txt_usuario1.getText());
                     lo.setPass(nuevaPass);
                     lo.setEdad(Integer.parseInt(txt_edad.getText()));
                     lo.setDireccion(txt_direccion.getText());
-                    lo.setId_rol(2);
+                    lo.setEstado(0);
+                    lo.setId_rol("2");
                     try {
                         if (da.agregar(lo)) {
                             JOptionPane.showMessageDialog(null, "registro guardado");
@@ -351,7 +357,7 @@ public class Frm_Registrarme extends javax.swing.JFrame {
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "El nombre de usuario ya existe");
-                }*/
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "Las Contraseñas no coisiden");
             }
@@ -410,6 +416,7 @@ public class Frm_Registrarme extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelMembresia;
+    private javax.swing.JPanel Panelregistrarme;
     private javax.swing.JButton btnAtrasCrearUser;
     private javax.swing.JButton btnComprar;
     private javax.swing.JButton btnInformacion;
@@ -428,8 +435,7 @@ public class Frm_Registrarme extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtCodigoSeguridad;
+    private javax.swing.JFormattedTextField txtCodigoSeguridad;
     private javax.swing.JFormattedTextField txtTarjeta;
     private javax.swing.JTextField txt_direccion;
     private javax.swing.JTextField txt_edad;

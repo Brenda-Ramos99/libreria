@@ -46,6 +46,7 @@ public class Frm_Login extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 51, 255));
         jLabel3.setText("Bienvenido/a ");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -114,6 +115,7 @@ public class Frm_Login extends javax.swing.JFrame {
         );
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 153, 204));
         jLabel4.setText("Disfruta de las mejores promociones y libros solo para ti ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

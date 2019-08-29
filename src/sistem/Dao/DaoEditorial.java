@@ -62,6 +62,10 @@ public class DaoEditorial extends Conexion implements CrudEditorial
         {
             
         }
+        finally
+        {
+            super.con().close();
+        }
         return res;
     }
 
@@ -81,6 +85,10 @@ public class DaoEditorial extends Conexion implements CrudEditorial
         {
             
         }
+        finally
+        {
+            super.con().close();
+        }
         return res;
     }
 
@@ -96,9 +104,10 @@ public class DaoEditorial extends Conexion implements CrudEditorial
         {
             
         }
+        finally
+        {
+            super.con().close();
+        }
         return res;
     }
-    
-    
-    
 }

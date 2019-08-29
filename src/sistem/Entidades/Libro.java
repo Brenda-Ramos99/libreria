@@ -20,7 +20,9 @@ public class Libro
     private String id_categoria;
     private String id_autor;
     private String id_edit;
-    private String id_usuario;
+    //private String id_usuario;
+    private String id_membresia;
+    
 
     /*Método constructor vacío para inicializar la clase Libro*/
     public Libro()
@@ -33,7 +35,7 @@ public class Libro
     base de datos*/
     public Libro(int id_libro, String titulo, int existencias, double precio,
             String anio_public, String tomo, int estado, String id_categoria,
-            String id_autor, String id_edit, String id_usuario)
+            String id_autor, String id_edit, String id_membresia)
     {
         this.id_libro = id_libro;
         this.titulo = titulo;
@@ -45,17 +47,18 @@ public class Libro
         this.id_categoria = id_categoria;
         this.id_autor = id_autor;
         this.id_edit = id_edit;
-        this.id_usuario = id_usuario;
+        this.id_membresia = id_membresia;
     }
+    
     
 
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla Libro en la base de 
     datos (sin ID, ya que es autoincrementable)*/
-    public Libro(String titulo, int existencias, double precio,
+    public Libro(String titulo, int existencias, double precio, 
             String anio_public, String tomo, int estado, String id_categoria,
-            String id_autor, String id_edit, String id_usuario)    
-    {
+            String id_autor, String id_edit, String id_membresia)
+    {    
         this.titulo = titulo;
         this.existencias = existencias;
         this.precio = precio;
@@ -65,7 +68,7 @@ public class Libro
         this.id_categoria = id_categoria;
         this.id_autor = id_autor;
         this.id_edit = id_edit;
-        this.id_usuario = id_usuario;
+        this.id_membresia = id_membresia;
     }
 
     /*Método constructor para el ID del Libro, necesario para realizar la
@@ -156,12 +159,13 @@ public class Libro
         this.id_edit = id_edit;
     }
 
-    public String getId_usuario() {
-        return id_usuario;
+    public String getId_membresia() {
+        return id_membresia;
     }
 
-    public void setId_usuario(String id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setId_membresia(String id_membresia) {
+        this.id_membresia = id_membresia;
     }
+    
     
 }

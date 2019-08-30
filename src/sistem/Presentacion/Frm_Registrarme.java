@@ -1,6 +1,6 @@
 package sistem.Presentacion;
 
-import java.sql.SQLException;
+//import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import sistem.Entidades.*;
 import sistem.Dao.*;
@@ -323,7 +323,7 @@ public class Frm_Registrarme extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarmeActionPerformed
-       DaoLogin da = new DaoLogin();
+        DaoLogin da = new DaoLogin();
         Usuario lo = new Usuario();
 
         String pass = new String(txt_pass.getPassword());
@@ -332,9 +332,9 @@ public class Frm_Registrarme extends javax.swing.JFrame {
         if (txt_usuario1.getText().equals("") || pasCon.equals("") || pass.equals("")
             || txt_edad.getText().equals("") || txt_direccion.getText().equals("")) {
 
-            JOptionPane.showMessageDialog(null, "debe llenar todos los campos");
+            JOptionPane.showMessageDialog(null, "Debe llenar todos los campos");
         } else {
-
+            
             if (pass.equals(pasCon)) {
 
                 if (da.ExisteUsuario(txt_usuario1.getText()) ==0) {
@@ -348,9 +348,9 @@ public class Frm_Registrarme extends javax.swing.JFrame {
                     lo.setId_rol("2");
                     try {
                         if (da.agregar(lo)) {
-                            JOptionPane.showMessageDialog(null, "registro guardado");
+                            JOptionPane.showMessageDialog(null, "Registro Guardado Exitosamente");
                         } else {
-                            JOptionPane.showMessageDialog(null, "Error al guardar");
+                            JOptionPane.showMessageDialog(null, "Error Registrarse");
                         }
                     }catch(Exception ex) {
                         //Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);

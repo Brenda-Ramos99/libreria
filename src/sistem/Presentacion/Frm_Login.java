@@ -158,20 +158,7 @@ public class Frm_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseClicked
-        /*String user="admin";
-        String contra="1234";
 
-        String pass = new String(password.getPassword());
-        if(txtuser.getText().equals(user) && pass.equals(contra))
-        {
-            Frm_MDIl mp= new Frm_MDIl();
-            mp.setVisible(true);
-            dispose();
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(this,"Usuario y/o Contraseña incorrecto");
-        }*/
     }//GEN-LAST:event_btn_ingresarMouseClicked
 //volver al menu inicial
     private void btnAtrasLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasLoginActionPerformed
@@ -179,7 +166,7 @@ public class Frm_Login extends javax.swing.JFrame {
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnAtrasLoginActionPerformed
-
+//ingresar al mdi principal
     private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
         DaoLogin da =new DaoLogin();
         Usuario lo = new Usuario();
@@ -187,24 +174,19 @@ public class Frm_Login extends javax.swing.JFrame {
         String pass=new String(password.getPassword());
         
         if(!txtuser.getText().equals("") && !pass.equals("")){
-        
-        String nuevoPass=Hash.sha(pass);
-        lo.setUsuario(txtuser.getText());
-        lo.setPass(nuevoPass);
-        if(da.loging(lo)){
-        
-           /*Frm_Principal.Frm_Login = null; 
-           this.dispose();*/
-           
-           Frm_MDIl frm1= new Frm_MDIl();
-           frm1.setVisible(true);
-            
+            String nuevoPass=Hash.sha(pass);
+            lo.setUsuario(txtuser.getText());
+            lo.setPass(nuevoPass);
+            if(da.loging(lo)){
+
+               Frm_MDIl frm1= new Frm_MDIl();
+               frm1.setVisible(true);
+               dispose();
+            }else{
+                JOptionPane.showMessageDialog(null, "Datos Incorrectos");
+            }
         }else{
-        JOptionPane.showMessageDialog(null, "Datos Incorrectos");
-        }
-            
-        }else{
-        JOptionPane.showMessageDialog(null, "Debe Ingresar sus datos");
+            JOptionPane.showMessageDialog(null, "Debe Ingresar sus datos");
         }
     }//GEN-LAST:event_btn_ingresarActionPerformed
 

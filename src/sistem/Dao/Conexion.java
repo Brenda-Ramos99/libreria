@@ -1,7 +1,10 @@
 package sistem.Dao;
 import java.sql.*;
 /**
- *
+ *nombre de la clase: Conexion
+ * version:1.0
+ * fecha: 27/08/19
+ * copyright:ITCA-FEPADE
  * @author Administrador
  */
 public class Conexion

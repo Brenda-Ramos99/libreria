@@ -217,7 +217,7 @@ public class Frm_Registrarme extends javax.swing.JFrame {
         });
 
         try {
-            txtCodigoSeguridad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+            txtCodigoSeguridad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }

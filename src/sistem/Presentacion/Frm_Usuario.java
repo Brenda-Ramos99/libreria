@@ -1,5 +1,6 @@
 package sistem.Presentacion;
 import sistem.Entidades.Validaciones;
+import sistem.Presentacion.Frm_MDIl;
 
 /**
  * nombre de la clase: Frm_Usuario
@@ -200,6 +201,7 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
 //salir
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         dispose();
+        
     }//GEN-LAST:event_btnSalirActionPerformed
 
 

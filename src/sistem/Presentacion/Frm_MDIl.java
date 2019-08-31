@@ -204,6 +204,7 @@ public class Frm_MDIl extends javax.swing.JFrame {
         Dimension FrameSize = user.getSize();
         user.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
         user.show();
+        EditorialMenu.setEnabled(false);
         
     }//GEN-LAST:event_MenuItemUserActionPerformed
 //Salir

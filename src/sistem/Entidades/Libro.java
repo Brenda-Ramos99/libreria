@@ -16,12 +16,12 @@ public class Libro
     private double precio;
     private String anio_public;
     private String tomo;
-    private int estado;
     private String id_categoria;
     private String id_autor;
     private String id_edit;
     //private String id_usuario;
     private String id_membresia;
+    private int estado;
     
 
     /*Método constructor vacío para inicializar la clase Libro*/
@@ -44,6 +44,22 @@ public class Libro
         this.anio_public = anio_public;
         this.tomo = tomo;
         this.estado = estado;
+        this.id_categoria = id_categoria;
+        this.id_autor = id_autor;
+        this.id_edit = id_edit;
+        this.id_membresia = id_membresia;
+    }
+
+    public Libro(int id_libro, String titulo, int existencias, double precio,
+            String anio_public, String tomo, String id_categoria,
+            String id_autor, String id_edit, String id_membresia)
+    {
+        this.id_libro = id_libro;
+        this.titulo = titulo;
+        this.existencias = existencias;
+        this.precio = precio;
+        this.anio_public = anio_public;
+        this.tomo = tomo;
         this.id_categoria = id_categoria;
         this.id_autor = id_autor;
         this.id_edit = id_edit;

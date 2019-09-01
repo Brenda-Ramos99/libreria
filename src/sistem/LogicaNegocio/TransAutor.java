@@ -41,9 +41,11 @@ public class TransAutor
         return tm;
     }
     
-    public void agregar(String nombre, String seudonimo, String genero, String nacionalidad)
+    public void agregar(String nombre, String seudonimo, String genero,
+            String nacionalidad, String estado)
     {
-        a = new Autor(nombre, seudonimo, genero, nacionalidad);
+        a = new Autor(nombre, seudonimo, genero, nacionalidad, 
+                Integer.valueOf(estado));
         try {
             if (obDAut.agregar(a)>0) {
                 JOptionPane.showMessageDialog(null, "Registro insertado "

@@ -12,6 +12,7 @@ public class Rol
 {
     private int id_rol;
     private String rol;
+    private int estado;
 
     /*Método constructor vacío para inicializar la clase*/
     public Rol()
@@ -22,23 +23,33 @@ public class Rol
     /*Método constructor de todos los campos disponible para una instancia al 
     momento de mostrar todos los datos provenientes de la tabla Rol en la 
     base de datos*/
-    public Rol(int id_rol, String rol)
+
+    public Rol(int id_rol, String rol, int estado)
     {
         this.id_rol = id_rol;
         this.rol = rol;
+        this.estado = estado;
     }
 
+    public Rol(int id_rol, String rol) {
+        this.id_rol = id_rol;
+        this.rol = rol;
+    }
+    
+    
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla Rol en la base de 
     datos (sin ID, ya que es autoincrementable)*/
-    public Rol(String rol)
-    {
+    public Rol(String rol, int estado)
+    {    
         this.rol = rol;
+        this.estado = estado;
     }
 
-    /*Método constructor para el ID del Rol, necesario para realizar la 
+    /*Método constructor para el ID del Rol, necesario para realizar la
     eliminación de registros a la tabla Rol en la base de datos*/
-    public Rol(int id_rol) {
+    public Rol(int id_rol)
+    {
         this.id_rol = id_rol;
     }
 
@@ -57,6 +68,14 @@ public class Rol
 
     public void setRol(String rol) {
         this.rol = rol;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
     
 }

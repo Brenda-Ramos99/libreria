@@ -39,6 +39,18 @@ public class Usuario
         this.estado = estado;
         this.id_rol = id_rol;
     }
+
+    public Usuario(int id_usuario, String usuario, String pass, int edad,
+            String direccion, String id_rol)
+    {
+        this.id_usuario = id_usuario;
+        this.usuario = usuario;
+        this.pass = pass;
+        this.edad = edad;
+        this.direccion = direccion;
+        this.id_rol = id_rol;
+    }
+    
     
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla usuario en la base de 

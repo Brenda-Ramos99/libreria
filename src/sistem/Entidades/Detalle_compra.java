@@ -15,6 +15,7 @@ public class Detalle_compra
     private int cantidad;
     private double precio;
     private double subtotal;
+    private int estado;
 
     /*Método constructor vacío para inicializar la clase*/
     public Detalle_compra()
@@ -27,8 +28,18 @@ public class Detalle_compra
     en la base de datos*/
 
     public Detalle_compra(int id_detalle_compra, int id_libro, int id_compra,
-            int cantidad, double precio, double subtotal)
+            int cantidad, double precio, double subtotal, int estado)
     {
+        this.id_detalle_compra = id_detalle_compra;
+        this.id_libro = id_libro;
+        this.id_compra = id_compra;
+        this.cantidad = cantidad;
+        this.precio = precio;
+        this.subtotal = subtotal;
+        this.estado = estado;
+    }
+
+    public Detalle_compra(int id_detalle_compra, int id_libro, int id_compra, int cantidad, double precio, double subtotal) {
         this.id_detalle_compra = id_detalle_compra;
         this.id_libro = id_libro;
         this.id_compra = id_compra;
@@ -37,24 +48,25 @@ public class Detalle_compra
         this.subtotal = subtotal;
     }
     
+    
+    
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla detalle_compra en la
     base de datos (sin ID, ya que es autoincrementable)*/
-
     public Detalle_compra(int id_libro, int id_compra, int cantidad,
-            double precio, double subtotal)
+            double precio, double subtotal, int estado)    
     {
         this.id_libro = id_libro;
         this.id_compra = id_compra;
         this.cantidad = cantidad;
         this.precio = precio;
         this.subtotal = subtotal;
+        this.estado = estado;
     }
 
     /*Método constructor para el ID del detalle_compra, necesario para realizar
     la eliminación de registros a la tabla detalle_compra en la base de datos*/
-    public Detalle_compra(int id_detalle_compra)
-    {
+    public Detalle_compra(int id_detalle_compra) {
         this.id_detalle_compra = id_detalle_compra;
     }
     
@@ -105,6 +117,14 @@ public class Detalle_compra
 
     public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
     
 }

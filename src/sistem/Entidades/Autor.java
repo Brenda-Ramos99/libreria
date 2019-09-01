@@ -36,6 +36,18 @@ public class Autor
         this.nacionalidad = nacionalidad;
         this.estado = estado;
     }
+
+    public Autor(int id_autor, String nombre, String seudonimo, String genero,
+            String nacionalidad)
+    {
+        this.id_autor = id_autor;
+        this.nombre = nombre;
+        this.seudonimo = seudonimo;
+        this.genero = genero;
+        this.nacionalidad = nacionalidad;
+    }
+    
+    
     
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla autor en la base de 
@@ -108,6 +120,5 @@ public class Autor
     public void setEstado(int estado) {
         this.estado = estado;
     }
-    
     
 }

@@ -17,13 +17,30 @@ public class Membresia
     private String fecha_vencimiento;
     private double precio_membresia;
     private int id_usuario;
+    private int estado;
 
     public Membresia()
     {
         
     }
 
-    public Membresia(int id_membresia, String tipo_membresia, String fecha_validacion, String fecha_vencimiento, double precio_membresia, int id_usuario) {
+    public Membresia(int id_membresia, String tipo_membresia,
+            String fecha_validacion, String fecha_vencimiento,
+            double precio_membresia, int id_usuario, int estado)
+    {
+        this.id_membresia = id_membresia;
+        this.tipo_membresia = tipo_membresia;
+        this.fecha_validacion = fecha_validacion;
+        this.fecha_vencimiento = fecha_vencimiento;
+        this.precio_membresia = precio_membresia;
+        this.id_usuario = id_usuario;
+        this.estado = estado;
+    }
+
+    public Membresia(int id_membresia, String tipo_membresia,
+            String fecha_validacion, String fecha_vencimiento,
+            double precio_membresia, int id_usuario)
+    {
         this.id_membresia = id_membresia;
         this.tipo_membresia = tipo_membresia;
         this.fecha_validacion = fecha_validacion;
@@ -31,13 +48,19 @@ public class Membresia
         this.precio_membresia = precio_membresia;
         this.id_usuario = id_usuario;
     }
+    
+    
 
-    public Membresia(String tipo_membresia, String fecha_validacion, String fecha_vencimiento, double precio_membresia, int id_usuario) {
+    public Membresia(String tipo_membresia, String fecha_validacion,
+            String fecha_vencimiento, double precio_membresia,
+            int id_usuario, int estado)
+    {
         this.tipo_membresia = tipo_membresia;
         this.fecha_validacion = fecha_validacion;
         this.fecha_vencimiento = fecha_vencimiento;
         this.precio_membresia = precio_membresia;
         this.id_usuario = id_usuario;
+        this.estado = estado;
     }
 
     public Membresia(int id_membresia) {
@@ -91,4 +114,14 @@ public class Membresia
     public void setId_usuario(int id_usuario) {
         this.id_usuario = id_usuario;
     }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+
+    
 }

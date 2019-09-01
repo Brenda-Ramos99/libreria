@@ -25,7 +25,8 @@ public class DaoDeta_Compra extends Conexion implements CrudDetalle_compra
     public ArrayList<Detalle_compra> mostrar() throws ClassNotFoundException,
             SQLException
     {
-        ps= super.con().prepareStatement("select * from detalle_compra");
+        ps= super.con().prepareStatement("SELECT id_detalle_compra,id_libro,"
+                + "id_compra,cantidad,precio,subtotal from detalle_compra;");
         ArrayList<Detalle_compra> ar = new ArrayList<Detalle_compra>();
         try
         {
@@ -53,7 +54,7 @@ public class DaoDeta_Compra extends Conexion implements CrudDetalle_compra
             SQLException
     {
         ps = super.con().prepareStatement("insert into detalle_compra(id_liro,"
-                + "id_compra,cantidad,precio,sutotal) values(?,?,?);");
+                + "id_compra,cantidad,precio,sutotal) values(?,?,?,?,?);");
         ps.setInt(1, deta_compra.getId_libro());
         ps.setInt(2, deta_compra.getId_compra());
         ps.setInt(3, deta_compra.getCantidad());
@@ -110,6 +111,27 @@ public class DaoDeta_Compra extends Conexion implements CrudDetalle_compra
         try
         {
             res=ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
+        finally
+        {
+            super.con().close();
+        }
+        return res;
+    }
+
+    @Override
+    public int eliminaLo(Detalle_compra deta_comp) throws ClassNotFoundException,
+            SQLException {
+        ps = super.con().prepareStatement("update detalle_compra set estado=? "
+                + "where id_detalle_compra=?;");
+        ps.setInt(1, deta_compra.getEstado());
+        ps.setInt(2, deta_compra.getId_detalle_compra());
+        try
+        {
+            res = ps.executeUpdate();
         } catch (Exception e)
         {
             

@@ -27,7 +27,8 @@ public class DaoDeta_Venta extends Conexion implements CrudDetalle_venta
     public ArrayList<Detalle_venta> mostrar() throws ClassNotFoundException,
             SQLException
     {
-        ps= super.con().prepareStatement("select * from detalle_venta");
+        ps= super.con().prepareStatement("select id_detalle_venta,cantidad,"
+                + "precio,subtotal,id_libro,id_venta from detalle_venta;");
         ArrayList<Detalle_venta> ar = new ArrayList<Detalle_venta>();
         try
         {
@@ -53,12 +54,13 @@ public class DaoDeta_Venta extends Conexion implements CrudDetalle_venta
     @Override
     public int agregar(Detalle_venta deta_venta) throws ClassNotFoundException, SQLException {
         ps = super.con().prepareStatement("insert into detalle_venta(cantidad,"
-                + "precio,sutotal,id_libro,id_venta) values(?,?,?,?,?);");
+                + "precio,sutotal,id_libro,id_venta, estado) values(?,?,?,?,?,?);");
         ps.setInt(1, deta_venta.getCantidad());
         ps.setDouble(2, deta_venta.getPrecio());
         ps.setDouble(3, deta_venta.getSubtotal());
         ps.setInt(4, deta_venta.getId_libro());
-        ps.setInt(5, deta_venta.getId_venta());
+        ps.setInt(5, deta_venta.getEstado());
+        ps.setInt(6, deta_venta.getId_venta());
         try
         {
             res = ps.executeUpdate();
@@ -82,7 +84,7 @@ public class DaoDeta_Venta extends Conexion implements CrudDetalle_venta
         ps.setDouble(2, deta_venta.getPrecio());
         ps.setDouble(3, deta_venta.getSubtotal());
         ps.setInt(4, deta_venta.getId_libro());
-        ps.setInt(5, deta_venta.getId_libro());
+        ps.setInt(5, deta_venta.getEstado());
         ps.setInt(6, deta_venta.getId_detalle_venta());
         try
         {
@@ -106,6 +108,28 @@ public class DaoDeta_Venta extends Conexion implements CrudDetalle_venta
         try
         {
             res=ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
+        finally
+        {
+            super.con().close();
+        }
+        return res;
+    }
+
+    @Override
+    public int eliminaLo(Detalle_venta deta_venta) throws ClassNotFoundException,
+            SQLException
+    {
+        ps = super.con().prepareStatement("update detalle_venta set estado=? "
+                + "where id_detalle_venta=?;");
+        ps.setInt(1, deta_venta.getEstado());
+        ps.setInt(2, deta_venta.getId_detalle_venta());
+        try
+        {
+            res = ps.executeUpdate();
         } catch (Exception e)
         {
             

@@ -16,6 +16,7 @@ public class Detalle_prestamo
     private int cantidad;
     private double precio;
     private double subtotal;
+    private int estado;
 
     /*Método constructor vacío para inicializar la clase*/
     public Detalle_prestamo()
@@ -26,9 +27,9 @@ public class Detalle_prestamo
     /*Método constructor de todos los campos disponible para una instancia al 
     momento de mostrar todos los datos provenientes de la tabla detalle_prestamo
     en la base de datos*/
-
     public Detalle_prestamo(int id_detalle_prestamo, int id_libro,
-            int id_prestamo, int cantidad, double precio, double subtotal)
+            int id_prestamo, int cantidad, double precio, double subtotal,
+            int estado)
     {
         this.id_detalle_prestamo = id_detalle_prestamo;
         this.id_libro = id_libro;
@@ -36,20 +37,23 @@ public class Detalle_prestamo
         this.cantidad = cantidad;
         this.precio = precio;
         this.subtotal = subtotal;
+        this.estado = estado;
     }
+    
     
     
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla detalle_prestamo en la 
     base de datos (sin ID, ya que es autoincrementable)*/
     public Detalle_prestamo(int id_libro, int id_prestamo, int cantidad,
-            double precio, double subtotal)
-    {
+            double precio, double subtotal, int estado)
+    {    
         this.id_libro = id_libro;
         this.id_prestamo = id_prestamo;
         this.cantidad = cantidad;
         this.precio = precio;
         this.subtotal = subtotal;
+        this.estado = estado;
     }
 
     /*Método constructor para el ID del detalle de prestamo, necesario para
@@ -60,7 +64,6 @@ public class Detalle_prestamo
     }
 
     /*Métodos de acceso de la Clase*/
-
     public int getId_detalle_prestamo() {
         return id_detalle_prestamo;
     }
@@ -108,4 +111,13 @@ public class Detalle_prestamo
     public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
     }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+    
 }

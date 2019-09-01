@@ -17,6 +17,7 @@ public class Detalle_venta
     private double subtotal;
     private int id_libro;
     private int id_venta;
+    private int estado;
 
     public Detalle_venta()
     {
@@ -24,7 +25,7 @@ public class Detalle_venta
     }
 
     public Detalle_venta(int id_detalle_venta, int cantidad, double precio,
-            double subtotal, int id_libro, int id_venta)
+            double subtotal, int id_libro, int id_venta, int estado)
     {
         this.id_detalle_venta = id_detalle_venta;
         this.cantidad = cantidad;
@@ -32,18 +33,33 @@ public class Detalle_venta
         this.subtotal = subtotal;
         this.id_libro = id_libro;
         this.id_venta = id_venta;
+        this.estado = estado;
     }
 
-    public Detalle_venta(int cantidad, double precio, double subtotal,
-            int id_libro, int id_venta)
-    {
+    public Detalle_venta(int id_detalle_venta, int cantidad, double precio,
+            double subtotal, int id_libro, int id_venta) {
+        this.id_detalle_venta = id_detalle_venta;
         this.cantidad = cantidad;
         this.precio = precio;
         this.subtotal = subtotal;
         this.id_libro = id_libro;
         this.id_venta = id_venta;
     }
+    
+    
 
+    public Detalle_venta(int cantidad, double precio, double subtotal,
+            int id_libro, int id_venta, int estado)
+    {
+        this.cantidad = cantidad;
+        this.precio = precio;
+        this.subtotal = subtotal;
+        this.id_libro = id_libro;
+        this.id_venta = id_venta;
+        this.estado = estado;
+    }
+
+    
     public Detalle_venta(int id_detalle_venta)
     {
         this.id_detalle_venta = id_detalle_venta;
@@ -96,4 +112,14 @@ public class Detalle_venta
     public void setId_venta(int id_venta) {
         this.id_venta = id_venta;
     }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+
+    
 }

@@ -13,6 +13,7 @@ public class Prestamo
     private String fecha_inicio;
     private String fecha_final;
     private double total;
+    private int estado;
 
     /*Método constructor vacío para inicializar la clase*/
     public Prestamo()
@@ -24,6 +25,16 @@ public class Prestamo
     momento de mostrar todos los datos provenientes de la tabla prestamo en la 
     base de datos*/
     public Prestamo(int id_prestamo, String fecha_inicio, String fecha_final,
+            double total, int estado)
+    {
+        this.id_prestamo = id_prestamo;
+        this.fecha_inicio = fecha_inicio;
+        this.fecha_final = fecha_final;
+        this.total = total;
+        this.estado = estado;
+    }
+
+    public Prestamo(int id_prestamo, String fecha_inicio, String fecha_final,
             double total)
     {
         this.id_prestamo = id_prestamo;
@@ -31,21 +42,23 @@ public class Prestamo
         this.fecha_final = fecha_final;
         this.total = total;
     }
-
+    
+    
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla prestamo en la base de 
     datos (sin ID, ya que es autoincrementable)*/
-    public Prestamo(String fecha_inicio, String fecha_final,double total)
+    public Prestamo(String fecha_inicio, String fecha_final, double total,
+            int estado)    
     {
         this.fecha_inicio = fecha_inicio;
         this.fecha_final = fecha_final;
         this.total = total;
+        this.estado = estado;
     }
 
-    /*Método constructor para el ID del Libro, necesario para realizar la 
+    /*Método constructor para el ID del Libro, necesario para realizar la
     eliminación de registros a la tabla Libro en la base de datos*/
-    public Prestamo(int id_prestamo)
-    {
+    public Prestamo(int id_prestamo) {
         this.id_prestamo = id_prestamo;
     }
 
@@ -81,4 +94,13 @@ public class Prestamo
     public void setTotal(double total) {
         this.total = total;
     }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+    
 }

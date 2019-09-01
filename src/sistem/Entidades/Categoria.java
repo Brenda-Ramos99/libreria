@@ -30,6 +30,11 @@ public class Categoria
         this.nombre_cat = nombre_cat;
         this.estado = estado;
     }
+
+    public Categoria(int id_categoria, String nombre_cat) {
+        this.id_categoria = id_categoria;
+        this.nombre_cat = nombre_cat;
+    }
     
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla categoria en la base de 

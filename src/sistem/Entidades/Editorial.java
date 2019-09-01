@@ -15,6 +15,7 @@ public class Editorial
     private String nombre;
     private String pais;
     private String direccion;
+    private int estado;
 
     /*Método constructor vacío para inicializar la clase*/
     public Editorial()
@@ -25,6 +26,18 @@ public class Editorial
     /*Método constructor de todos los campos disponible para una instancia al 
         momento de mostrar todos los datos provenientes de la tabla editorial en la 
         base de datos*/
+
+    public Editorial(int id_edit, String telefono, String nombre, String pais,
+            String direccion, int estado)
+    {
+        this.id_edit = id_edit;
+        this.telefono = telefono;
+        this.nombre = nombre;
+        this.pais = pais;
+        this.direccion = direccion;
+        this.estado = estado;
+    }
+
     public Editorial(int id_edit, String telefono, String nombre, String pais,
             String direccion)
     {
@@ -34,19 +47,22 @@ public class Editorial
         this.pais = pais;
         this.direccion = direccion;
     }
-
+    
     
     /*Método constructor de todos los campos necesarios para una instancia al 
         momento de insertar datos provenientes de la tabla editorial en la base
         de datos (sin ID, ya que es autoincrementable)*/
+
     public Editorial(String telefono, String nombre, String pais,
-            String direccion)
+            String direccion, int estado)
     {
         this.telefono = telefono;
         this.nombre = nombre;
         this.pais = pais;
         this.direccion = direccion;
+        this.estado = estado;
     }
+    
 
     
     /*Método constructor para el ID del editorial, necesario para realizar la 
@@ -57,6 +73,7 @@ public class Editorial
     }
 
     /*Métodos de acceso de la Clase*/
+
     public int getId_edit() {
         return id_edit;
     }
@@ -95,5 +112,14 @@ public class Editorial
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
-    }    
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+        
 }

@@ -15,23 +15,32 @@ public class Venta
     private String fecha;
     private double IVA=0.13;
     private double total;
+    private int estado;
 
     public Venta()
     {
         
     }
 
-    public Venta(int id_venta, String fecha, double total)
+    public Venta(int id_venta, String fecha, double total, int estado)
     {
+        this.id_venta = id_venta;
+        this.fecha = fecha;
+        this.total = total;
+        this.estado = estado;
+    }
+
+    public Venta(int id_venta, String fecha, double total) {
         this.id_venta = id_venta;
         this.fecha = fecha;
         this.total = total;
     }
 
-    public Venta(String fecha, double total)
-    {
+    
+    public Venta(String fecha, double total, int estado) {
         this.fecha = fecha;
         this.total = total;
+        this.estado = estado;
     }
 
     public Venta(int id_venta)
@@ -70,4 +79,13 @@ public class Venta
     public void setTotal(double total) {
         this.total = total;
     }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+    
 }

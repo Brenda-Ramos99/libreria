@@ -27,13 +27,14 @@ public class DaoCategoria extends Conexion implements CrudCategoria
             SQLException
     {
         ArrayList<Categoria> ar = new ArrayList<Categoria>();
-        ps = super.con().prepareStatement("select * from categoria");
+        ps = super.con().prepareStatement("select id_categoria,nombre_cat from "
+                + "categoria");
         rs=ps.executeQuery();
         try
         {
             while (rs.next())
             {                
-                cat = new Categoria(rs.getInt(1),rs.getString(2), rs.getInt(3));
+                cat = new Categoria(rs.getInt(1),rs.getString(2));
                 ar.add(cat);
             }
         } catch (Exception e)

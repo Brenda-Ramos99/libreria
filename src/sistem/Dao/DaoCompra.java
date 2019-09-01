@@ -26,7 +26,7 @@ public class DaoCompra extends Conexion implements CrudCompra
             SQLException
     {
         ps= super.con().prepareStatement("SELECT id_compra, DATE_FORMAT(fecha,"
-                + " '%d/%m/%y') AS fecha,total,iva FROM compra;");
+                + "'%d/%m/%y') AS fecha,total,iva FROM compra;");
         ArrayList<Compra> ar = new ArrayList<Compra>();
         try
         {
@@ -50,11 +50,12 @@ public class DaoCompra extends Conexion implements CrudCompra
     @Override
     public int agregar(Compra comp) throws ClassNotFoundException, SQLException
     {
-        ps = super.con().prepareStatement("insert into compra(fecha,total,iva) "
-                + "values(?,?,?);");
+        ps = super.con().prepareStatement("insert into compra(fecha,total,iva,estado) "
+                + "values(?,?,?,?);");
         ps.setString(1, com.getFecha());
         ps.setDouble(2, com.getTotal());
         ps.setDouble(3, com.getIVA());
+        ps.setInt(4, com.getEstado());
         try
         {
             res = ps.executeUpdate();
@@ -74,11 +75,12 @@ public class DaoCompra extends Conexion implements CrudCompra
             SQLException
     {
         ps = super.con().prepareStatement("update compra set fecha=?,total=?,"
-                + "iva=? where id_compra = ?");
+                + "iva=?,estado=? where id_compra = ?");
         ps.setString(1, comp.getFecha());
         ps.setDouble(2, com.getTotal());
         ps.setDouble(3, com.getIVA());
-        ps.setInt(4, com.getId_compra());
+        ps.setInt(4, com.getEstado());
+        ps.setInt(5, com.getId_compra());
         try
         {
             res=ps.executeUpdate();
@@ -112,6 +114,26 @@ public class DaoCompra extends Conexion implements CrudCompra
         }
         return res;
     }
-    
-    
+
+    @Override
+    public int eliminaLo(Compra comp) throws ClassNotFoundException,
+            SQLException
+    {
+        ps = super.con().prepareStatement("update compra set estado=? "
+                + "where id_compra = ?");
+        ps.setInt(1, com.getEstado());
+        ps.setInt(2, com.getId_compra());
+        try
+        {
+            res=ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
+        finally
+        {
+            super.con().close();
+        }
+        return res;
+    }
 }

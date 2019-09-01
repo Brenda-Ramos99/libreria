@@ -33,7 +33,7 @@ public class DaoAutor extends Conexion implements CrudAutor
             while (rs.next())
             {                
                 a=new Autor(rs.getInt(1),rs.getString(2),rs.getString(3),
-                rs.getString(4),rs.getString(5));
+                rs.getString(4),rs.getString(5),rs.getInt(6));
                 ar.add(a);
             }
         }
@@ -79,7 +79,8 @@ public class DaoAutor extends Conexion implements CrudAutor
         ps.setString(2,a.getSeudonimo());
         ps.setString(3, a.getGenero());
         ps.setString(4, a.getNacionalidad());
-        ps.setInt(5, a.getId_autor());
+        ps.setInt(5, a.getEstado());
+        ps.setInt(6, a.getId_autor());
         
         try
         {
@@ -100,6 +101,28 @@ public class DaoAutor extends Conexion implements CrudAutor
     public int eliminar(Autor a) throws ClassNotFoundException, SQLException {
         ps=super.con().prepareStatement("delete from autor where id_autor=?;");
         ps.setInt(1, a.getId_autor());
+        
+        try
+        {
+            res=ps.executeUpdate();
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error",1);
+        }
+        finally
+        {
+            super.con().close();
+        }
+        return res;
+    }
+
+    @Override
+    public int eliminaLo(Autor a) throws ClassNotFoundException, SQLException {
+        ps=super.con().prepareStatement("update autor set estado=? where "
+                + "id_autor=?;");
+        ps.setInt(1, a.getEstado());
+        ps.setInt(2, a.getId_autor());
         
         try
         {

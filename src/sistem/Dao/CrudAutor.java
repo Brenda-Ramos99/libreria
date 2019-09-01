@@ -18,4 +18,5 @@ public interface CrudAutor
     public int agregar(Autor a) throws ClassNotFoundException,SQLException;
     public int modificar(Autor a) throws ClassNotFoundException,SQLException;
     public int eliminar(Autor a) throws ClassNotFoundException,SQLException;
+    public int eliminaLo(Autor a) throws ClassNotFoundException,SQLException;
 }

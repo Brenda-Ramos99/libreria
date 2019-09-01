@@ -33,7 +33,7 @@ public class DaoCategoria extends Conexion implements CrudCategoria
         {
             while (rs.next())
             {                
-                cat = new Categoria(rs.getInt(1),rs.getString(2));
+                cat = new Categoria(rs.getInt(1),rs.getString(2), rs.getInt(3));
                 ar.add(cat);
             }
         } catch (Exception e)
@@ -51,9 +51,10 @@ public class DaoCategoria extends Conexion implements CrudCategoria
     public int agregar(Categoria categ) throws ClassNotFoundException,
             SQLException
     {
-        ps=super.con().prepareStatement("insert into categoria(nombre_cat) "
-                + "values(?);");
+        ps=super.con().prepareStatement("insert into categoria(nombre_cat,estado) "
+                + "values(?,?);");
         ps.setString(1, cat.getNombre_cat());
+        ps.setInt(2, categ.getEstado());
         try
         {
             res=ps.executeUpdate();
@@ -72,10 +73,12 @@ public class DaoCategoria extends Conexion implements CrudCategoria
     public int modificar(Categoria categ) throws ClassNotFoundException,
             SQLException
     {
-        ps=super.con().prepareStatement("update categoria set nombre_cat=? "
-                + "where id_categoria=?;");
+        ps=super.con().prepareStatement("update categoria set nombre_cat=?,"
+                + "estado=? where id_categoria=?;");
         ps.setString(1, cat.getNombre_cat());
-        ps.setInt(2, cat.getId_categoria());
+        ps.setInt(2, categ.getEstado());
+        ps.setInt(3, cat.getId_categoria());
+        
         try
         {
             res=ps.executeUpdate();
@@ -97,6 +100,28 @@ public class DaoCategoria extends Conexion implements CrudCategoria
         ps=super.con().prepareStatement("delete from categoria where "
                 + "id_categoria=?;");
         ps.setInt(1, cat.getId_categoria());
+        try
+        {
+            res=ps.executeUpdate();
+        } catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error",1);
+        }
+        finally
+        {
+            super.con().close();
+        }
+        return res;
+    }
+
+    @Override
+    public int eliminaLo(Categoria categ) throws ClassNotFoundException, SQLException {
+        ps=super.con().prepareStatement("update categoria set estado=? where "
+                + "id_categoria=?;");
+        
+        ps.setInt(1, categ.getEstado());
+        ps.setInt(2, cat.getId_categoria());
+        
         try
         {
             res=ps.executeUpdate();

@@ -2,6 +2,7 @@ package sistem.Dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import sistem.Entidades.Detalle_compra;
 import sistem.Entidades.Rol;
 
 /**
@@ -17,4 +18,5 @@ public interface CrudRol
     public int agregar(Rol rol) throws ClassNotFoundException,SQLException;
     public int modificar(Rol rol) throws ClassNotFoundException,SQLException;
     public int eliminar(Rol rol) throws ClassNotFoundException,SQLException;
+    public int eliminaLo(Rol rol) throws ClassNotFoundException,SQLException;
 }

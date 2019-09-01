@@ -23,4 +23,6 @@ public interface CrudDetalle_venta
             ClassNotFoundException,SQLException;
     public int eliminar(Detalle_venta deta_venta) throws 
             ClassNotFoundException, SQLException;
+    public int eliminaLo(Detalle_venta deta_venta) throws 
+            ClassNotFoundException,SQLException;
 }

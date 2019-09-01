@@ -20,4 +20,6 @@ public interface CrudPrestamo
             SQLException;
     public int eliminar(Prestamo presta) throws ClassNotFoundException,
             SQLException;
+    public int eliminaLo(Prestamo presta) throws ClassNotFoundException,
+            SQLException;
 }

@@ -21,4 +21,6 @@ public interface CrudCategoria
             SQLException;
     public int eliminar(Categoria categ) throws ClassNotFoundException,
             SQLException;
+    public int eliminaLo(Categoria categ) throws ClassNotFoundException,
+            SQLException;
 }

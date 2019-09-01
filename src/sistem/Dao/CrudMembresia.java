@@ -18,4 +18,6 @@ public interface CrudMembresia
             SQLException;
     public int eliminar(Membresia memb) throws ClassNotFoundException,
             SQLException;
+    public int eliminaLo(Membresia memb) throws ClassNotFoundException,
+            SQLException;
 }

@@ -21,4 +21,6 @@ public interface CrudEditorial
             SQLException;
     public int eliminar(Editorial edit) throws ClassNotFoundException,
             SQLException;
+    public int eliminaLo(Editorial edit) throws ClassNotFoundException,
+            SQLException;
 }

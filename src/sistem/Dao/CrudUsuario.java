@@ -18,4 +18,6 @@ public interface CrudUsuario
     public int modificar(Usuario usu) throws ClassNotFoundException,
             SQLException;
     public int eliminar(Usuario usu) throws ClassNotFoundException,SQLException;
+    public int eliminaLo(Usuario usu) throws ClassNotFoundException,
+            SQLException;
 }

@@ -17,4 +17,5 @@ public interface CrudLibro
     public int agregar(Libro lib) throws ClassNotFoundException,SQLException;
     public int modificar(Libro lib) throws ClassNotFoundException,SQLException;
     public int eliminar(Libro lib) throws ClassNotFoundException,SQLException;
+    public int eliminaLo(Libro lib) throws ClassNotFoundException,SQLException;
 }

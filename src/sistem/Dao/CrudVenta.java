@@ -14,4 +14,5 @@ public interface CrudVenta
     public int agregar(Venta vent) throws ClassNotFoundException,SQLException;
     public int modificar(Venta vent) throws ClassNotFoundException,SQLException;
     public int eliminar(Venta vent) throws ClassNotFoundException,SQLException;
+    public int eliminaLo(Venta vent) throws ClassNotFoundException,SQLException;
 }

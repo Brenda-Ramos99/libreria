@@ -18,4 +18,6 @@ public interface CrudCompra
     public int modificar(Compra comp) throws ClassNotFoundException,
             SQLException;
     public int eliminar(Compra comp) throws ClassNotFoundException,SQLException;
+    public int eliminaLo(Compra comp) throws ClassNotFoundException,
+            SQLException;
 }

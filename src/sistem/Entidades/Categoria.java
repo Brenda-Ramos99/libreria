@@ -12,6 +12,7 @@ public class Categoria
 {
     private int id_categoria;
     private String nombre_cat;
+    private int estado;
 
     /*Método constructor vacío para inicializar la clase Libro*/
     public Categoria()
@@ -22,19 +23,24 @@ public class Categoria
     /*Método constructor de todos los campos disponible para una instancia al 
     momento de mostrar todos los datos provenientes de la tabla categoria en la 
     base de datos*/
-    public Categoria(int id_categoria, String nombre_cat)
+
+    public Categoria(int id_categoria, String nombre_cat, int estado)
     {
         this.id_categoria = id_categoria;
         this.nombre_cat = nombre_cat;
+        this.estado = estado;
     }
-
+    
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla categoria en la base de 
     datos (sin ID, ya que es autoincrementable)*/
-    public Categoria(String nombre_cat)
+
+    public Categoria(String nombre_cat, int estado)
     {
         this.nombre_cat = nombre_cat;
+        this.estado = estado;
     }
+    
 
     /*Método constructor para el ID del categoría, necesario para realizar la 
     eliminación de registros a la tabla categoria en la base de datos*/
@@ -43,7 +49,9 @@ public class Categoria
     }
 
     /*Métodos de acceso de la Clase*/
-    public int getId_categoria() {
+
+    public int getId_categoria()
+    {
         return id_categoria;
     }
 
@@ -58,4 +66,13 @@ public class Categoria
     public void setNombre_cat(String nombre_cat) {
         this.nombre_cat = nombre_cat;
     }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+    
 }

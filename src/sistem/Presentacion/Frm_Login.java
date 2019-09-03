@@ -24,7 +24,11 @@ public class Frm_Login extends javax.swing.JFrame {
         v.validarNombres(txtuser);
         this.setLocationRelativeTo(null); 
     }
-
+    void limpiar()
+    {
+        txtuser.setText("");
+        password.setText("");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -182,6 +186,7 @@ public class Frm_Login extends javax.swing.JFrame {
                Frm_MDIl frm1= new Frm_MDIl(lo);
                frm1.setVisible(true);
                dispose();
+               limpiar();
             }else{
                 JOptionPane.showMessageDialog(null, "Datos Incorrectos");
             }

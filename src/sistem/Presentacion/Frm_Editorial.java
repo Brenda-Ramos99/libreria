@@ -27,7 +27,13 @@ TransaccionesEditorial ob=new TransaccionesEditorial();
       TableEditorial.setModel(ob.datos());
     
     }
-
+    void limpiar(){
+        txtCodEdit.setText("");
+        txtDireccEdit.setText("");
+        txtNomEdit.setText("");
+        txtPaisEdit.setText("");
+        txtTelefEdit.setText("");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -233,20 +239,23 @@ TransaccionesEditorial ob=new TransaccionesEditorial();
     }//GEN-LAST:event_TableEditorialMouseClicked
 
     private void btnAgregEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregEditActionPerformed
-       ob.agregar(txtNomEdit.getText(), txtTelefEdit.getText(),txtPaisEdit.getText(),txtDireccEdit.getText());
-         
-          llenar();
+        ob.agregar(txtNomEdit.getText(), txtTelefEdit.getText(),
+                txtPaisEdit.getText(),txtDireccEdit.getText());
+        limpiar();
+        llenar();
     }//GEN-LAST:event_btnAgregEditActionPerformed
 
     private void btnModifEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifEditActionPerformed
-         ob.modificar (txtCodEdit.getText(),txtNomEdit.getText(), txtTelefEdit.getText(),txtPaisEdit.getText(),txtDireccEdit.getText());
-         
-          llenar();
+        ob.modificar (txtCodEdit.getText(),txtNomEdit.getText(),
+        txtTelefEdit.getText(),txtPaisEdit.getText(),txtDireccEdit.getText());
+        limpiar();
+        llenar();
     }//GEN-LAST:event_btnModifEditActionPerformed
 
     private void btnElimEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimEditActionPerformed
         ob.eliminar(txtCodEdit.getText());
           llenar();
+          limpiar();
     }//GEN-LAST:event_btnElimEditActionPerformed
 
 

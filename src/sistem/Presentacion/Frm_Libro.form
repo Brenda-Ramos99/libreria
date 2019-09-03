@@ -100,7 +100,7 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="txtIdUsuarioFK" min="-2" pref="103" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           <Component id="txtEstado" min="-2" pref="85" max="-2" attributes="0"/>
                       </Group>
                   </Group>

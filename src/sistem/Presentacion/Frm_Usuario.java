@@ -21,7 +21,15 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
         v.validarNombres(txtUser);
         v.validarUsuario(txtPass);
     }
-
+    void limpiar(){
+        txtCodigUser.setText("");
+        txtDire.setText("");
+        txtPass.setText("");
+        txtUser.setText("");
+        cmbRol.setSelectedIndex(0);
+        SpinnerEdadUser.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1),
+            Integer.valueOf(1), null, Integer.valueOf(1)));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

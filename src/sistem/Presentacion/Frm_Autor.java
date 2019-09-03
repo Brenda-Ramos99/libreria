@@ -25,9 +25,16 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
         v.validarNombres(txtSeudonimo);
         llenar();
     }
-void llenar(){
+    void llenar(){
       TableAutor.setModel(ob.datos());
-    
+    }
+    void limpiar()
+    {
+        txtCodAut.setText("");
+        txtNaciAutor.setText("");
+        txtNomAuto.setText("");
+        txtSeudonimo.setText("");
+        buttonGroup1.clearSelection();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -266,17 +273,19 @@ void llenar(){
     private void btnAgregarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAutoActionPerformed
          ob.agregar(txtNomAuto.getText(),txtSeudonimo.getText(),rbtnMasculino.getText(),txtNaciAutor.getText());
           llenar();
+          limpiar();
     }//GEN-LAST:event_btnAgregarAutoActionPerformed
 
     private void btnModifAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifAutorActionPerformed
       ob.modificar( txtCodAut.getText(),txtNomAuto.getText(),txtSeudonimo.getText(),rbtnMasculino.getText(),txtNaciAutor.getText());
-          
+          limpiar();
           llenar();
     }//GEN-LAST:event_btnModifAutorActionPerformed
 
     private void btnElimAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimAutorActionPerformed
         ob.eliminar( txtCodAut.getText());
           llenar();
+          limpiar();
     }//GEN-LAST:event_btnElimAutorActionPerformed
 
 

@@ -34,7 +34,20 @@ Libro lb= new Libro();
         cmbCategoriaLib.setModel(tca.llenarCategoria());
         cmbAutorLib.setModel(tab.llenarAutor());
         cmbEditorialLib.setModel(edit.llenarEditorial());
-        
+    }
+    void limpiar()
+    {
+        txtCodLib.setText("");
+        txtEstado.setText("");
+        txtExistenciasLib.setText("");
+        txtIdUsuarioFK.setText("");
+        txtPrecioLib.setText("");
+        txtPublicacionLib.setText("");
+        txtTituloLib.setText("");
+        txtTomoLib.setText("");
+        cmbAutorLib.setSelectedIndex(0);
+        cmbCategoriaLib.setSelectedIndex(0);
+        cmbEditorialLib.setSelectedIndex(0);
     }
 
     /**
@@ -172,7 +185,7 @@ Libro lb= new Libro();
                             .addComponent(cmbEditorialLib, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(PanelLibroLayout.createSequentialGroup()
                         .addComponent(txtIdUsuarioFK, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addGap(51, 51, 51)
                         .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

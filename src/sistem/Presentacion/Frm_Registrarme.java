@@ -27,6 +27,16 @@ public class Frm_Registrarme extends javax.swing.JFrame {
         v.validarNumeros(txtCodigoSeguridad);
         v.validarNumeros(txtTarjeta);
     }
+    void limpiar(){
+        txtCodigoSeguridad.setText("");
+        txtTarjeta.setText("");
+        txt_direccion.setText("");
+        txt_edad.setText("");
+        txt_pass.setText("");
+        txt_passcon.setText("");
+        txt_usuario1.setText("");
+        cmbTiposMembresia.setSelectedIndex(0);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -328,7 +338,7 @@ public class Frm_Registrarme extends javax.swing.JFrame {
 
         String pass = new String(txt_pass.getPassword());
         String pasCon = new String(txt_passcon.getPassword());
-
+        limpiar();
         if (txt_usuario1.getText().equals("") || pasCon.equals("") || pass.equals("")
             || txt_edad.getText().equals("") || txt_direccion.getText().equals("")) {
 

@@ -20,9 +20,12 @@ Transacciones ob=new Transacciones();
         v.validarNombres(txtCatrgoria);
         llenar();
     }
-void llenar(){
+    void llenar(){
       TableCategoria.setModel(ob.datos());
-    
+    }
+    void limpiar(){
+        txtCatrgoria.setText("");
+        txtCodCateg.setText("");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -188,10 +191,12 @@ void llenar(){
     private void btnAgregCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregCategActionPerformed
          ob.agregar(txtCatrgoria.getText());
           llenar();
+          limpiar();
     }//GEN-LAST:event_btnAgregCategActionPerformed
 
     private void btnModifCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifCategActionPerformed
          //
+         limpiar();
     }//GEN-LAST:event_btnModifCategActionPerformed
 
 

@@ -53,7 +53,7 @@ public class DaoUsuario extends Conexion implements CrudUsuario
         ps.setInt(3, usu.getEdad());
         ps.setString(4, usu.getDireccion());
         ps.setInt(5, usu.getEstado());
-        ps.setString(6, usu.getId_rol());
+        ps.setInt(6, usu.getId_rol());
         try
         {
             res = ps.executeUpdate();
@@ -78,7 +78,7 @@ public class DaoUsuario extends Conexion implements CrudUsuario
         ps.setInt(3, usu.getEdad());
         ps.setString(4, usu.getDireccion());
         ps.setInt(5, usu.getEstado());
-        ps.setString(6, usu.getId_rol());
+        ps.setInt(6, usu.getId_rol());
         ps.setInt(7, usu.getId_usuario());
         try
         {

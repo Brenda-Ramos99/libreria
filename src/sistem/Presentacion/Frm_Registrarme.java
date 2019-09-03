@@ -345,7 +345,7 @@ public class Frm_Registrarme extends javax.swing.JFrame {
                     lo.setEdad(Integer.parseInt(txt_edad.getText()));
                     lo.setDireccion(txt_direccion.getText());
                     lo.setEstado(0);
-                    lo.setId_rol("2");
+                    lo.setId_rol(2);
                     try {
                         if (da.agregar(lo)) {
                             JOptionPane.showMessageDialog(null, "Registro Guardado Exitosamente");

@@ -31,7 +31,7 @@ public class DaoLogin extends ConexionLogin{
             ps.setInt(3, usr.getEdad());
             ps.setString(4, usr.getDireccion());
             ps.setInt(5,usr.getEstado());
-            ps.setString(6, usr.getId_rol());
+            ps.setInt(6, usr.getId_rol());
             ps.executeUpdate();
             return true;
         }catch(SQLException e){
@@ -62,34 +62,39 @@ public class DaoLogin extends ConexionLogin{
         }
     }
      
-    public boolean loging(Usuario usr){
-        PreparedStatement ps=null; 
-        ResultSet rs=null;
-        Connection con= getConexion();
-
-        String sql="select id_usuario, usuario, pass, estado, id_rol from usuario where usuario=?";
-
-        try{
-            ps=con.prepareStatement(sql);
-            ps.setString(1, usr.getUsuario());
-            rs=ps.executeQuery();
-            if(rs.next()){
-                if(usr.getPass().equals(rs.getString(3))){
-                    usr.setId_usuario(rs.getInt(1));
-                    usr.setUsuario(rs.getString(2));
-                    usr.setId_rol(rs.getString(5));
-                    usr.setEstado(rs.getInt(4));
-                return true;
-                }else{
-                return false;
-                }
-
-            }
-        return false;
-        
-        }catch(SQLException ex){
-            //Logger.getLogger(DaoLogin.class.getName()).log(Level.SEVERE, null,ex);
-        return false;
-        }
+public boolean loging(Usuario usr){
+    PreparedStatement ps=null; 
+    ResultSet rs=null;
+    Connection con= getConexion();
+    
+    /*String sql="select id_usuario, usuario, pass, estado, id_rol from usuario where usuario=?";
+         String sql="select u.id_usuario, u.usuario, u.pass, u.estado, u.id_rol, t.nombre_rol"+
+            "from usuario u INNER JOIN rol t ON u.id_rol=t.id where usuario=?";*/
+    String sql="SELECT id_usuario, usuario, pass, estado, id_rol FROM usuario WHERE usuario = ? LIMIT 1";
+    try{
+    ps=con.prepareStatement(sql);
+    ps.setString(1, usr.getUsuario());
+    rs=ps.executeQuery();
+    if(rs.next()){
+    if(usr.getPass().equals(rs.getString(3)))
+    {
+        usr.setId_usuario(rs.getInt(1));
+        usr.setUsuario(rs.getString(2));
+        usr.setId_rol(rs.getInt(5));
+        usr.setEstado(rs.getInt(4));
+        return true;
+    }else{
+    
+    return false;
+    
     }
+    
+    }
+    return false;
+    
+    }catch(SQLException ex){
+        //Logger.getLogger(DaoLogin.class.getName()).log(Level.SEVERE, null,ex);
+    return false;
+    }
+}
 }

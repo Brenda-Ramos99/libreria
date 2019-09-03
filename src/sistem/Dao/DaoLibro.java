@@ -22,7 +22,9 @@ public class DaoLibro extends Conexion implements CrudLibro
     public ArrayList<Libro> mostrar() throws ClassNotFoundException,
             SQLException
     {
-        ps = super.con().prepareStatement("select * from libro where estado=0;");
+        ps = super.con().prepareStatement("select id_libro,titulo,existencias,"
+                + "precio,anio_public,tomo,id_categoria,id_autor,id_edit,"
+                + "id_membresia from libro where estado=0;");
         ArrayList<Libro> ar = new ArrayList<Libro>();
         try
         {
@@ -31,8 +33,8 @@ public class DaoLibro extends Conexion implements CrudLibro
             {            
                 libro = new Libro(rs.getInt(1), rs.getString(2),
                         rs.getInt(3),rs.getDouble(4),rs.getString(5),
-                        rs.getString(6), rs.getInt(7),rs.getString(8),
-                        rs.getString(9), rs.getString(10),rs.getString(11));
+                        rs.getString(6), rs.getInt(7),rs.getInt(8),
+                        rs.getInt(9), rs.getInt(10));
                 ar.add(libro);
             }
         } catch (Exception e)
@@ -51,22 +53,20 @@ public class DaoLibro extends Conexion implements CrudLibro
     {
         ps = super.con().prepareStatement("insert into libro (titulo,"
                 + "existencias,precio,anio_public,tomo,estado,id_categoria,"
-                + "id_autor,id_edit,id_membresia) values(?,?,?,?,?,?,(select "
-                + "id_categoria from categoria where nombre_cat=?),(select "
-                + "id_autor from autor where nombre=?),(select id_edit from "
-                + "editorial where nombre=?),(select id_membresia from membresia"
-                + " where tipo_membresia=?));");
+                + "id_autor,id_edit,id_membresia,estado) values(?,?,?,?,?,?,?,"
+                + "?,?,?,?);");
         ps.setString(1, libro.getTitulo());
         ps.setInt(2, libro.getExistencias());
         ps.setDouble(3, libro.getPrecio());
         ps.setString(4, libro.getAnio_public());
         ps.setString(5, libro.getTomo());
         ps.setInt(6, libro.getEstado());
-        ps.setString(7, libro.getId_categoria());
-        ps.setString(8, libro.getId_autor());
-        ps.setString(9, libro.getId_edit());
+        ps.setInt(7, libro.getId_categoria());
+        ps.setInt(8, libro.getId_autor());
+        ps.setInt(9, libro.getId_edit());
         //ps.setString(9, libro.getId_usuario());
-        ps.setString(10, libro.getId_membresia());
+        ps.setInt(10, libro.getId_membresia());
+        ps.setInt(11, libro.getEstado());
         
         try
         {
@@ -86,7 +86,7 @@ public class DaoLibro extends Conexion implements CrudLibro
     public int modificar(Libro lib) throws ClassNotFoundException, SQLException {
         ps = super.con().prepareStatement("update libro set titulo=?,"
                 + "existencias=?,precio=?,anio_public=?,tomo=?,estado=?,"
-                + "id_categoria=?,id_autor=?,id_edit=?,id_membresia=? "
+                + "id_categoria=?,id_autor=?,id_edit=?,id_membresia=? estado=? "
                 + "where id_libro=?;");
         ps.setString(1, libro.getTitulo());
         ps.setInt(2, libro.getExistencias());
@@ -94,11 +94,12 @@ public class DaoLibro extends Conexion implements CrudLibro
         ps.setString(4, libro.getAnio_public());
         ps.setString(5, libro.getTomo());
         ps.setInt(6, libro.getEstado());
-        ps.setString(7, libro.getId_categoria());
-        ps.setString(8, libro.getId_autor());
-        ps.setString(9, libro.getId_edit());
+        ps.setInt(7, libro.getId_categoria());
+        ps.setInt(8, libro.getId_autor());
+        ps.setInt(9, libro.getId_edit());
         //ps.setString(9, libro.getId_usuario());
-        ps.setString(10, libro.getId_membresia());
+        ps.setInt(10, libro.getId_membresia());
+        ps.setInt(11, libro.getEstado());
         ps.setInt(11, libro.getId_libro());
         
         try
@@ -123,6 +124,26 @@ public class DaoLibro extends Conexion implements CrudLibro
         try
         {
             res=ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
+        finally
+        {
+            super.con().close();
+        }
+        return res;
+    }
+
+    @Override
+    public int eliminaLo(Libro lib) throws ClassNotFoundException, SQLException {
+        ps = super.con().prepareStatement("update libro set estado=? "
+                + "where id_libro=?;");
+        ps.setInt(1, libro.getEstado());
+        ps.setInt(2, libro.getId_libro());
+        try
+        {
+            res = ps.executeUpdate();
         } catch (Exception e)
         {
             

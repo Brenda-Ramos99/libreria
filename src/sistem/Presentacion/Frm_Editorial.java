@@ -1,5 +1,6 @@
 package sistem.Presentacion;
 import sistem.Entidades.Validaciones;
+import sistem.LogicaNegocio.TransaccionesEditorial;
 
 /**
  * nombre de la clase: Frm_Editorial
@@ -9,7 +10,7 @@ import sistem.Entidades.Validaciones;
  * @author Brenda Ramos
  */
 public class Frm_Editorial extends javax.swing.JInternalFrame {
-
+TransaccionesEditorial ob=new TransaccionesEditorial();
     /**
      * Creates new form Frm_Editorial
      */
@@ -20,6 +21,11 @@ public class Frm_Editorial extends javax.swing.JInternalFrame {
         v.validarNombres(txtNomEdit);
         v.validarNombres(txtPaisEdit);
         v.validarNumeros(txtTelefEdit);
+        llenar();
+    }
+    void llenar(){
+      TableEditorial.setModel(ob.datos());
+    
     }
 
     /**
@@ -68,12 +74,27 @@ public class Frm_Editorial extends javax.swing.JInternalFrame {
 
         btnAgregEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnAgregEdit.setText("Agregar");
+        btnAgregEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregEditActionPerformed(evt);
+            }
+        });
 
         btnModifEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/lapiz-escribiendo-en-un-papel.png"))); // NOI18N
         btnModifEdit.setText("Modificar");
+        btnModifEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifEditActionPerformed(evt);
+            }
+        });
 
         btnElimEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/cesto-de-basura.png"))); // NOI18N
         btnElimEdit.setText("Eliminar");
+        btnElimEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnElimEditActionPerformed(evt);
+            }
+        });
 
         btnSalirEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/logout.png"))); // NOI18N
         btnSalirEdit.setText("Salir");
@@ -166,6 +187,11 @@ public class Frm_Editorial extends javax.swing.JInternalFrame {
 
             }
         ));
+        TableEditorial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableEditorialMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TableEditorial);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -196,6 +222,32 @@ public class Frm_Editorial extends javax.swing.JInternalFrame {
     private void btnSalirEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirEditActionPerformed
         dispose();
     }//GEN-LAST:event_btnSalirEditActionPerformed
+
+    private void TableEditorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableEditorialMouseClicked
+       int f=TableEditorial.getSelectedRow();
+       txtCodEdit.setText(TableEditorial.getValueAt(f, 0).toString());
+       txtNomEdit.setText(TableEditorial.getValueAt(f, 1).toString());
+       txtTelefEdit.setText(TableEditorial.getValueAt(f, 2).toString());
+       txtPaisEdit.setText(TableEditorial.getValueAt(f, 3).toString());
+       txtDireccEdit.setText(TableEditorial.getValueAt(f, 4).toString());
+    }//GEN-LAST:event_TableEditorialMouseClicked
+
+    private void btnAgregEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregEditActionPerformed
+       ob.agregar(txtNomEdit.getText(), txtTelefEdit.getText(),txtPaisEdit.getText(),txtDireccEdit.getText());
+         
+          llenar();
+    }//GEN-LAST:event_btnAgregEditActionPerformed
+
+    private void btnModifEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifEditActionPerformed
+         ob.modificar (txtCodEdit.getText(),txtNomEdit.getText(), txtTelefEdit.getText(),txtPaisEdit.getText(),txtDireccEdit.getText());
+         
+          llenar();
+    }//GEN-LAST:event_btnModifEditActionPerformed
+
+    private void btnElimEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimEditActionPerformed
+        ob.eliminar(txtCodEdit.getText());
+          llenar();
+    }//GEN-LAST:event_btnElimEditActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,5 +1,11 @@
 package sistem.Presentacion;
+import sistem.Entidades.Autor;
+import sistem.Entidades.Libro;
 import sistem.Entidades.Validaciones;
+import sistem.LogicaNegocio.Transacciones;
+import sistem.LogicaNegocio.TransaccionesAutor;
+import sistem.LogicaNegocio.TransaccionesEditorial;
+import sistem.LogicaNegocio.TransaccionesLibro;
 /**
  * nombre de la clase: Frm_Libro
  * version:1.0
@@ -8,7 +14,13 @@ import sistem.Entidades.Validaciones;
  * @author Brenda Ramos
  */
 public class Frm_Libro extends javax.swing.JInternalFrame {
-
+Libro lb= new Libro();
+    Autor au;
+   TransaccionesLibro tlb=new TransaccionesLibro();
+   TransaccionesAutor tab=new TransaccionesAutor();
+    TransaccionesEditorial edit=new TransaccionesEditorial();
+    Transacciones tca=new Transacciones();
+  
     /**
      * Creates new form Frm_Libro
      */
@@ -19,6 +31,9 @@ public class Frm_Libro extends javax.swing.JInternalFrame {
         v.validarPrecio(txtPrecioLib);
         v.validarNumeros(txtExistenciasLib);
         v.validarNumeros(txtTomoLib);
+        cmbCategoriaLib.setModel(tca.llenarCategoria());
+        cmbAutorLib.setModel(tab.llenarAutor());
+        cmbEditorialLib.setModel(edit.llenarEditorial());
         
     }
 

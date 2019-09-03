@@ -1,5 +1,8 @@
 package sistem.Presentacion;
 import sistem.Entidades.Validaciones;
+import sistem.Dao.*;
+import sistem.LogicaNegocio.*;
+import sistem.Entidades.*;
 
 /**
  * nombre de la clase: Frm_Autor
@@ -14,13 +17,18 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
      * Creates new form Frm_Autor
      */
     Validaciones v= new Validaciones();
+    TransaccionesAutor ob=new TransaccionesAutor();
     public Frm_Autor() {
         initComponents(); 
         v.validarNombres(txtNomAuto);
         v.validarNombres(txtNaciAutor);
         v.validarNombres(txtSeudonimo);
+        llenar();
     }
-
+void llenar(){
+      TableAutor.setModel(ob.datos());
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,12 +79,27 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
 
         btnAgregarAuto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnAgregarAuto.setText("Agregar");
+        btnAgregarAuto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarAutoActionPerformed(evt);
+            }
+        });
 
         btnModifAutor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/lapiz-escribiendo-en-un-papel.png"))); // NOI18N
         btnModifAutor.setText("Modificar");
+        btnModifAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifAutorActionPerformed(evt);
+            }
+        });
 
         btnElimAutor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/cesto-de-basura.png"))); // NOI18N
         btnElimAutor.setText("Eliminar");
+        btnElimAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnElimAutorActionPerformed(evt);
+            }
+        });
 
         btnSalirAutor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/logout.png"))); // NOI18N
         btnSalirAutor.setText("Salir");
@@ -199,6 +222,11 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
 
             }
         ));
+        TableAutor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableAutorMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TableAutor);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,6 +254,30 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
     private void btnSalirAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirAutorActionPerformed
         dispose();
     }//GEN-LAST:event_btnSalirAutorActionPerformed
+
+    private void TableAutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableAutorMouseClicked
+        int f=TableAutor.getSelectedRow();
+       txtCodAut.setText(TableAutor.getValueAt(f, 0).toString());
+       txtNomAuto.setText(TableAutor.getValueAt(f, 1).toString());
+       txtSeudonimo.setText(TableAutor.getValueAt(f, 2).toString()); 
+       txtNaciAutor.setText(TableAutor.getValueAt(f, 3).toString());
+    }//GEN-LAST:event_TableAutorMouseClicked
+
+    private void btnAgregarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAutoActionPerformed
+         ob.agregar(txtNomAuto.getText(),txtSeudonimo.getText(),rbtnMasculino.getText(),txtNaciAutor.getText());
+          llenar();
+    }//GEN-LAST:event_btnAgregarAutoActionPerformed
+
+    private void btnModifAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifAutorActionPerformed
+      ob.modificar( txtCodAut.getText(),txtNomAuto.getText(),txtSeudonimo.getText(),rbtnMasculino.getText(),txtNaciAutor.getText());
+          
+          llenar();
+    }//GEN-LAST:event_btnModifAutorActionPerformed
+
+    private void btnElimAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimAutorActionPerformed
+        ob.eliminar( txtCodAut.getText());
+          llenar();
+    }//GEN-LAST:event_btnElimAutorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -12,15 +12,13 @@ import sistem.Entidades.Categoria;
  * @author Elvis Adalberto Alfaro Gómez
  */
 
-public interface CrudCategoria
-{
-    ArrayList<Categoria> mostrar() throws ClassNotFoundException,SQLException;
-    public int agregar(Categoria categ) throws ClassNotFoundException,
-            SQLException;
-    public int modificar(Categoria categ) throws ClassNotFoundException,
-            SQLException;
-    public int eliminar(Categoria categ) throws ClassNotFoundException,
-            SQLException;
-    public int eliminaLo(Categoria categ) throws ClassNotFoundException,
-            SQLException;
+ public interface CrudCategoria {
+      public ArrayList<Categoria> mostrar()throws ClassNotFoundException,
+              SQLException;
+      public int agregar(Categoria cat)throws ClassNotFoundException,SQLException;
+      public int modificar(Categoria cat)throws ClassNotFoundException,SQLException;
+      public int eliminar(Categoria cat)throws ClassNotFoundException,SQLException;
+      
+      public ArrayList<Categoria> llenarCategorias()throws ClassNotFoundException,
+              SQLException;
 }

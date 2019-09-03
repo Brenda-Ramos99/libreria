@@ -22,14 +22,16 @@ public class DaoMembresia extends Conexion implements CrudMembresia
     public ArrayList<Membresia> mostrar() throws ClassNotFoundException,
             SQLException
     {
-        ps=super.con().prepareStatement("select * from membresia");
+        ps=super.con().prepareStatement("select id_membresia,tipo_membresia,"
+                + "fecha_validacion,fecha_vencimiento,precio_membresia,"
+                + "id_usuario from membresia;");
         ArrayList<Membresia> ar = new ArrayList<Membresia>();        
         try {
             rs = ps.executeQuery();
             while (rs.next())
             {                
-                membre = new Membresia(rs.getString(1),rs.getString(2),
-                        rs.getString(3), rs.getDouble(4), rs.getInt(5));
+                membre = new Membresia(rs.getInt(1),rs.getString(2),rs.getString(3),
+                        rs.getString(4), rs.getDouble(5), rs.getInt(6));
                 ar.add(membre);
             }
         } catch (Exception e)
@@ -104,6 +106,27 @@ public class DaoMembresia extends Conexion implements CrudMembresia
         try
         {
             res=ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
+        finally
+        {
+            super.con().close();
+        }
+        return res;
+    }
+
+    @Override
+    public int eliminaLo(Membresia memb) throws ClassNotFoundException, SQLException {
+        ps = super.con().prepareStatement("update membresia set estado=? where"
+                + " id_membresia=?;");
+        ps.setInt(1, membre.getEstado());
+        ps.setInt(2, membre.getId_membresia());
+        
+        try
+        {
+            res = ps.executeUpdate();
         } catch (Exception e)
         {
             

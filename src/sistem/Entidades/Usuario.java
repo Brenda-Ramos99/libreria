@@ -16,7 +16,7 @@ public class Usuario
     private int edad;
     private String direccion;
     private int estado;
-    private String id_rol;
+    private int id_rol;
 
     /*Método constructor vacío para inicializar la clase*/
     public Usuario()
@@ -29,7 +29,7 @@ public class Usuario
     base de datos*/
 
     public Usuario(int id_usuario, String usuario, String pass, int edad,
-            String direccion, int estado, String id_rol)
+            String direccion, int estado, int id_rol)
     {
         this.id_usuario = id_usuario;
         this.usuario = usuario;
@@ -41,7 +41,7 @@ public class Usuario
     }
 
     public Usuario(int id_usuario, String usuario, String pass, int edad,
-            String direccion, String id_rol)
+            String direccion, int id_rol)
     {
         this.id_usuario = id_usuario;
         this.usuario = usuario;
@@ -57,7 +57,7 @@ public class Usuario
     datos (sin ID, ya que es autoincrementable)*/
 
     public Usuario(String usuario, String pass, int edad, String direccion,
-            int estado, String id_rol)
+            int estado, int id_rol)
     {
         this.usuario = usuario;
         this.pass = pass;
@@ -124,11 +124,11 @@ public class Usuario
         this.estado = estado;
     }
 
-    public String getId_rol() {
+    public int getId_rol() {
         return id_rol;
     }
 
-    public void setId_rol(String id_rol) {
+    public void setId_rol(int id_rol) {
         this.id_rol = id_rol;
     }
 }

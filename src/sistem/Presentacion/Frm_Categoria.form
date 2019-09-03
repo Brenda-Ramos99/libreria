@@ -144,6 +144,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Agregar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregCategActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnModifCateg">
           <Properties>
@@ -152,6 +155,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Modificar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModifCategActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnElimCateg">
           <Properties>
@@ -187,6 +193,9 @@
               <Table columnCount="0" rowCount="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TableCategoriaMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

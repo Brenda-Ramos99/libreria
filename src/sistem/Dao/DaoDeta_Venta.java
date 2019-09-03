@@ -28,7 +28,8 @@ public class DaoDeta_Venta extends Conexion implements CrudDetalle_venta
             SQLException
     {
         ps= super.con().prepareStatement("select id_detalle_venta,cantidad,"
-                + "precio,subtotal,id_libro,id_venta from detalle_venta;");
+                + "precio,subtotal,id_libro,id_venta from detalle_venta where "
+                + "estado=0;");
         ArrayList<Detalle_venta> ar = new ArrayList<Detalle_venta>();
         try
         {

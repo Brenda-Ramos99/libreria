@@ -179,7 +179,7 @@ public class Frm_Login extends javax.swing.JFrame {
             lo.setPass(nuevoPass);
             if(da.loging(lo)){
 
-               Frm_MDIl frm1= new Frm_MDIl();
+               Frm_MDIl frm1= new Frm_MDIl(lo);
                frm1.setVisible(true);
                dispose();
             }else{

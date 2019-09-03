@@ -26,7 +26,8 @@ public class DaoDeta_Compra extends Conexion implements CrudDetalle_compra
             SQLException
     {
         ps= super.con().prepareStatement("SELECT id_detalle_compra,id_libro,"
-                + "id_compra,cantidad,precio,subtotal from detalle_compra;");
+                + "id_compra,cantidad,precio,subtotal from detalle_compra "
+                + "where estado=0;");
         ArrayList<Detalle_compra> ar = new ArrayList<Detalle_compra>();
         try
         {

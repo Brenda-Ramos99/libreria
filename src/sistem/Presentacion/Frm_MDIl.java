@@ -1,6 +1,7 @@
  package sistem.Presentacion;
 
 import java.awt.Dimension;
+import sistem.Entidades.Usuario;
 //import sistem.Presentacion.Frm_Usuario;
 
 /**
@@ -11,7 +12,7 @@ import java.awt.Dimension;
  * @author Brenda Ramos
  */
 public class Frm_MDIl extends javax.swing.JFrame {
-
+Usuario lo;
     /**
      * Creates new form Frm_MDIl
      */
@@ -24,7 +25,28 @@ public class Frm_MDIl extends javax.swing.JFrame {
     
     public Frm_MDIl() {
         initComponents();
-        this.setExtendedState(Frm_MDIl.MAXIMIZED_BOTH);
+        
+    }
+    Frm_MDIl(Usuario lo){
+    initComponents();
+    this.lo=lo;
+    this.setExtendedState(Frm_MDIl.MAXIMIZED_BOTH);
+    
+    if(lo.getId_rol()==1)
+    {
+    
+    }else if(lo.getId_rol()==2)
+    {
+    UserMenu.setVisible(false);
+    MenuItemCateg.setVisible(false);
+    AutoresMenu.setVisible(false);
+    VentaMenu.setVisible(false);
+    ReporteMenu.setVisible(false);
+    MenuItemEditorial.setVisible(false);
+    LibroMenu.setVisible(false);
+        
+    }
+        
     }
 
     /**

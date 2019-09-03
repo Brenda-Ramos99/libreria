@@ -1,5 +1,6 @@
 package sistem.Presentacion;
 import sistem.Entidades.Validaciones;
+import sistem.LogicaNegocio.Transacciones;
 
 /**
  *nombre de la clase: Frm_Categoria
@@ -9,7 +10,7 @@ import sistem.Entidades.Validaciones;
  * @author Brenda Ramos
  */
 public class Frm_Categoria extends javax.swing.JInternalFrame {
-
+Transacciones ob=new Transacciones();
     /**
      * Creates new form Frm_Categoria
      */
@@ -17,8 +18,12 @@ public class Frm_Categoria extends javax.swing.JInternalFrame {
     public Frm_Categoria() {
         initComponents();
         v.validarNombres(txtCatrgoria);
+        llenar();
     }
-
+void llenar(){
+      TableCategoria.setModel(ob.datos());
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,9 +56,19 @@ public class Frm_Categoria extends javax.swing.JInternalFrame {
 
         btnAgregCateg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnAgregCateg.setText("Agregar");
+        btnAgregCateg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregCategActionPerformed(evt);
+            }
+        });
 
         btnModifCateg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/lapiz-escribiendo-en-un-papel.png"))); // NOI18N
         btnModifCateg.setText("Modificar");
+        btnModifCateg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifCategActionPerformed(evt);
+            }
+        });
 
         btnElimCateg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/cesto-de-basura.png"))); // NOI18N
         btnElimCateg.setText("Eliminar");
@@ -127,6 +142,11 @@ public class Frm_Categoria extends javax.swing.JInternalFrame {
 
             }
         ));
+        TableCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableCategoriaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TableCategoria);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -158,6 +178,21 @@ public class Frm_Categoria extends javax.swing.JInternalFrame {
     private void btnSalirCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirCategActionPerformed
         dispose();
     }//GEN-LAST:event_btnSalirCategActionPerformed
+
+    private void TableCategoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableCategoriaMouseClicked
+         int f=TableCategoria.getSelectedRow();
+       txtCodCateg.setText(TableCategoria.getValueAt(f, 0).toString());
+       txtCatrgoria.setText(TableCategoria.getValueAt(f, 1).toString());
+    }//GEN-LAST:event_TableCategoriaMouseClicked
+
+    private void btnAgregCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregCategActionPerformed
+         ob.agregar(txtCatrgoria.getText());
+          llenar();
+    }//GEN-LAST:event_btnAgregCategActionPerformed
+
+    private void btnModifCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifCategActionPerformed
+         //
+    }//GEN-LAST:event_btnModifCategActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -26,7 +26,7 @@ public class DaoCompra extends Conexion implements CrudCompra
             SQLException
     {
         ps= super.con().prepareStatement("SELECT id_compra, DATE_FORMAT(fecha,"
-                + "'%d/%m/%y') AS fecha,total,iva FROM compra;");
+                + "'%d/%m/%y') AS fecha,total,iva FROM compra where estado=0;");
         ArrayList<Compra> ar = new ArrayList<Compra>();
         try
         {

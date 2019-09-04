@@ -17,7 +17,7 @@ public class Frm_Autor extends javax.swing.JInternalFrame {
      * Creates new form Frm_Autor
      */
     Validaciones v= new Validaciones();
-    TransaccionesAutor ob=new TransaccionesAutor();
+    TransAutor ob=new TransAutor();
     public Frm_Autor() {
         initComponents(); 
         v.validarNombres(txtNomAuto);

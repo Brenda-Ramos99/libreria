@@ -26,7 +26,8 @@ public class DaoRol extends Conexion implements CrudRol
     @Override
     public ArrayList<Rol> mostrar() throws ClassNotFoundException, SQLException
     {
-        ps=super.con().prepareStatement("select * from rol");
+        ps=super.con().prepareStatement("select id_rol,rol from rol where "
+                + "estado=0;");
         ArrayList<Rol> ar = new ArrayList<Rol>();        
         try {
             rs = ps.executeQuery();
@@ -102,6 +103,23 @@ public class DaoRol extends Conexion implements CrudRol
         }
         return res;
     }
-    
-    
+
+    @Override
+    public int eliminaLo(Rol rol) throws ClassNotFoundException, SQLException {
+        ps = super.con().prepareStatement("update rol set estado=1 where "
+                + "id_rol=?;");
+        ps.setInt(1, rol.getId_rol());
+        try
+        {
+            res = ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
+        finally
+        {
+            super.con().close();
+        }
+        return res;
+    }
 }

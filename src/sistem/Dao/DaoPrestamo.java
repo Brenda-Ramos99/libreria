@@ -22,13 +22,14 @@ public class DaoPrestamo extends Conexion implements CrudPrestamo
     public ArrayList<Prestamo> mostrar() throws ClassNotFoundException,
             SQLException
     {
-        ps=super.con().prepareStatement("select * from prestamo");
+        ps=super.con().prepareStatement("select id_prestamo,fecha_inicio,"
+                + "fecha_final,total from prestamo where estado=0;");
         ArrayList<Prestamo> ar = new ArrayList<Prestamo>();        
         try {
             rs = ps.executeQuery();
             while (rs.next())
             {                
-                presta = new Prestamo(rs.getString(1),rs.getString(2),
+                presta = new Prestamo(rs.getInt(1), rs.getString(2),rs.getString(3),
                         rs.getDouble(3));
                 ar.add(presta);
             }
@@ -105,6 +106,23 @@ public class DaoPrestamo extends Conexion implements CrudPrestamo
         }
         return res;
     }
-    
-    
+
+    @Override
+    public int eliminaLo(Prestamo presta) throws ClassNotFoundException, SQLException {
+        ps = super.con().prepareStatement("update prestamo set estado=1 where "
+                + "id_prestamo=?;");
+        ps.setInt(1, presta.getId_prestamo());
+        try
+        {
+            res = ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
+        finally
+        {
+            super.con().close();
+        }
+        return res;
+    }
 }

@@ -5,35 +5,33 @@
  */
 package sistem.LogicaNegocio;
 import sistem.Dao.*;
-import sistem.Entidades.Autor;
+import sistem.Entidades.Editorial;
 import javax.swing.table.*;
 import java.util.*;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author william villatoro
  */
-public class TransaccionesAutor 
+public class TransEditorial 
 {
-      Autor auto;
-    DaoAutor ob=new DaoAutor();
+    Editorial edit;
+    DaoEditorial ob=new DaoEditorial();
     public DefaultTableModel datos(){
-         ArrayList<Autor> ar=new ArrayList<Autor>();
-         String[] title={"Id","Nombre","seudonimo","Genero","Nacionalidad"};
+         ArrayList<Editorial> ar=new ArrayList<Editorial>();
+         String[] title={"Id","Telefono","Nombre","Pais","Direccion"};
          DefaultTableModel tm=new DefaultTableModel(title, 0);
          Object[] row=new Object[5];
          try {
-             ar.addAll(ob.mostrarAutor());
-             for(Autor v:ar){
-                row[0]=v.getId_autor();
-                row[1]=v.getNombre();
-                row[2]=v.getSeudonimo();
-                row[3]=v.getGenero();
-                row[4]=v.getNacionalidad();
-                
+             ar.addAll(ob.mostrar());
+             for(Editorial v:ar){
+                row[0]=v.getId_edit();
+                row[1]=v.getTelefono();
+                row[2]=v.getNombre();
+                row[3]=v.getPais();
+                row[4]=v.getDireccion();
                
                 tm.addRow(row);
              }
@@ -41,15 +39,16 @@ public class TransaccionesAutor
         } catch (Exception e) {
         }
         return tm;
- 
     }
     
     
-    public void agregar(String nombre,String seudonimo, String genero,String nacionalidad){
-       auto= new Autor(nombre, seudonimo, genero, nacionalidad, 0);
+    
+    
+     public void agregar(String telefono, String nombre, String direccion, String pais){
+       edit= new Editorial(telefono, nombre, pais, direccion, 0);
        
         try {
-            if(ob.agregar(auto)>0)
+            if(ob.agregar(edit)>0)
                 JOptionPane.showMessageDialog(null,"Registro Guardado"
                         + " Correctamente");
             else
@@ -59,11 +58,14 @@ public class TransaccionesAutor
         } catch (Exception e) {
         }
     }
-      
-    public void modificar (String id_autor,String nombre, String seudonimo, String genero,String nacionalidad){
-         auto =new Autor(Integer.valueOf(id_autor), nombre, seudonimo, genero,nacionalidad);
+    
+    public void modificar (String id_editorial,String telefono, String nombre,
+            String direccion, String pais)
+    {
+         edit =new Editorial(Integer.valueOf(id_editorial), telefono, nombre,
+                 direccion ,pais);
          try {
-            if(ob.modificar(auto)>0)
+            if(ob.modificar(edit)>0)
                 JOptionPane.showMessageDialog(null,"Registro Modificado"
                         + " Correctamente");
             else
@@ -74,12 +76,11 @@ public class TransaccionesAutor
     }
     
     
-    
-    
-    public void eliminar(String id_autor){
-         auto=new Autor (Integer.valueOf(id_autor));
+    public void eliminar(String id_editorial)
+    {
+         edit=new Editorial(Integer.valueOf(id_editorial));
          try {
-            if(ob.eliminar(auto)>0)
+            if(ob.eliminar(edit)>0)
                 JOptionPane.showMessageDialog(null,"Registro Eliminado"
                         + " Correctamente");
             else
@@ -89,16 +90,29 @@ public class TransaccionesAutor
         }
     }
     
-  
-     public DefaultComboBoxModel llenarAutor()
+    public void eliminaLo(String id_editorial)
     {
-     ArrayList<Autor> arr= new ArrayList<>();
+         edit=new Editorial(Integer.valueOf(id_editorial));
+         try {
+            if(ob.eliminaLo(edit)>0)
+                JOptionPane.showMessageDialog(null,"Registro Eliminado"
+                        + " Correctamente");
+            else
+                JOptionPane.showMessageDialog(null,"Registro No Eliminado"
+                        + " Correctamente");
+        } catch (Exception e) {
+        }
+    }
+    
+ public DefaultComboBoxModel llenarEditorial()
+    {
+     ArrayList<Editorial> arr= new ArrayList<>();
      Object[] vec= new Object[1];
      
      DefaultComboBoxModel cm= new DefaultComboBoxModel();
         try {
-            arr.addAll(ob.llenarAutor());
-            for (Autor cat:arr) {
+            arr.addAll(ob.llenarEditorial());
+            for (Editorial cat:arr) {
                 cm.addElement(cat.getNombre());
             }
         } catch (Exception e) 
@@ -107,14 +121,6 @@ public class TransaccionesAutor
         }
     return cm;
     }
-    
-     
-     
-     
-     
-     
-     
-     
-     
+       
     
 }

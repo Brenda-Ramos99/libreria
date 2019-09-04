@@ -1,6 +1,7 @@
 package sistem.Presentacion;
+import sistem.Entidades.Editorial;
 import sistem.Entidades.Validaciones;
-import sistem.LogicaNegocio.TransaccionesEditorial;
+import sistem.LogicaNegocio.TransEditorial;
 
 /**
  * nombre de la clase: Frm_Editorial
@@ -10,7 +11,8 @@ import sistem.LogicaNegocio.TransaccionesEditorial;
  * @author Brenda Ramos
  */
 public class Frm_Editorial extends javax.swing.JInternalFrame {
-TransaccionesEditorial ob=new TransaccionesEditorial();
+TransEditorial ob=new TransEditorial();
+    Editorial edit = new Editorial();
     /**
      * Creates new form Frm_Editorial
      */

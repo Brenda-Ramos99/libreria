@@ -18,6 +18,7 @@ import sistem.Entidades.Categoria;
       public int agregar(Categoria cat)throws ClassNotFoundException,SQLException;
       public int modificar(Categoria cat)throws ClassNotFoundException,SQLException;
       public int eliminar(Categoria cat)throws ClassNotFoundException,SQLException;
+      public int eliminaLo(Categoria cat)throws ClassNotFoundException,SQLException;
       
       public ArrayList<Categoria> llenarCategorias()throws ClassNotFoundException,
               SQLException;

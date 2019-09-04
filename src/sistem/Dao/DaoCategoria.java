@@ -35,8 +35,6 @@ import sistem.Entidades.Categoria;
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
         finally{
-           //ps.close();
-           //rs.close();
            super.con().close();
         }
         return ar;
@@ -113,6 +111,22 @@ import sistem.Entidades.Categoria;
              
      return cate;
         
+    }
+
+    @Override
+    public int eliminaLo(Categoria cat) throws ClassNotFoundException, SQLException {
+        ps=super.con().prepareStatement("update categoria set estado=1 "
+                + "where id_categoria=?");
+        ps.setInt(1,cat.getId_categoria());
+        
+        try {
+            res=ps.executeUpdate();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }finally{
+          super.con().close();
+        }
+        return res;
     }
     
     

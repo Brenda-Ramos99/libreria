@@ -124,10 +124,9 @@ public class DaoDeta_Venta extends Conexion implements CrudDetalle_venta
     public int eliminaLo(Detalle_venta deta_venta) throws ClassNotFoundException,
             SQLException
     {
-        ps = super.con().prepareStatement("update detalle_venta set estado=? "
+        ps = super.con().prepareStatement("update detalle_venta set estado=1 "
                 + "where id_detalle_venta=?;");
-        ps.setInt(1, deta_venta.getEstado());
-        ps.setInt(2, deta_venta.getId_detalle_venta());
+        ps.setInt(1, deta_venta.getId_detalle_venta());
         try
         {
             res = ps.executeUpdate();

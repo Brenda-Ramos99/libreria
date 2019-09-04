@@ -25,19 +25,19 @@ public class DaoEditorial  extends Conexion implements CrudEditorial
     @Override
     public ArrayList<Editorial> mostrar() throws ClassNotFoundException, SQLException {
         ArrayList<Editorial> ar=new ArrayList<Editorial>();
-        ps=super.con().prepareStatement("select * from editorial");
+        ps=super.con().prepareStatement("select id_edit,telefono,nombre,pais,"
+                + "direccion from editorial where estado=0;");
         try {
             rs=ps.executeQuery();
             while(rs.next()){
-               edit=new Editorial(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+               edit=new Editorial(rs.getInt(1),rs.getString(2),rs.getString(3),
+                       rs.getString(4),rs.getString(5));
                ar.add(edit);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
         finally{
-           //ps.close();
-           //rs.close();
            super.con().close();
         }
         return ar;
@@ -45,8 +45,8 @@ public class DaoEditorial  extends Conexion implements CrudEditorial
 
     @Override
     public int agregar(Editorial edit) throws ClassNotFoundException, SQLException {
-        ps=super.con().prepareStatement("insert into editorial (telefono,nombre,pais,direccion) "
-                + "values(?,?,?,?)");
+        ps=super.con().prepareStatement("insert into editorial (telefono,nombre,"
+                + "pais,direccion) values(?,?,?,?)");
         ps.setString(1,edit.getTelefono());
         ps.setString(2,edit.getNombre());
         ps.setString(3,edit.getPais());
@@ -86,7 +86,7 @@ public class DaoEditorial  extends Conexion implements CrudEditorial
      @Override
     public int eliminar(Editorial edit) throws ClassNotFoundException, SQLException {
         ps=super.con().prepareStatement("delete from editorial where id_edit=?");
-       ps.setInt(1,edit.getId_edit());
+        ps.setInt(1,edit.getId_edit());
         
         try {
             res=ps.executeUpdate();
@@ -123,6 +123,21 @@ public class DaoEditorial  extends Conexion implements CrudEditorial
      return cate;
         
     } 
+
+    @Override
+    public int eliminaLo(Editorial edit) throws ClassNotFoundException, SQLException {
+        ps=super.con().prepareStatement("update editorial set estado=1 where id_edit=?");
+        ps.setInt(1,edit.getId_edit());
+        
+        try {
+            res=ps.executeUpdate();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }finally{
+          super.con().close();
+        }
+        return res;
+    }
     
     
     

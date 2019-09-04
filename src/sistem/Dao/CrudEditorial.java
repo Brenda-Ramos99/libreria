@@ -19,7 +19,8 @@ public interface CrudEditorial
       public int agregar(Editorial edit)throws ClassNotFoundException,SQLException;
       public int modificar(Editorial edit)throws ClassNotFoundException,SQLException;
       public int eliminar(Editorial edit)throws ClassNotFoundException,SQLException;
-       public ArrayList<Editorial> llenarEditorial()throws ClassNotFoundException,
+      public int eliminaLo(Editorial edit)throws ClassNotFoundException,SQLException;
+      public ArrayList<Editorial> llenarEditorial()throws ClassNotFoundException,
               SQLException;
 }
 

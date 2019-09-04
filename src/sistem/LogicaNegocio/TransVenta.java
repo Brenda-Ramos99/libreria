@@ -5,34 +5,35 @@
  */
 package sistem.LogicaNegocio;
 import sistem.Dao.*;
-import sistem.Entidades.Categoria;
 import javax.swing.table.*;
 import java.util.*;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import sistem.Entidades.Venta;
+
 
 
 /**
  *
- * @author Eduardo R.
+ * @author Eduardo Recinos
+ * 
  */
-public class Transacciones 
+public class TransVenta
+
 {
-    
-    
-    Categoria cat;
-    DaoCategoria ob=new DaoCategoria();
+    Venta vent;
+    DaoVenta ob =new DaoVenta();
     public DefaultTableModel datos(){
-         ArrayList<Categoria> ar=new ArrayList<Categoria>();
-         String[] title={"Id","Nombre Categoria"};
+         ArrayList<Venta> ar=new ArrayList<Venta>();
+         String[] title={"Id","Fecha","Total","Iva"};
          DefaultTableModel tm=new DefaultTableModel(title, 0);
-         Object[] row=new Object[2];
+         Object[] row = new Object[4];
          try {
              ar.addAll(ob.mostrar());
-             for(Categoria v:ar){
-                row[0]=v.getId_categoria();
-                row[1]=v.getNombre_cat();
-               
+             for(Venta v:ar){
+                row[0]=v.getId_venta();
+                row[1]=v.getFecha();
+                row[2]=v.getTotal();
+                row[3]=v.getIVA();
                 tm.addRow(row);
              }
              
@@ -41,11 +42,11 @@ public class Transacciones
         return tm;
     }
    
-     public void agregar(String nombre_cat){
-       cat= new Categoria(nombre_cat, 0);
-       
-        try {
-            if(ob.agregar(cat)>0)
+     public void agregar (String fecha,String total, String iva)
+     {
+         vent = new Venta(fecha, Double.valueOf(total),0);
+         try {
+            if(ob.agregar(this.vent)>0)
                 JOptionPane.showMessageDialog(null,"Registro Guardado"
                         + " Correctamente");
             else
@@ -56,13 +57,12 @@ public class Transacciones
         }
     }
      
-     
-     
-     
-   public void modificar (String id_categoria,String nombre_cat,String estado){
-         cat=new Categoria(Integer.valueOf(id_categoria), nombre_cat,Integer.valueOf(estado));
+   public void modificar (String id_venta,String fecha,String total)
+   {
+         vent = new Venta(Integer.valueOf(id_venta), fecha,
+                 Double.valueOf(total), 0);
          try {
-            if(ob.modificar(cat)>0)
+            if(ob.modificar(vent)>0)
                 JOptionPane.showMessageDialog(null,"Registro Modificado"
                         + " Correctamente");
             else
@@ -72,10 +72,10 @@ public class Transacciones
         }
     }
    
-   public void eliminar(String id_categoria){
-         cat=new Categoria(Integer.valueOf(id_categoria));
+   public void eliminar(String id_venta){
+         vent=new Venta(Integer.valueOf(id_venta));
          try {
-            if(ob.eliminar(cat)>0)
+            if(ob.eliminar(vent)>0)
                 JOptionPane.showMessageDialog(null,"Registro Eliminado"
                         + " Correctamente");
             else
@@ -85,39 +85,16 @@ public class Transacciones
         }
     }
     
-    public DefaultComboBoxModel llenarCategoria()
-    {
-     ArrayList<Categoria> arr= new ArrayList<>();
-     Object[] vec= new Object[1];
-     
-     DefaultComboBoxModel cm= new DefaultComboBoxModel();
-        try {
-            arr.addAll(ob.llenarCategorias());
-            for (Categoria cat:arr) {
-                cm.addElement(cat.getNombre_cat());
-            }
-        } catch (Exception e) 
-        {
-            JOptionPane.showMessageDialog(null, e.getMessage(),"ERROR(mostrar_Transacciones)",0);
+    public void eliminaLo(String id_venta){
+         vent=new Venta (Integer.valueOf(id_venta));
+         try {
+            if(ob.eliminaLo(vent)>0)
+                JOptionPane.showMessageDialog(null,"Registro Eliminado"
+                        + " Correctamente");
+            else
+                JOptionPane.showMessageDialog(null,"Registro No Eliminado"
+                        + " Correctamente");
+        } catch (Exception e) {
         }
-    return cm;
     }
-    
-    
-    
-    
-    
-    }
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
+}

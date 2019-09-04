@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author Eduardo Recinos
  * 
  */
-public class TransaccionesLibro
+public class TransLibro
 
 {
     Libro lbr;
@@ -51,8 +51,11 @@ public class TransaccionesLibro
     }
    
      public void agregar (String titulo,String existencias, String precio, String anio_public, String tomo
-     ,String id_categoria,String id_autor,String id_edit,String id_membresia){
-       lbr= new Libro(titulo, Integer.valueOf(existencias),Double.valueOf(precio), anio_public, tomo, Integer.valueOf(id_categoria), Integer.valueOf(id_autor), Integer.valueOf(id_edit), Integer.valueOf(id_membresia),0);
+     ,String id_categoria,String id_autor,String id_edit,String id_membresia)
+     {
+       lbr= new Libro(titulo, Integer.valueOf(existencias),Double.valueOf(precio),
+               anio_public, tomo, Integer.valueOf(id_categoria), Integer.valueOf(id_autor),
+               Integer.valueOf(id_edit), Integer.valueOf(id_membresia),0);
        
         try {
             if(ob.agregar(lbr)>0)
@@ -69,10 +72,15 @@ public class TransaccionesLibro
      
      
      
-   public void modificar (String id_libro,String titulo,String existencias, String precio, String anio_public, String tomo
-     ,String id_categoria,String id_autor,String id_edit,String id_membresia){
-         lbr=new Libro(Integer.valueOf(id_libro),titulo, Integer.valueOf(existencias), Double.valueOf(precio), anio_public
-               , tomo, Integer.valueOf(id_categoria), Integer.valueOf(id_autor), Integer.valueOf(id_edit),Integer.valueOf(id_membresia),0);
+   public void modificar (String id_libro,String titulo,String existencias,
+           String precio, String anio_public, String tomo,String id_categoria,
+           String id_autor,String id_edit,String id_membresia)
+   {
+         lbr=new Libro(Integer.valueOf(id_libro),titulo,
+                 Integer.valueOf(existencias), Double.valueOf(precio),
+                 anio_public,tomo, Integer.valueOf(id_categoria),
+                 Integer.valueOf(id_autor), Integer.valueOf(id_edit),
+                 Integer.valueOf(id_membresia),0);
          try {
             if(ob.modificar(lbr)>0)
                 JOptionPane.showMessageDialog(null,"Registro Modificado"
@@ -97,9 +105,16 @@ public class TransaccionesLibro
         }
     }
     
-    
-    
-    
-    
-    
+    public void eliminaLo(String id_libro){
+         lbr=new Libro (Integer.valueOf(id_libro));
+         try {
+            if(ob.eliminaLo(lbr)>0)
+                JOptionPane.showMessageDialog(null,"Registro Eliminado"
+                        + " Correctamente");
+            else
+                JOptionPane.showMessageDialog(null,"Registro No Eliminado"
+                        + " Correctamente");
+        } catch (Exception e) {
+        }
+    }
 }

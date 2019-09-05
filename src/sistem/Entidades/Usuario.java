@@ -68,11 +68,6 @@ public class Usuario
         this.estado = estado;
         this.id_rol = id_rol;
     }
-<<<<<<< HEAD
-=======
-    
-    
->>>>>>> origin/master
 
     /*Método constructor para el ID del usuario, necesario para realizar la
     eliminación de registros a la tabla usuario en la base de datos*/
@@ -154,23 +149,5 @@ public class Usuario
         this.id_rol = id_rol;
     }
 
-<<<<<<< HEAD
-    public String getTarjeta() {
-        return tarjeta;
-    }
-
-    public void setTarjeta(String tarjeta) {
-        this.tarjeta = tarjeta;
-    }
-
-    public String getCvc() {
-        return cvc;
-    }
-
-    public void setCvc(String cvc) {
-        this.cvc = cvc;
-    }
     
-=======
->>>>>>> origin/master
 }

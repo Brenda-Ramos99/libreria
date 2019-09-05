@@ -126,10 +126,9 @@ public class DaoDeta_Compra extends Conexion implements CrudDetalle_compra
     @Override
     public int eliminaLo(Detalle_compra deta_comp) throws ClassNotFoundException,
             SQLException {
-        ps = super.con().prepareStatement("update detalle_compra set estado=? "
+        ps = super.con().prepareStatement("update detalle_compra set estado=1 "
                 + "where id_detalle_compra=?;");
-        ps.setInt(1, deta_compra.getEstado());
-        ps.setInt(2, deta_compra.getId_detalle_compra());
+        ps.setInt(1, deta_compra.getId_detalle_compra());
         try
         {
             res = ps.executeUpdate();

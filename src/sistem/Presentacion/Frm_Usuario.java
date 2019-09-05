@@ -1,5 +1,7 @@
 package sistem.Presentacion;
+import sistem.Dao.DaoUsuario;
 import sistem.Entidades.Validaciones;
+import sistem.LogicaNegocio.TransUsuario;
 import sistem.Presentacion.Frm_MDIl;
 
 /**
@@ -15,11 +17,14 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
      * Creates new form Frm_Usuario
      */
     Validaciones v = new Validaciones();
+    DaoUsuario dusu = new DaoUsuario();
+    TransUsuario tusu = new TransUsuario();
     public Frm_Usuario() {
         initComponents();
         v.validarNombres(txtDire);
         v.validarNombres(txtUser);
         v.validarUsuario(txtPass);
+        llenar();
     }
     void limpiar(){
         txtCodigUser.setText("");
@@ -28,6 +33,11 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
         txtUser.setText("");
         cmbRol.setSelectedIndex(0);
         SpinnerEdadUser.setText("");
+    }
+    
+    void llenar()
+    {
+        TableUser.setModel(tusu.datos());
     }
     /**
      * This method is called from within the constructor to initialize the form.

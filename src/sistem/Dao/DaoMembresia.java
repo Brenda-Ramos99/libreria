@@ -119,11 +119,9 @@ public class DaoMembresia extends Conexion implements CrudMembresia
 
     @Override
     public int eliminaLo(Membresia memb) throws ClassNotFoundException, SQLException {
-        ps = super.con().prepareStatement("update membresia set estado=? where"
+        ps = super.con().prepareStatement("update membresia set estado=1 where"
                 + " id_membresia=?;");
-        ps.setInt(1, membre.getEstado());
-        ps.setInt(2, membre.getId_membresia());
-        
+        ps.setInt(1, membre.getId_membresia());
         try
         {
             res = ps.executeUpdate();

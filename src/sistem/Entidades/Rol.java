@@ -53,6 +53,7 @@ public class Rol
         this.id_rol = id_rol;
     }
 
+
     /*Métodos de acceso de la Clase*/
     public int getId_rol() {
         return id_rol;

@@ -52,7 +52,7 @@ public class Usuario
         this.cvc = cvc;
         this.id_rol = id_rol;
     }
-    
+
     
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla usuario en la base de 
@@ -68,6 +68,11 @@ public class Usuario
         this.estado = estado;
         this.id_rol = id_rol;
     }
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> origin/master
 
     /*Método constructor para el ID del usuario, necesario para realizar la
     eliminación de registros a la tabla usuario en la base de datos*/
@@ -117,6 +122,22 @@ public class Usuario
         this.direccion = direccion;
     }
 
+    public String getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(String tarjeta) {
+        this.tarjeta = tarjeta;
+    }
+
+    public String getCvc() {
+        return cvc;
+    }
+
+    public void setCvc(String cvc) {
+        this.cvc = cvc;
+    }
+
     public int getEstado() {
         return estado;
     }
@@ -133,6 +154,7 @@ public class Usuario
         this.id_rol = id_rol;
     }
 
+<<<<<<< HEAD
     public String getTarjeta() {
         return tarjeta;
     }
@@ -149,4 +171,6 @@ public class Usuario
         this.cvc = cvc;
     }
     
+=======
+>>>>>>> origin/master
 }

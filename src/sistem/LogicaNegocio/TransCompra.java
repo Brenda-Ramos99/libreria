@@ -29,7 +29,6 @@ public class TransCompra
                 ar.addAll(obDaoCom.mostrar());
                 re[0]=v.getId_compra();
                 re[1]=v.getFecha();
-                ///re[2]=v.calcTotal();
                 tm.addRow(re);
             }
         } catch (Exception e)
@@ -41,7 +40,7 @@ public class TransCompra
     
     public void agregar(String fecha, String total)
     {
-        com= new Compra(fecha,Double.valueOf(total));
+        com= new Compra(fecha,Double.valueOf(total),0);
         try
         {
             if (obDaoCom.agregar(com)>0)
@@ -88,6 +87,23 @@ public class TransCompra
         {
             JOptionPane.showMessageDialog(null, "No se pudo eliminar el "
                     + "registro","Error",0);
+        }
+    }
+    
+    public void eliminaLo(String id_compra)
+    {
+        com= new Compra(Integer.valueOf(id_compra));
+        try
+        {
+            if (obDaoCom.eliminaLo(com)>0)
+            {
+                JOptionPane.showMessageDialog(null, "Registro eliminado "
+                        + "correctamente");
+            }
+        } catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "No se pudo eliminar el "
+                    + "registro","Erro",0);
         }
     }
 }

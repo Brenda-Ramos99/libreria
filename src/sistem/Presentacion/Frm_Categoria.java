@@ -1,6 +1,6 @@
 package sistem.Presentacion;
 import sistem.Entidades.Validaciones;
-import sistem.LogicaNegocio.Transacciones;
+import sistem.LogicaNegocio.TransCategoria;
 
 /**
  *nombre de la clase: Frm_Categoria
@@ -10,7 +10,7 @@ import sistem.LogicaNegocio.Transacciones;
  * @author Brenda Ramos
  */
 public class Frm_Categoria extends javax.swing.JInternalFrame {
-Transacciones ob=new Transacciones();
+TransCategoria ob=new TransCategoria();
     /**
      * Creates new form Frm_Categoria
      */

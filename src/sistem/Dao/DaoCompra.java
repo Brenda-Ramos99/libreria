@@ -50,7 +50,8 @@ public class DaoCompra extends Conexion implements CrudCompra
     @Override
     public int agregar(Compra comp) throws ClassNotFoundException, SQLException
     {
-        ps = super.con().prepareStatement("insert into compra(fecha,total,iva,estado) "
+        ps = super.con().prepareStatement("insert into compra(fecha,total,iva,"
+                + "estado) "
                 + "values(?,?,?,?);");
         ps.setString(1, com.getFecha());
         ps.setDouble(2, com.getTotal());
@@ -75,12 +76,11 @@ public class DaoCompra extends Conexion implements CrudCompra
             SQLException
     {
         ps = super.con().prepareStatement("update compra set fecha=?,total=?,"
-                + "iva=?,estado=? where id_compra = ?");
+                + "iva=? where id_compra = ?");
         ps.setString(1, comp.getFecha());
         ps.setDouble(2, com.getTotal());
         ps.setDouble(3, com.getIVA());
-        ps.setInt(4, com.getEstado());
-        ps.setInt(5, com.getId_compra());
+        ps.setInt(4, com.getId_compra());
         try
         {
             res=ps.executeUpdate();
@@ -119,10 +119,9 @@ public class DaoCompra extends Conexion implements CrudCompra
     public int eliminaLo(Compra comp) throws ClassNotFoundException,
             SQLException
     {
-        ps = super.con().prepareStatement("update compra set estado=? "
+        ps = super.con().prepareStatement("update compra set estado=1 "
                 + "where id_compra = ?");
-        ps.setInt(1, com.getEstado());
-        ps.setInt(2, com.getId_compra());
+        ps.setInt(1, com.getId_compra());
         try
         {
             res=ps.executeUpdate();

@@ -23,32 +23,23 @@ public class DaoAutor extends Conexion implements CrudAutor
     @Override
     public ArrayList<Autor> mostrarAutor() throws ClassNotFoundException, SQLException {
         ArrayList<Autor> ar=new ArrayList<Autor>();
-        ps=super.con().prepareStatement("select * from autor");
+        ps=super.con().prepareStatement("select id_autor,nombre,seudonimo,"
+                + "genero,nacionalidad from autor where id_autor=0;");
         try {
             rs=ps.executeQuery();
             while(rs.next()){
-               auto=new Autor(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+               auto=new Autor(rs.getInt(1),rs.getString(2),rs.getString(3),
+                       rs.getString(4),rs.getString(5));
                ar.add(auto);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
         finally{
-           //ps.close();
-           //rs.close();
            super.con().close();
         }
         return ar;
     }
-    
-
-    
-    
-    
-    
-    
-    
-    
     
      @Override
     public int agregar(Autor auto) throws ClassNotFoundException, SQLException {
@@ -88,15 +79,11 @@ public class DaoAutor extends Conexion implements CrudAutor
         }
         return res;
     }
- 
-    
-    
     
      @Override
     public int eliminar(Autor auto) throws ClassNotFoundException, SQLException {
         ps=super.con().prepareStatement("delete from autor where id_autor=?");
        ps.setInt(1,auto.getId_autor());
-        
         try {
             res=ps.executeUpdate();
         } catch (Exception e) {
@@ -131,14 +118,23 @@ public class DaoAutor extends Conexion implements CrudAutor
      return autor;
           
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    @Override
+    public int eliminaLo(Autor aut) throws ClassNotFoundException, SQLException {
+        ps=super.con().prepareStatement("update autor set estado=1 where id_autor=?");
+        ps.setInt(1,auto.getId_autor());
+      
+        try 
+        {
+            res=ps.executeUpdate();
+        } catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        finally
+        {
+            super.con().close();
+        }
+        return res;
+    }
 }

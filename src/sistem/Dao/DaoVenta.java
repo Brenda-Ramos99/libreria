@@ -20,7 +20,8 @@ public class DaoVenta extends Conexion implements CrudVenta
 
     @Override
     public ArrayList<Venta> mostrar() throws ClassNotFoundException, SQLException {
-        ps=super.con().prepareStatement("select * from venta");
+        ps=super.con().prepareStatement("select id_venta, fecha,total,iva from "
+                + "venta where estado=0;");
         ArrayList<Venta> ar = new ArrayList<Venta>();        
         try {
             rs = ps.executeQuery();
@@ -47,7 +48,6 @@ public class DaoVenta extends Conexion implements CrudVenta
         ps.setString(1, venta.getFecha());
         ps.setDouble(2, venta.getTotal());
         ps.setDouble(3, venta.getIVA());
-        
         try
         {
             res = ps.executeUpdate();
@@ -69,7 +69,7 @@ public class DaoVenta extends Conexion implements CrudVenta
         ps.setString(1, venta.getFecha());
         ps.setDouble(2, venta.getTotal());
         ps.setDouble(3, venta.getIVA());
-        ps.setDouble(4, venta.getId_venta());
+        ps.setInt(4, venta.getId_venta());
         try
         {
             res = ps.executeUpdate();
@@ -87,7 +87,26 @@ public class DaoVenta extends Conexion implements CrudVenta
     @Override
     public int eliminar(Venta vent) throws ClassNotFoundException, SQLException {
         ps = super.con().prepareStatement("delete from venta where id_venta=?;");
-        ps.setDouble(1, venta.getId_venta());
+        ps.setInt(1, venta.getId_venta());
+        try
+        {
+            res = ps.executeUpdate();
+        } catch (Exception e)
+        {
+            
+        }
+        finally
+        {
+            super.con().close();
+        }
+        return res;
+    }
+
+    @Override
+    public int eliminaLo(Venta vent) throws ClassNotFoundException, SQLException {
+        ps = super.con().prepareStatement("update venta set estado=1 where "
+                + "id_venta=?;");
+        ps.setInt(1, venta.getId_venta());
         try
         {
             res = ps.executeUpdate();

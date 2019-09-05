@@ -21,7 +21,8 @@ public class DaoLogin extends ConexionLogin{
         PreparedStatement ps=null; 
         Connection con= getConexion();
         
-        String sql="Insert into usuario(usuario,pass,edad,direccion,estado,id_rol)"
+        String sql="Insert into usuario(usuario,pass,edad,direccion,estado,"
+                + "id_rol)"
                 +" values(?,?,?,?,?,?)";
         try{
             

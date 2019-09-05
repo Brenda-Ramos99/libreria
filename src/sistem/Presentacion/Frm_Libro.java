@@ -2,10 +2,10 @@ package sistem.Presentacion;
 import sistem.Entidades.Autor;
 import sistem.Entidades.Libro;
 import sistem.Entidades.Validaciones;
-import sistem.LogicaNegocio.Transacciones;
-import sistem.LogicaNegocio.TransaccionesAutor;
-import sistem.LogicaNegocio.TransaccionesEditorial;
-import sistem.LogicaNegocio.TransaccionesLibro;
+import sistem.LogicaNegocio.TransCategoria;
+import sistem.LogicaNegocio.TransAutor;
+import sistem.LogicaNegocio.TransEditorial;
+import sistem.LogicaNegocio.TransLibro;
 /**
  * nombre de la clase: Frm_Libro
  * version:1.0
@@ -14,12 +14,12 @@ import sistem.LogicaNegocio.TransaccionesLibro;
  * @author Brenda Ramos
  */
 public class Frm_Libro extends javax.swing.JInternalFrame {
-Libro lb= new Libro();
+    Libro lb= new Libro();
     Autor au;
-   TransaccionesLibro tlb=new TransaccionesLibro();
-   TransaccionesAutor tab=new TransaccionesAutor();
-    TransaccionesEditorial edit=new TransaccionesEditorial();
-    Transacciones tca=new Transacciones();
+    TransLibro tlb=new TransLibro();
+    TransAutor tab=new TransAutor();
+    TransEditorial edit=new TransEditorial();
+    TransCategoria tca=new TransCategoria();
   
     /**
      * Creates new form Frm_Libro
@@ -34,6 +34,7 @@ Libro lb= new Libro();
         cmbCategoriaLib.setModel(tca.llenarCategoria());
         cmbAutorLib.setModel(tab.llenarAutor());
         cmbEditorialLib.setModel(edit.llenarEditorial());
+        llenar();
     }
     void limpiar()
     {
@@ -48,6 +49,10 @@ Libro lb= new Libro();
         cmbAutorLib.setSelectedIndex(0);
         cmbCategoriaLib.setSelectedIndex(0);
         cmbEditorialLib.setSelectedIndex(0);
+    }
+    
+    void llenar(){
+      TableLibro.setModel(tlb.datos());
     }
 
     /**
@@ -86,6 +91,8 @@ Libro lb= new Libro();
         btnSalirLib = new javax.swing.JButton();
         txtIdUsuarioFK = new javax.swing.JTextField();
         txtEstado = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txtMembresia = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableLibro = new javax.swing.JTable();
 
@@ -113,6 +120,11 @@ Libro lb= new Libro();
 
         btnAgregarLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnAgregarLib.setText("Agregar");
+        btnAgregarLib.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAgregarLibMouseClicked(evt);
+            }
+        });
 
         btnMOdifLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/lapiz-escribiendo-en-un-papel.png"))); // NOI18N
         btnMOdifLib.setText("Modificar");
@@ -140,6 +152,8 @@ Libro lb= new Libro();
 
         txtEstado.setBorder(null);
         txtEstado.setEnabled(false);
+
+        jLabel10.setText("Membresia");
 
         javax.swing.GroupLayout PanelLibroLayout = new javax.swing.GroupLayout(PanelLibro);
         PanelLibro.setLayout(PanelLibroLayout);
@@ -169,8 +183,8 @@ Libro lb= new Libro();
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtCodLib, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(47, 47, 47)
-                .addGroup(PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(34, 34, 34)
+                .addGroup(PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PanelLibroLayout.createSequentialGroup()
                         .addGroup(PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
@@ -184,25 +198,22 @@ Libro lb= new Libro();
                             .addComponent(cmbAutorLib, 0, 190, Short.MAX_VALUE)
                             .addComponent(cmbEditorialLib, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(PanelLibroLayout.createSequentialGroup()
-                        .addComponent(txtIdUsuarioFK, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel10)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtMembresia, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtIdUsuarioFK, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addGroup(PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelLibroLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAgregarLib, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnELiminLib, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnSalirLib)
-                                .addComponent(btnPrestarLib))))
-                    .addGroup(PanelLibroLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(btnMOdifLib))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLibroLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(btnComprarLib, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnMOdifLib, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnELiminLib, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnComprarLib, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(btnPrestarLib, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSalirLib, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAgregarLib, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(35, 35, 35))
         );
         PanelLibroLayout.setVerticalGroup(
@@ -214,11 +225,13 @@ Libro lb= new Libro();
                         .addGroup(PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(txtCodLib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtIdUsuarioFK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtIdUsuarioFK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)
+                            .addComponent(txtMembresia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLibroLayout.createSequentialGroup()
                         .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)))
+                        .addGap(18, 18, 18)))
                 .addGroup(PanelLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel2)
@@ -276,17 +289,17 @@ Libro lb= new Libro();
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
-                    .addComponent(PanelLibro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PanelLibro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PanelLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
+                .addComponent(PanelLibro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -296,6 +309,13 @@ Libro lb= new Libro();
     private void btnSalirLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirLibActionPerformed
         dispose();
     }//GEN-LAST:event_btnSalirLibActionPerformed
+
+    private void btnAgregarLibMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarLibMouseClicked
+//        tlb.agregar(txtTituloLib.getText(),txtExistenciasLib.getText(),
+//                Double.parseDouble(txtPrecioLib.getText()), txtPublicacionLib.getText(),
+//                txtTomoLib.getText(), cmbCategoriaLib.getSelectedIndex(),
+//                cmbAutorLib.getSelectedIndex(), cmbEditorialLib.getSelectedIndex(),txtMembresia.getText());
+    }//GEN-LAST:event_btnAgregarLibMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -311,6 +331,7 @@ Libro lb= new Libro();
     private javax.swing.JComboBox<String> cmbCategoriaLib;
     private javax.swing.JComboBox<String> cmbEditorialLib;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -324,6 +345,7 @@ Libro lb= new Libro();
     private javax.swing.JTextField txtEstado;
     private javax.swing.JTextField txtExistenciasLib;
     private javax.swing.JTextField txtIdUsuarioFK;
+    private javax.swing.JTextField txtMembresia;
     private javax.swing.JTextField txtPrecioLib;
     private javax.swing.JTextField txtPublicacionLib;
     private javax.swing.JTextField txtTituloLib;

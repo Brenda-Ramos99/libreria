@@ -75,6 +75,11 @@ TransCategoria ob=new TransCategoria();
 
         btnElimCateg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/cesto-de-basura.png"))); // NOI18N
         btnElimCateg.setText("Eliminar");
+        btnElimCateg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnElimCategActionPerformed(evt);
+            }
+        });
 
         btnSalirCateg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/logout.png"))); // NOI18N
         btnSalirCateg.setText("Salir");
@@ -195,9 +200,16 @@ TransCategoria ob=new TransCategoria();
     }//GEN-LAST:event_btnAgregCategActionPerformed
 
     private void btnModifCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifCategActionPerformed
-         //
+         ob.modificar(txtCodCateg.getText(),txtCatrgoria.getText());
+          llenar();
          limpiar();
     }//GEN-LAST:event_btnModifCategActionPerformed
+
+    private void btnElimCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimCategActionPerformed
+        ob.eliminar(txtCodCateg.getText());
+          llenar();
+          limpiar();
+    }//GEN-LAST:event_btnElimCategActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

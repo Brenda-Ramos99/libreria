@@ -24,7 +24,7 @@ public class DaoAutor extends Conexion implements CrudAutor
     public ArrayList<Autor> mostrarAutor() throws ClassNotFoundException, SQLException {
         ArrayList<Autor> ar=new ArrayList<Autor>();
         ps=super.con().prepareStatement("select id_autor,nombre,seudonimo,"
-                + "genero,nacionalidad from autor where id_autor=0;");
+                + "genero,nacionalidad from autor where estado=0;");
         try {
             rs=ps.executeQuery();
             while(rs.next()){
@@ -43,12 +43,13 @@ public class DaoAutor extends Conexion implements CrudAutor
     
      @Override
     public int agregar(Autor auto) throws ClassNotFoundException, SQLException {
-        ps=super.con().prepareStatement("insert into autor (nombre,seudonimo,genero,nacionalidad)"
-                + "values(?,?,?,?)");
+        ps=super.con().prepareStatement("insert into autor (nombre,seudonimo,genero,nacionalidad,estado)"
+                + "values(?,?,?,?,?)");
         ps.setString(1,auto.getNombre());
         ps.setString(2,auto.getSeudonimo());
         ps.setString(3,auto.getGenero());
         ps.setString(4,auto.getNacionalidad());
+        ps.setInt(5,auto.getEstado());
       
         try {
             res=ps.executeUpdate();
@@ -65,8 +66,8 @@ public class DaoAutor extends Conexion implements CrudAutor
         ps=super.con().prepareStatement("update autor set nombre=?,seudonimo=?,genero=?,nacionalidad=?"
                 + "where id_autor=?");
          ps.setString(1,auto.getNombre());
-        ps.setString(2,auto.getGenero());
-         ps.setString(3,auto.getSeudonimo());
+        ps.setString(2,auto.getSeudonimo());
+         ps.setString(3,auto.getGenero());
         ps.setString(4,auto.getNacionalidad());
         ps.setInt(5,auto.getId_autor());
       

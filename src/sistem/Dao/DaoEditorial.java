@@ -46,11 +46,12 @@ public class DaoEditorial  extends Conexion implements CrudEditorial
     @Override
     public int agregar(Editorial edit) throws ClassNotFoundException, SQLException {
         ps=super.con().prepareStatement("insert into editorial (telefono,nombre,"
-                + "pais,direccion) values(?,?,?,?)");
+                + "pais,direccion,estado) values(?,?,?,?,?)");
         ps.setString(1,edit.getTelefono());
         ps.setString(2,edit.getNombre());
         ps.setString(3,edit.getPais());
         ps.setString(4,edit.getDireccion());
+        ps.setInt(5,edit.getEstado());
         
         try {
             res=ps.executeUpdate();
@@ -64,7 +65,7 @@ public class DaoEditorial  extends Conexion implements CrudEditorial
     
     @Override
     public int modificar(Editorial edit )throws ClassNotFoundException, SQLException {
-        ps=super.con().prepareStatement("update editorial set telefono=?,nombre=?,pais=?,direccion=?"
+        ps=super.con().prepareStatement("update editorial set telefono=?,nombre=?,pais=?,direccion=? estado=?"
                 + "where id_edit=?");
          ps.setString(1,edit.getTelefono());
         ps.setString(2,edit.getNombre());

@@ -60,6 +60,7 @@ TransEditorial ob=new TransEditorial();
         btnModifEdit = new javax.swing.JButton();
         btnElimEdit = new javax.swing.JButton();
         btnSalirEdit = new javax.swing.JButton();
+        txtestado = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableEditorial = new javax.swing.JTable();
 
@@ -112,36 +113,46 @@ TransEditorial ob=new TransEditorial();
             }
         });
 
+        txtestado.setText("0");
+        txtestado.setBorder(null);
+        txtestado.setEnabled(false);
+
         javax.swing.GroupLayout PanelEditorialLayout = new javax.swing.GroupLayout(PanelEditorial);
         PanelEditorial.setLayout(PanelEditorialLayout);
         PanelEditorialLayout.setHorizontalGroup(
             PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelEditorialLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
                 .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelEditorialLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
                         .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(22, 22, 22)
-                        .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PanelEditorialLayout.createSequentialGroup()
-                                .addGap(0, 230, Short.MAX_VALUE)
                                 .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)))))
-                    .addGroup(PanelEditorialLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNomEdit, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                            .addComponent(txtTelefEdit))))
-                .addGap(16, 16, 16)
-                .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDireccEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPaisEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(22, 22, 22)
+                                .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCodEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(PanelEditorialLayout.createSequentialGroup()
+                                        .addGap(0, 230, Short.MAX_VALUE)
+                                        .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5)))))
+                            .addGroup(PanelEditorialLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtNomEdit, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                                    .addComponent(txtTelefEdit))))
+                        .addGap(16, 16, 16)
+                        .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtDireccEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPaisEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditorialLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtestado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(113, 113, 113)))
                 .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalirEdit)
                     .addComponent(btnElimEdit)
@@ -152,7 +163,7 @@ TransEditorial ob=new TransEditorial();
         PanelEditorialLayout.setVerticalGroup(
             PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelEditorialLayout.createSequentialGroup()
-                .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(PanelEditorialLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(btnAgregEdit)
@@ -174,6 +185,8 @@ TransEditorial ob=new TransEditorial();
                         .addGap(23, 23, 23))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditorialLayout.createSequentialGroup()
                         .addContainerGap()
+                        .addComponent(txtestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnElimEdit)))
                 .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -238,20 +251,21 @@ TransEditorial ob=new TransEditorial();
        txtTelefEdit.setText(TableEditorial.getValueAt(f, 2).toString());
        txtPaisEdit.setText(TableEditorial.getValueAt(f, 3).toString());
        txtDireccEdit.setText(TableEditorial.getValueAt(f, 4).toString());
+        
     }//GEN-LAST:event_TableEditorialMouseClicked
 
     private void btnAgregEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregEditActionPerformed
         ob.agregar( txtTelefEdit.getText(),txtNomEdit.getText(),
-                txtPaisEdit.getText(),txtDireccEdit.getText());
-        limpiar();
-        llenar();
+                txtPaisEdit.getText(),txtDireccEdit.getText(),Integer.parseInt(txtestado.getText()));
+         llenar();
+         limpiar();
     }//GEN-LAST:event_btnAgregEditActionPerformed
 
     private void btnModifEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifEditActionPerformed
         ob.modificar (txtCodEdit.getText(),txtTelefEdit.getText(),txtNomEdit.getText(),
         txtPaisEdit.getText(),txtDireccEdit.getText());
-        limpiar();
         llenar();
+        limpiar();
     }//GEN-LAST:event_btnModifEditActionPerformed
 
     private void btnElimEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimEditActionPerformed
@@ -279,5 +293,6 @@ TransEditorial ob=new TransEditorial();
     private javax.swing.JTextField txtNomEdit;
     private javax.swing.JTextField txtPaisEdit;
     private javax.swing.JTextField txtTelefEdit;
+    private javax.swing.JTextField txtestado;
     // End of variables declaration//GEN-END:variables
 }

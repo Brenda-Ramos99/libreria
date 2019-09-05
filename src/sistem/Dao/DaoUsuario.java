@@ -27,9 +27,16 @@ public class DaoUsuario extends Conexion implements CrudUsuario
             rs = ps.executeQuery();
             while (rs.next())
             {                
+
+             /*   usu = new Usuario(rs.getInt(1), rs.getString(2),
+=======
                 usu = new Usuario(rs.getInt(1), rs.getString(2),
+>>>>>>> origin/master
                         rs.getString(3), rs.getInt(4), rs.getString(5),
-                        rs.getString(6), rs.getString(7),rs.getInt(8));
+<<<<<<< HEAD
+                        rs.getInt(6), rs.getInt(7));*/
+           //     rs.getString(6), rs.getString(7),rs.getInt(8));
+
 
                 usu = new Usuario(rs.getInt(1), rs.getString(2), rs.getString(3),
                         rs.getInt(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getInt(8));
@@ -122,8 +129,11 @@ public class DaoUsuario extends Conexion implements CrudUsuario
 
     @Override
     public int eliminaLo(Usuario usu) throws ClassNotFoundException, SQLException {
+
+       // ps = super.con().prepareStatement("update usuario set estado=1 where id_usuario=?;");
         ps = super.con().prepareStatement("update usuario set estado=1 where "
                 + "id_usuario=?;");
+
         ps.setString(1, usu.getUsuario());
         try
         {
@@ -138,5 +148,5 @@ public class DaoUsuario extends Conexion implements CrudUsuario
         }
         return res;
     }
-    
+
 }

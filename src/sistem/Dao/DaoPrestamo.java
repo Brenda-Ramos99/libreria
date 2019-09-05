@@ -109,6 +109,7 @@ public class DaoPrestamo extends Conexion implements CrudPrestamo
 
     @Override
     public int eliminaLo(Prestamo presta) throws ClassNotFoundException, SQLException {
+
         ps = super.con().prepareStatement("update prestamo set estado=1 where "
                 + "id_prestamo=?;");
         ps.setInt(1, presta.getId_prestamo());

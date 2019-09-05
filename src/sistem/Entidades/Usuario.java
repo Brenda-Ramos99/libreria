@@ -149,5 +149,4 @@ public class Usuario
         this.id_rol = id_rol;
     }
 
-    
 }

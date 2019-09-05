@@ -119,5 +119,5 @@ public class DaoVenta extends Conexion implements CrudVenta
             super.con().close();
         }
         return res;
-    }   
+    }
 }

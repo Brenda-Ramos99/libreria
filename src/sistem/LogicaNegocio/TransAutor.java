@@ -44,7 +44,7 @@ public class TransAutor
     }
     
     
-    public void agregar(String nombre,String seudonimo, String genero,String nacionalidad){
+    public void agregar(String nombre,String seudonimo, String genero,String nacionalidad,int estado){
        auto= new Autor(nombre, seudonimo, genero, nacionalidad, 0);
        
         try {

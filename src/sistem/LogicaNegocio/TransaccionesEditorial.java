@@ -32,7 +32,6 @@ public class TransaccionesEditorial
                 row[2]=v.getTelefono();
                 row[3]=v.getPais();
                 row[4]=v.getDireccion();
-               
                 tm.addRow(row);
              }
              
@@ -40,9 +39,6 @@ public class TransaccionesEditorial
         }
         return tm;
     }
-    
-    
-    
     
      public void agregar(String telefono, String nombre, String direccion, String pais){
        edit= new Editorial(telefono, nombre, pais, direccion, 0);

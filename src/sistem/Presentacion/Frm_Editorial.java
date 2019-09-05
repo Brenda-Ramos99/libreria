@@ -239,15 +239,15 @@ TransaccionesEditorial ob=new TransaccionesEditorial();
     }//GEN-LAST:event_TableEditorialMouseClicked
 
     private void btnAgregEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregEditActionPerformed
-        ob.agregar(txtNomEdit.getText(), txtTelefEdit.getText(),
+        ob.agregar( txtTelefEdit.getText(),txtNomEdit.getText(),
                 txtPaisEdit.getText(),txtDireccEdit.getText());
         limpiar();
         llenar();
     }//GEN-LAST:event_btnAgregEditActionPerformed
 
     private void btnModifEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifEditActionPerformed
-        ob.modificar (txtCodEdit.getText(),txtNomEdit.getText(),
-        txtTelefEdit.getText(),txtPaisEdit.getText(),txtDireccEdit.getText());
+        ob.modificar (txtCodEdit.getText(),txtTelefEdit.getText(),txtNomEdit.getText(),
+        txtPaisEdit.getText(),txtDireccEdit.getText());
         limpiar();
         llenar();
     }//GEN-LAST:event_btnModifEditActionPerformed

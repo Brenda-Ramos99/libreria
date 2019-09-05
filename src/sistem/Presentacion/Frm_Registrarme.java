@@ -35,7 +35,7 @@ public class Frm_Registrarme extends javax.swing.JFrame {
         txt_pass.setText("");
         txt_passcon.setText("");
         txt_usuario1.setText("");
-        cmbTiposMembresia.setSelectedIndex(0);
+//        cmbTiposMembresia.setSelectedIndex(0);
     }
 
     /**
@@ -227,7 +227,7 @@ public class Frm_Registrarme extends javax.swing.JFrame {
         });
 
         try {
-            txtCodigoSeguridad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
+            txtCodigoSeguridad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -338,9 +338,11 @@ public class Frm_Registrarme extends javax.swing.JFrame {
 
         String pass = new String(txt_pass.getPassword());
         String pasCon = new String(txt_passcon.getPassword());
-        limpiar();
+        String codigo = new String(txtCodigoSeguridad.getText());
+        
         if (txt_usuario1.getText().equals("") || pasCon.equals("") || pass.equals("")
-            || txt_edad.getText().equals("") || txt_direccion.getText().equals("")) {
+            || txt_edad.getText().equals("") || txt_direccion.getText().equals("")
+                || txtTarjeta.getText().equals("") || txtCodigoSeguridad.getText().equals("")) {
 
             JOptionPane.showMessageDialog(null, "Debe llenar todos los campos");
         } else {
@@ -349,15 +351,19 @@ public class Frm_Registrarme extends javax.swing.JFrame {
 
                 if (da.ExisteUsuario(txt_usuario1.getText()) ==0) {
                     String nuevaPass = Hash.sha(pass);
+                    String cod=Hash.sha(codigo);
 
                     lo.setUsuario(txt_usuario1.getText());
                     lo.setPass(nuevaPass);
                     lo.setEdad(Integer.parseInt(txt_edad.getText()));
                     lo.setDireccion(txt_direccion.getText());
+                    lo.setTarjeta(txtTarjeta.getText());
+                    lo.setCvc(cod);
                     lo.setEstado(0);
                     lo.setId_rol(2);
                     try {
                         if (da.agregar(lo)) {
+                            limpiar();
                             JOptionPane.showMessageDialog(null, "Registro Guardado Exitosamente");
                         } else {
                             JOptionPane.showMessageDialog(null, "Error Registrarse");

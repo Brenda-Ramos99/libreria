@@ -21,15 +21,15 @@ public class TransaccionesEditorial
     DaoEditorial ob=new DaoEditorial();
     public DefaultTableModel datos(){
          ArrayList<Editorial> ar=new ArrayList<Editorial>();
-         String[] title={"Id","Telefono","Nombre","Pais","Direccion"};
+         String[] title={"Id","Nombre","Telefono","Pais","Direccion"};
          DefaultTableModel tm=new DefaultTableModel(title, 0);
          Object[] row=new Object[5];
          try {
              ar.addAll(ob.mostrar());
              for(Editorial v:ar){
                 row[0]=v.getId_edit();
-                row[1]=v.getTelefono();
-                row[2]=v.getNombre();
+                row[1]=v.getNombre();
+                row[2]=v.getTelefono();
                 row[3]=v.getPais();
                 row[4]=v.getDireccion();
                

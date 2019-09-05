@@ -28,7 +28,7 @@ public class DaoUsuario extends Conexion implements CrudUsuario
             {                
                 usu = new Usuario(rs.getInt(1), rs.getString(2),
                         rs.getString(3), rs.getInt(4), rs.getString(5),
-                        rs.getInt(6), rs.getString(7));
+                        rs.getInt(6), rs.getInt(7));
                 ar.add(usu);
             }
         } catch (Exception e)
@@ -111,6 +111,11 @@ public class DaoUsuario extends Conexion implements CrudUsuario
             super.con().close();
         }
         return res;
+    }
+
+    @Override
+    public int eliminaLo(Usuario usu) throws ClassNotFoundException, SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

@@ -96,8 +96,8 @@
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="cmbRol" min="-2" pref="190" max="-2" attributes="0"/>
-                              <Component id="SpinnerEdadUser" min="-2" pref="121" max="-2" attributes="0"/>
                               <Component id="txtDire" min="-2" pref="190" max="-2" attributes="0"/>
+                              <Component id="SpinnerEdadUser" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -188,13 +188,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtPass">
         </Component>
-        <Component class="javax.swing.JSpinner" name="SpinnerEdadUser">
-          <Properties>
-            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="15" maximum="100" minimum="15" numberType="java.lang.Integer" stepSize="1" type="number"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="txtDire">
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbRol">
@@ -241,6 +234,8 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalirActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="SpinnerEdadUser">
         </Component>
       </SubComponents>
     </Container>

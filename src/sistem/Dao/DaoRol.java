@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistem.Dao;
 
 import java.sql.PreparedStatement;
@@ -101,6 +96,11 @@ public class DaoRol extends Conexion implements CrudRol
             super.con().close();
         }
         return res;
+    }
+
+    @Override
+    public int eliminaLo(Rol rol) throws ClassNotFoundException, SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

@@ -129,6 +129,12 @@ public class Frm_Venta extends javax.swing.JInternalFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
+        txtIdLiroFk.setBorder(null);
+        txtIdLiroFk.setEnabled(false);
+
+        txtIdVentaFK.setBorder(null);
+        txtIdVentaFK.setEnabled(false);
+
         jLabel5.setText("Cantidad");
 
         txtSUtotalVenta.addActionListener(new java.awt.event.ActionListener() {
@@ -145,6 +151,9 @@ public class Frm_Venta extends javax.swing.JInternalFrame {
 
         btnAgregarDetalleVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/carro-de-la-compra.png"))); // NOI18N
         btnAgregarDetalleVenta.setText("Agregar");
+
+        txtVentaEstado.setBorder(null);
+        txtVentaEstado.setEnabled(false);
 
         javax.swing.GroupLayout PanelDetalleVentaLayout = new javax.swing.GroupLayout(PanelDetalleVenta);
         PanelDetalleVenta.setLayout(PanelDetalleVentaLayout);
@@ -300,7 +309,7 @@ public class Frm_Venta extends javax.swing.JInternalFrame {
                 .addComponent(panelBotonesCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();

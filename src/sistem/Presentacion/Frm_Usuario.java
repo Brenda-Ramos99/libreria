@@ -27,8 +27,7 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
         txtPass.setText("");
         txtUser.setText("");
         cmbRol.setSelectedIndex(0);
-        SpinnerEdadUser.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1),
-            Integer.valueOf(1), null, Integer.valueOf(1)));
+        SpinnerEdadUser.setText("");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,13 +48,13 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
         txtCodigUser = new javax.swing.JTextField();
         txtUser = new javax.swing.JTextField();
         txtPass = new javax.swing.JTextField();
-        SpinnerEdadUser = new javax.swing.JSpinner();
         txtDire = new javax.swing.JTextField();
         cmbRol = new javax.swing.JComboBox<>();
         btnAgreUser = new javax.swing.JButton();
         btnModifUser = new javax.swing.JButton();
         btnElminUser = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        SpinnerEdadUser = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableUser = new javax.swing.JTable();
 
@@ -75,8 +74,6 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
         jLabel6.setText("Edad");
 
         txtCodigUser.setEnabled(false);
-
-        SpinnerEdadUser.setModel(new javax.swing.SpinnerNumberModel(15, 15, 100, 1));
 
         btnAgreUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnAgreUser.setText("Agregar");
@@ -131,8 +128,8 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addGroup(PanelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cmbRol, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SpinnerEdadUser, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDire, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDire, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SpinnerEdadUser, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUserLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -215,7 +212,7 @@ public class Frm_Usuario extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelUser;
-    private javax.swing.JSpinner SpinnerEdadUser;
+    private javax.swing.JTextField SpinnerEdadUser;
     private javax.swing.JTable TableUser;
     private javax.swing.JButton btnAgreUser;
     private javax.swing.JButton btnElminUser;

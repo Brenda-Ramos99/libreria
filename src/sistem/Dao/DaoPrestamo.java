@@ -105,6 +105,11 @@ public class DaoPrestamo extends Conexion implements CrudPrestamo
         }
         return res;
     }
+
+    @Override
+    public int eliminaLo(Prestamo presta) throws ClassNotFoundException, SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

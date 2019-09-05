@@ -28,25 +28,22 @@ Usuario lo;
         
     }
     Frm_MDIl(Usuario lo){
-    initComponents();
-    this.lo=lo;
-    this.setExtendedState(Frm_MDIl.MAXIMIZED_BOTH);
-    
-    if(lo.getId_rol()==1)
-    {
-    
-    }else if(lo.getId_rol()==2)
-    {
-    UserMenu.setVisible(false);
-    MenuItemCateg.setVisible(false);
-    AutoresMenu.setVisible(false);
-    VentaMenu.setVisible(false);
-    ReporteMenu.setVisible(false);
-    MenuItemEditorial.setVisible(false);
-    LibroMenu.setVisible(false);
-        
-    }
-        
+        initComponents();
+        this.lo=lo;
+        this.setExtendedState(Frm_MDIl.MAXIMIZED_BOTH);
+
+        if(lo.getId_rol()==1)
+        {
+
+        }else if(lo.getId_rol()==2){
+            UserMenu.setVisible(false);
+            MenuItemCateg.setVisible(false);
+            AutoresMenu.setVisible(false);
+            VentaMenu.setVisible(false);
+            ReporteMenu.setVisible(false);
+            MenuItemEditorial.setVisible(false);
+            LibroMenu.setVisible(false);
+        }  
     }
 
     /**
@@ -226,7 +223,7 @@ Usuario lo;
         Dimension FrameSize = user.getSize();
         user.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
         user.show();
-        EditorialMenu.setEnabled(false);
+        //EditorialMenu.setEnabled(false);
         
     }//GEN-LAST:event_MenuItemUserActionPerformed
 //Salir

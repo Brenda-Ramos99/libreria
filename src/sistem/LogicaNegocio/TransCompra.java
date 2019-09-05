@@ -87,7 +87,7 @@ public class TransCompra
         } catch (Exception e)
         {
             JOptionPane.showMessageDialog(null, "No se pudo eliminar el "
-                    + "registro","Erro",0);
+                    + "registro","Error",0);
         }
     }
 }

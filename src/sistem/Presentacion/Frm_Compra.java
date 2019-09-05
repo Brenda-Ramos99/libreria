@@ -32,11 +32,11 @@ public class Frm_Compra extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         txtCodigCompr = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        spinnerFechaCompra = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
         txtIvaCompr = new javax.swing.JTextField();
         txttotalComp = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        spinnerFechaCompra = new javax.swing.JTextField();
         PanelDetalleCOmpra = new javax.swing.JPanel();
         txtIdLiroFk = new javax.swing.JTextField();
         txtIdCompFK = new javax.swing.JTextField();
@@ -67,8 +67,6 @@ public class Frm_Compra extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Fecha de compra");
 
-        spinnerFechaCompra.setModel(new javax.swing.SpinnerDateModel());
-
         jLabel3.setText("Total");
 
         jLabel4.setText("IVA");
@@ -85,17 +83,17 @@ public class Frm_Compra extends javax.swing.JInternalFrame {
                             .addGroup(PanelCompraLayout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtIvaCompr, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(PanelCompraLayout.createSequentialGroup()
+                                .addComponent(txtIvaCompr, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(62, 62, 62)
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
                                 .addComponent(txttotalComp, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(spinnerFechaCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(PanelCompraLayout.createSequentialGroup()
+                                .addGroup(PanelCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(32, 32, 32)
+                                .addComponent(spinnerFechaCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(PanelCompraLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(txtCodigCompr, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -120,6 +118,12 @@ public class Frm_Compra extends javax.swing.JInternalFrame {
                     .addComponent(txttotalComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
+
+        txtIdLiroFk.setEditable(false);
+        txtIdLiroFk.setBorder(null);
+
+        txtIdCompFK.setBorder(null);
+        txtIdCompFK.setEnabled(false);
 
         jLabel5.setText("Cantidad");
 
@@ -277,7 +281,7 @@ public class Frm_Compra extends javax.swing.JInternalFrame {
                 .addComponent(panelBotonesCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
@@ -307,7 +311,7 @@ public class Frm_Compra extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JPanel panelBotonesCompra;
-    private javax.swing.JSpinner spinnerFechaCompra;
+    private javax.swing.JTextField spinnerFechaCompra;
     private javax.swing.JTable tableCompra;
     private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextField txtCodigCompr;

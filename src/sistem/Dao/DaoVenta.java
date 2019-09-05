@@ -119,12 +119,5 @@ public class DaoVenta extends Conexion implements CrudVenta
             super.con().close();
         }
         return res;
-    }
-
-    @Override
-    public int eliminaLo(Venta vent) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
+    }   
 }

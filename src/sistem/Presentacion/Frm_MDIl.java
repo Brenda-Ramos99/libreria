@@ -21,7 +21,8 @@ Usuario lo;
     Frm_Editorial editorial = new Frm_Editorial();
     Frm_Libro libro = new Frm_Libro();
     Frm_Autor autor = new Frm_Autor();
-    Frm_Categoria categ = new Frm_Categoria();    
+    Frm_Categoria categ = new Frm_Categoria();
+    Frm_Venta venta = new Frm_Venta();
     
     public Frm_MDIl() {
         initComponents();
@@ -43,6 +44,7 @@ Usuario lo;
             ReporteMenu.setVisible(false);
             MenuItemEditorial.setVisible(false);
             LibroMenu.setVisible(false);
+            VentaMenu.setVisible(false);
         }  
     }
 
@@ -179,6 +181,11 @@ Usuario lo;
         VentaMenu.setText("Venta");
 
         MenuItemVenta.setText("agregar Venta");
+        MenuItemVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemVentaActionPerformed(evt);
+            }
+        });
         VentaMenu.add(MenuItemVenta);
 
         MenuBar.add(VentaMenu);
@@ -262,6 +269,14 @@ Usuario lo;
         categ.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
         categ.show();
     }//GEN-LAST:event_MenuItemCategActionPerformed
+
+    private void MenuItemVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemVentaActionPerformed
+        jDesktopPanePrincipal.add(venta);
+        Dimension desktopSize = jDesktopPanePrincipal.getSize();
+        Dimension FrameSize = venta.getSize();
+        venta.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        venta.show();
+    }//GEN-LAST:event_MenuItemVentaActionPerformed
 
     /**
      * @param args the command line arguments

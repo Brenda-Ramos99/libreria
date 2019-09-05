@@ -5,6 +5,13 @@
  */
 package sistem.Presentacion;
 
+import sistem.Entidades.Detalle_venta;
+import sistem.Entidades.Libro;
+import sistem.Entidades.Venta;
+import sistem.LogicaNegocio.TransDetaVenta;
+import sistem.LogicaNegocio.TransLibro;
+import sistem.LogicaNegocio.TransVenta;
+
 /**
  *
  * @author Brenda Ramos
@@ -16,8 +23,15 @@ public class Frm_Venta extends javax.swing.JInternalFrame {
      */
     public Frm_Venta() {
         initComponents();
+        llenar();
     }
 
+    TransDetaVenta tDetaVenta = new TransDetaVenta();
+    TransVenta tVenta = new TransVenta();
+    TransLibro tLibro = new TransLibro();
+    Detalle_venta detaVenta = new Detalle_venta();
+    Venta venta = new Venta();
+    Libro lib = new Libro();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -225,7 +239,7 @@ public class Frm_Venta extends javax.swing.JInternalFrame {
                     .addGroup(PanelDetalleVentaLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnAgregarDetalleVenta)
-                        .addContainerGap(22, Short.MAX_VALUE))
+                        .addContainerGap(26, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDetalleVentaLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtDetallVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -244,6 +258,11 @@ public class Frm_Venta extends javax.swing.JInternalFrame {
 
         btnAgregarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnAgregarVenta.setText("Agregar");
+        btnAgregarVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarVentaActionPerformed(evt);
+            }
+        });
 
         btnModifiVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/lapiz-escribiendo-en-un-papel.png"))); // NOI18N
         btnModifiVenta.setText("Modificar");
@@ -253,6 +272,11 @@ public class Frm_Venta extends javax.swing.JInternalFrame {
 
         btnSalirVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistem/Presentacion/img/logout.png"))); // NOI18N
         btnSalirVenta.setText("Salir");
+        btnSalirVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirVentaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelBotonesCompraLayout = new javax.swing.GroupLayout(panelBotonesCompra);
         panelBotonesCompra.setLayout(panelBotonesCompraLayout);
@@ -315,9 +339,23 @@ public class Frm_Venta extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    void llenar(){
+      tableVenta.setModel(tDetaVenta.datos());
+    
+    }
+    
     private void txtSUtotalVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSUtotalVentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSUtotalVentaActionPerformed
+
+    private void btnSalirVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirVentaActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalirVentaActionPerformed
+
+    private void btnAgregarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarVentaActionPerformed
+        
+        llenar();
+    }//GEN-LAST:event_btnAgregarVentaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

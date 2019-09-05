@@ -69,7 +69,6 @@ public class Usuario
         this.id_rol = id_rol;
     }
 
-
     /*Método constructor para el ID del usuario, necesario para realizar la
     eliminación de registros a la tabla usuario en la base de datos*/
     public Usuario(int id_usuario) {
@@ -149,4 +148,5 @@ public class Usuario
     public void setId_rol(int id_rol) {
         this.id_rol = id_rol;
     }
+
 }
